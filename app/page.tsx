@@ -387,35 +387,133 @@ export default function Page() {
           titre="La croisière à Komodo"
           intro={croisiere.cadre}
         >
-          <div className="grid gap-3">
-            {croisiere.operateurs.map((o, i) => (
-              <div
-                key={i}
-                className="rounded-2xl bg-white border border-[var(--ligne)] p-5 ombre-douce"
-              >
-                <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                  <div className="font-bold text-[17px]">{o.nom}</div>
-                  <div
-                    className="text-[15px] font-semibold px-3 py-1 rounded-full"
-                    style={{ background: "#e9f6f8", color: "#147284" }}
-                  >
-                    {o.prix}
+          {/* Recommandation */}
+          <div
+            className="rounded-2xl p-5 md:p-6 text-white ombre-carte"
+            style={{ background: "linear-gradient(135deg, #1f7a8c, #166374)" }}
+          >
+            <div className="text-[13px] font-bold uppercase tracking-wide opacity-90">
+              ⭐ Le verdict des deux équipes
+            </div>
+            <p className="mt-2 text-[16.5px] leading-relaxed">
+              {croisiere.recommande}
+            </p>
+          </div>
+
+          {/* Podium — une fiche détaillée par bateau */}
+          <div className="mt-5 grid gap-4">
+            {croisiere.operateurs.map((o) => {
+              const gagnant = o.rang === 1;
+              return (
+                <div
+                  key={o.rang}
+                  className={`rounded-2xl bg-white p-5 md:p-6 ombre-douce border ${
+                    gagnant
+                      ? "border-2 border-[#1f7a8c]"
+                      : "border-[var(--ligne)]"
+                  }`}
+                >
+                  {/* En-tête fiche */}
+                  <div className="flex items-start justify-between gap-3 flex-wrap">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="serif w-9 h-9 rounded-full flex items-center justify-center text-white font-semibold text-[17px] shrink-0"
+                        style={{
+                          background: gagnant ? "#1f7a8c" : "#b0a896",
+                        }}
+                      >
+                        {o.rang}
+                      </span>
+                      <div>
+                        <div className="font-bold text-[18px] leading-tight">
+                          {o.nom}
+                        </div>
+                        {gagnant && (
+                          <div className="text-[13px] font-bold text-[#1f7a8c]">
+                            Notre recommandation
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    <div
+                      className="text-[15px] font-semibold px-3 py-1.5 rounded-full"
+                      style={{ background: "#e9f6f8", color: "#147284" }}
+                    >
+                      {o.prix}
+                    </div>
+                  </div>
+
+                  {/* Tableau de la fiche */}
+                  <dl className="mt-4 divide-y divide-[var(--ligne)] text-[15.5px]">
+                    {[
+                      ["Bateau", o.bateau],
+                      ["Départ lundi", o.departLundi],
+                      ["Avis", o.avis],
+                    ].map(([k, v]) => (
+                      <div
+                        key={k}
+                        className="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-x-4 gap-y-0.5 py-2.5"
+                      >
+                        <dt className="font-semibold text-[var(--encre-douce)]">
+                          {k}
+                        </dt>
+                        <dd>{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  {/* Le + et le − */}
+                  <div className="mt-3 grid sm:grid-cols-2 gap-3">
+                    <div className="rounded-xl bg-[#f0faf3] border border-[#cfe9d6] p-3.5">
+                      <div className="text-[12.5px] font-bold uppercase tracking-wide text-[#1f7a4b] mb-1">
+                        ＋ Le point fort
+                      </div>
+                      <p className="text-[14.5px] leading-relaxed">{o.pour}</p>
+                    </div>
+                    <div className="rounded-xl bg-[#fdf4f1] border border-[#f1d6cc] p-3.5">
+                      <div className="text-[12.5px] font-bold uppercase tracking-wide text-[#b5471f] mb-1">
+                        － La réserve
+                      </div>
+                      <p className="text-[14.5px] leading-relaxed">{o.contre}</p>
+                    </div>
+                  </div>
+
+                  {/* Comment réserver */}
+                  <div className="mt-3 text-[14.5px] leading-relaxed text-[var(--encre-douce)]">
+                    <span className="font-semibold text-[var(--encre)]">
+                      Réserver :{" "}
+                    </span>
+                    {o.reserver}
                   </div>
                 </div>
-                <p className="mt-2 text-[15.5px] leading-relaxed text-[var(--encre-douce)]">
-                  {o.note}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
+          {/* À retenir */}
           <div className="mt-5 rounded-2xl bg-[var(--fond-chaud)] border border-[var(--ligne)] p-5 md:p-6">
-            <div className="font-bold mb-3">À retenir avant de réserver</div>
+            <div className="font-bold mb-3">🔒 Réserver en sécurité — les règles d'or</div>
             <ul className="space-y-2.5">
               {croisiere.aRetenir.map((p, i) => (
                 <li key={i} className="flex gap-3 text-[15.5px] leading-relaxed">
                   <span className="text-[var(--komodo)] font-bold shrink-0">
                     •
                   </span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* À éviter */}
+          <div className="mt-4 rounded-2xl bg-[#fdf3f0] border border-[#f1d6cc] p-5 md:p-6">
+            <div className="font-bold mb-3 text-[#b5471f]">
+              🚫 À fuir absolument
+            </div>
+            <ul className="space-y-2.5">
+              {croisiere.aEviter.map((p, i) => (
+                <li key={i} className="flex gap-3 text-[15.5px] leading-relaxed">
+                  <span className="text-[#b5471f] font-bold shrink-0">✕</span>
                   <span>{p}</span>
                 </li>
               ))}
