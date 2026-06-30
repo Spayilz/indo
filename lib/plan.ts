@@ -71,36 +71,6 @@ export const volsRetour = [
   },
 ];
 
-export const decision = {
-  intro:
-    "Trois façons d'organiser les mêmes envies ont été comparées puis vérifiées point par point : vols réels du jeudi, jours d'ouverture des volcans, horaires de ferry et de train. Voici pourquoi le voyage est construit ainsi.",
-  pourquoi:
-    "Le scénario retenu décale la traversée de Java d'un jour. Il laisse une journée de repos à Bukit Lawang à l'arrivée, avant d'attaquer le trek frais. Il place le Kawah Ijen le mercredi 7 octobre, loin de sa fermeture mensuelle du vendredi 2 octobre, et le mont Bromo le mardi 6 octobre, un jour de semaine calme. La traversée vers Bali tombe un jeudi : le ferry public fonctionne vingt-quatre heures sur vingt-quatre. Surtout, ce scénario offre cinq nuits de plage à Bali, dont trois consécutives à Canggu avant la croisière, et deux nuits tampons à Labuan Bajo protègent la croisière et le vol du retour contre les caprices du volcan Lewotobi.",
-  comparaison: [
-    {
-      scenario: "A — Tout enchaîné sans décalage",
-      bali: "3 nuits possibles, mais en comprimant tout le reste",
-      fatigue:
-        "Très élevée : il faudrait enchaîner la fin du trek et le vol le même jour — physiquement impossible",
-      verdict: "Éliminé",
-    },
-    {
-      scenario: "B — Le décalage d'un jour (retenu)",
-      bali: "5 nuits, dont 3 consécutives à Canggu",
-      fatigue:
-        "Maîtrisée : aucune journée n'enchaîne deux gros efforts, vraie récupération aux bons moments",
-      verdict: "✓ Gagnant — validé par les 5 rapports",
-    },
-    {
-      scenario: "C — La croisière en toute fin de séjour",
-      bali: "Jusqu'à 6 nuits d'affilée avant la croisière",
-      fatigue: "Faible pendant le séjour, mais finale très stressante",
-      verdict:
-        "Éliminé : si le volcan Lewotobi ferme l'aéroport de Labuan Bajo un jour ou deux, l'avion du retour est raté",
-    },
-  ],
-};
-
 export type Jour = {
   date: string;
   titre: string;
@@ -147,7 +117,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Prise en charge à 11 h au JW Marriott par Sumatra Orangutan Explore, route vers la jungle, après-midi de repos au lodge.",
         details:
-          "Matinée tranquille au JW Marriott (option, si l'envie est là : un saut rapide au manoir Tjong A Fie en centre-ville). À 11 h, prise en charge à l'hôtel par Sumatra Orangutan Explore en voiture privée (800 000 roupies, péage de 33 000 roupies par trajet à régler en espèces au chauffeur). Quatre à cinq heures de route vers Bukit Lawang. À l'arrivée, l'équipe vous accueille pour régler le solde, puis transfert des bagages à moto jusqu'au lodge. Installation au New SOE Lodge (chambre Family Room à l'étage : grand lit, moustiquaire, salle de bain privée eau chaude, climatisation, balcon avec vue jungle). Après-midi de repos pour digérer le voyage : hamac, rivière Bohorok, briefing du trek. Coucher tôt.",
+          "Matinée tranquille au JW Marriott (option, si l'envie est là : un saut rapide au manoir Tjong A Fie en centre-ville). À 11 h, prise en charge à l'hôtel par Sumatra Orangutan Explore en voiture privée (800 000 roupies, péage de 33 000 roupies par trajet à régler en espèces au chauffeur). Quatre à cinq heures de route vers Bukit Lawang. À l'arrivée, l'équipe vous accueille pour régler le solde du trek (environ 4 629 000 roupies, en espèces), puis transfert des bagages à moto jusqu'au lodge. Installation au New SOE Lodge (chambre Family Room à l'étage : grand lit, moustiquaire, salle de bain privée eau chaude, climatisation, balcon avec vue jungle). Après-midi de repos pour digérer le voyage : hamac, rivière Bohorok, briefing du trek. Coucher tôt.",
         nuit: "New SOE Lodge, Bukit Lawang (chambre Family Room) · ✅ réservé",
         type: "repos",
       },
@@ -384,13 +354,6 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
     ],
   },
 ];
-
-export const choixTrek = {
-  explication:
-    "Trek réservé chez Sumatra Orangutan Explore : deux jours et une nuit, en petit groupe, tout compris (guide certifié, porteur, cuisinier, repas, matériel de camping, frais de parc, descente en rafting). Les orangs-outans se voient presque tous dès le premier jour — pas besoin d'un troisième jour, qui n'ajoute qu'une immersion plus longue. Le choix de rythme : plutôt que d'attaquer le trek dès le lendemain de l'arrivée avec 24 heures de voyage dans les jambes, on s'offre d'abord une demi-journée tranquille à Bukit Lawang le lundi, et on entre dans la jungle le mardi, frais.",
-  recommandation:
-    "Facture réglée en partie (acompte ✅), solde d'environ 4 629 000 roupies à régler sur place. Hébergement au New SOE Lodge, le lodge de l'opérateur (chambre Family Room avec climatisation, salle de bain eau chaude et balcon vue jungle), inclus pour les nuits du 28 et du 30 septembre.",
-};
 
 export const croisiere = {
   cadre:

@@ -3,9 +3,7 @@ import {
   infos,
   volsAller,
   volsRetour,
-  decision,
   phases,
-  choixTrek,
   croisiere,
   baliBase,
   checklist,
@@ -26,17 +24,16 @@ const typeBadge: Record<string, { emoji: string; label: string; fond: string; te
 const phaseStyle: Record<string, { couleur: string; icone: string }> = {
   "Le départ": { couleur: "var(--depart)", icone: "🛫" },
   "Sumatra — les orangs-outans": { couleur: "var(--sumatra)", icone: "🦧" },
-  "Java — Borobudur et les volcans": { couleur: "var(--java)", icone: "🌋" },
-  "Bali — trois nuits de chill": { couleur: "var(--bali)", icone: "🏝️" },
+  "Java — temples et volcans": { couleur: "var(--java)", icone: "🌋" },
+  "Bali — trois nuits à Canggu": { couleur: "var(--bali)", icone: "🏝️" },
   "Komodo — la croisière": { couleur: "var(--komodo)", icone: "🐉" },
-  "Bali — le final": { couleur: "var(--bali)", icone: "🌅" },
+  "Bali — le final à Canggu": { couleur: "var(--bali)", icone: "🌅" },
   "Le retour": { couleur: "var(--depart)", icone: "🛬" },
 };
 
 const navLiens = [
   { href: "#itineraire", label: "Jour par jour" },
   { href: "#vols", label: "Vols" },
-  { href: "#decision", label: "Le choix" },
   { href: "#croisiere", label: "Croisière" },
   { href: "#bali", label: "Bali" },
   { href: "#carte", label: "Carte" },
@@ -301,89 +298,10 @@ export default function Page() {
           </div>
         </NumSection>
 
-        {/* ════════ LA DÉCISION ════════ */}
-        <NumSection
-          id="decision"
-          num="03"
-          titre="Le scénario retenu, et pourquoi"
-          intro={decision.intro}
-        >
-          <div
-            className="rounded-2xl bg-white p-6 md:p-8 ombre-carte border-l-4"
-            style={{ borderColor: "var(--accent)" }}
-          >
-            <div className="text-[13px] font-bold uppercase tracking-wide text-[var(--accent)]">
-              ✓ Notre choix
-            </div>
-            <p className="mt-3 text-[17px] leading-relaxed">
-              {decision.pourquoi}
-            </p>
-          </div>
-          <div className="mt-5 grid gap-3">
-            {decision.comparaison.map((l, i) => {
-              const gagnant = l.verdict.startsWith("✓");
-              return (
-                <div
-                  key={i}
-                  className={`rounded-2xl border p-5 ${
-                    gagnant
-                      ? "bg-[#eef7f0] border-[#bfe0c8]"
-                      : "bg-white border-[var(--ligne)]"
-                  }`}
-                >
-                  <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                    <div className="font-bold text-[16.5px]">{l.scenario}</div>
-                    <div
-                      className={`text-[14px] font-bold ${
-                        gagnant ? "text-[#1f7a4b]" : "text-[var(--encre-douce)]"
-                      }`}
-                    >
-                      {l.verdict}
-                    </div>
-                  </div>
-                  <div className="mt-2 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-[15px] text-[var(--encre-douce)]">
-                    <div>
-                      <span className="font-semibold text-[var(--encre)]">
-                        Plage à Bali :{" "}
-                      </span>
-                      {l.bali}
-                    </div>
-                    <div>
-                      <span className="font-semibold text-[var(--encre)]">
-                        Fatigue :{" "}
-                      </span>
-                      {l.fatigue}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </NumSection>
-
-        {/* ════════ TREK ════════ */}
-        <NumSection
-          id="trek"
-          num="04"
-          titre="Le trek : deux jours suffisent"
-        >
-          <div className="rounded-2xl bg-white border border-[var(--ligne)] p-6 md:p-8 ombre-douce space-y-4">
-            <p className="text-[16.5px] leading-relaxed text-[var(--encre-douce)]">
-              {choixTrek.explication}
-            </p>
-            <p
-              className="text-[16.5px] leading-relaxed font-semibold rounded-xl p-4"
-              style={{ background: "color-mix(in srgb, var(--sumatra) 8%, white)" }}
-            >
-              {choixTrek.recommandation}
-            </p>
-          </div>
-        </NumSection>
-
         {/* ════════ CROISIÈRE ════════ */}
         <NumSection
           id="croisiere"
-          num="05"
+          num="03"
           titre="La croisière à Komodo"
           intro={croisiere.cadre}
         >
@@ -524,7 +442,7 @@ export default function Page() {
         {/* ════════ BALI ════════ */}
         <NumSection
           id="bali"
-          num="06"
+          num="04"
           titre="Où dormir à Bali"
           intro="Cinq nuits de plage : trois pour souffler avant Komodo, deux pour finir en douceur."
         >
@@ -560,7 +478,7 @@ export default function Page() {
         {/* ════════ CARTE ════════ */}
         <NumSection
           id="carte"
-          num="07"
+          num="05"
           titre="La carte du voyage"
           intro="D'ouest en est : Sumatra, Java, Bali, puis les îles de Komodo — et retour à Bali pour finir."
         >
@@ -572,7 +490,7 @@ export default function Page() {
         {/* ════════ CHECKLIST ════════ */}
         <NumSection
           id="reservations"
-          num="08"
+          num="06"
           titre="Quoi réserver, et quand"
           intro="Dans l'ordre. La toute première ligne est la plus urgente : c'est elle qui bloque le reste."
         >
@@ -599,7 +517,7 @@ export default function Page() {
         {/* ════════ BUDGET + VIGILANCE ════════ */}
         <NumSection
           id="budget"
-          num="09"
+          num="07"
           titre="Budget et points de vigilance"
         >
           <div
