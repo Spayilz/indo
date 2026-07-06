@@ -56,7 +56,7 @@ export const volsRetour = [
     trajet: "Bali (Denpasar) → Singapour",
     horaire: "samedi 17 · 13 h 15 → 16 h 00",
     compagnie:
-      "Lufthansa (vol SQ 9768, opéré par Singapore Airlines, Boeing 787) · 2 h 45",
+      "Singapore Airlines (vol SQ 9768, Boeing 787) · 2 h 45 · sur billet Lufthansa",
   },
   {
     trajet: "Singapour → Munich",
@@ -229,7 +229,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Traversée en ferry public, puis route jusqu'à Canggu. Arrivée à l'hôtel en milieu/fin d'après-midi.",
         details:
-          "Départ de l'hôtel vers 8 heures (heure de Java). Le ferry public de Ketapang vers Gilimanuk fonctionne vingt-quatre heures sur vingt-quatre, départ toutes les vingt à trente minutes, traversée de trente à quarante-cinq minutes. Important depuis décembre 2025 : le billet s'achète en ligne sur l'application Ferizy AVANT d'approcher du port — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port. À acheter la veille au soir, ou via le chauffeur. À l'arrivée, on avance les montres d'une heure (Bali vit à l'heure de l'Indonésie centrale). Puis route vers Canggu avec un chauffeur privé : quatre à cinq heures en conditions réelles (Canggu est au sud-ouest, un peu plus loin que Sanur — prévoir large), avec une pause déjeuner. Arrivée en fin d'après-midi : premier plongeon, et trois nuits posées commencent.",
+          "Départ de l'hôtel vers 8 heures (heure de Java). Le ferry public de Ketapang vers Gilimanuk fonctionne vingt-quatre heures sur vingt-quatre, départ toutes les vingt à trente minutes, traversée de trente à quarante-cinq minutes. Important depuis décembre 2025 : le billet s'achète en ligne sur l'application Ferizy AVANT d'approcher du port — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port. À acheter la veille au soir, ou via le chauffeur. À l'arrivée, on avance les montres d'une heure (Bali vit à l'heure de l'Indonésie centrale). Puis route vers Canggu avec un chauffeur privé : trois heures et demie à quatre heures et demie en conditions réelles (Canggu est au sud-ouest, un peu plus loin que Sanur — prévoir large), avec une pause déjeuner. Arrivée à l'hôtel vers 15-16 heures : premier plongeon, et trois nuits posées commencent.",
         nuit: "Hôtel à Canggu · ‼️ à réserver",
         type: "route",
       },
@@ -265,8 +265,8 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Vol du matin vers Labuan Bajo, puis journée douce sur place, la veille de l'embarquement.",
         details:
-          "Départ de l'hôtel tôt : depuis Canggu, compter environ une heure jusqu'à l'aéroport de Denpasar (un peu plus loin que depuis Sanur, prévoir la marge). Vol du matin pour Labuan Bajo, sur l'île de Florès : AirAsia à 7 h 10 ou Batik Air à 7 h 55 (les deux seules compagnies sur cette ligne, ~1 h 15 de vol) ; billet modifiable obligatoire à cause du volcan Lewotobi. Arrivée en milieu de matinée, installation à l'hôtel, journée tranquille : front de mer, rencontre avec l'opérateur de croisière pour régler le solde et confirmer l'heure d'embarquement, coucher de soleil sur la baie. Arriver la veille est exigé par les opérateurs — c'est la première nuit tampon du plan.",
-        nuit: "Hôtel à Labuan Bajo · ‼️ à réserver",
+          "Départ de l'hôtel vers 5 h 15 - 5 h 30 : depuis Canggu, compter environ une heure jusqu'à l'aéroport de Denpasar (un peu plus loin que depuis Sanur, prévoir la marge). Vol du matin pour Labuan Bajo, sur l'île de Florès : AirAsia à 7 h 10 ou Batik Air à 7 h 55 (les deux seules compagnies sur cette ligne, ~1 h 15 de vol) ; billet modifiable obligatoire à cause du volcan Lewotobi. Arrivée en milieu de matinée, installation à l'Airbnb « Hotel Komodo » (déjà réservé), journée tranquille : front de mer, rencontre avec l'opérateur de croisière pour régler le solde et confirmer l'heure d'embarquement, coucher de soleil sur la baie. Arriver la veille est exigé par les opérateurs — c'est la première nuit tampon du plan.",
+        nuit: "Airbnb « Hotel Komodo », Labuan Bajo · ✅ réservé",
         type: "vol",
       },
       {
@@ -460,7 +460,7 @@ export const baliBase = {
   avant: {
     zone: "Canggu — 3 nuits, du 8 au 11 octobre",
     pourquoi:
-      "Votre choix pour décompresser après le marathon de Java : le quartier le plus vivant de Bali, plein de cafés, boutiques, beach clubs et bons restaurants (et un ami sur place, Jasmine). À savoir honnêtement : Canggu est plus loin de Gilimanuk (4 à 5 heures de route depuis le ferry) et de l'aéroport (~1 heure) qu'un Sanur — d'où un transfert un peu plus long le dimanche matin pour le vol vers Komodo. Rien de bloquant, juste à anticiper.",
+      "Votre choix pour décompresser après le marathon de Java : le quartier le plus vivant de Bali, plein de cafés, boutiques, beach clubs et bons restaurants (et un ami sur place, Jasmine). À savoir honnêtement : Canggu est plus loin de Gilimanuk (3 h 30 à 4 h 30 de route depuis le ferry) et de l'aéroport (~1 heure) qu'un Sanur — d'où un transfert un peu plus long le dimanche matin pour le vol vers Komodo. Rien de bloquant, juste à anticiper.",
     hotels: [
       "À choisir selon le budget et l'ambiance recherchée (boutique, beach club, villa avec piscine) — Canggu regorge d'adresses ; réservez tôt car octobre reste prisé.",
       "Repères : la zone de Berawa (beach clubs, restaurants) ou Echo Beach (plus surf/tranquille) sont les plus agréables pour 3 nuits.",
@@ -480,7 +480,7 @@ export const baliBase = {
 export const checklist = [
   {
     quand: "✅ Déjà réservé",
-    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10).",
+    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10) · Airbnb « Hotel Komodo », Labuan Bajo (nuit tampon du 11/10, avant la croisière).",
   },
   {
     quand: "Le plus urgent",
@@ -492,7 +492,7 @@ export const checklist = [
   },
   {
     quand: "Dès que possible",
-    quoi: "Réserver les hôtels encore ouverts : Bromo B&B (5/10), Banyuwangi ×2 nuits (6 et 7/10), Canggu (les deux séjours : 8-10/10 puis 15-16/10), Labuan Bajo ×2 nuits (11 et 14/10).",
+    quoi: "Réserver les hôtels encore ouverts : Bromo B&B (5/10), Banyuwangi ×2 nuits (6 et 7/10), Canggu (les deux séjours : 8-10/10 puis 15-16/10), et l'hôtel post-croisière à Labuan Bajo (nuit tampon du 14/10).",
   },
   {
     quand: "Dès que possible",
@@ -520,8 +520,8 @@ export const vigilance = [
   "Croisière Komodo : verrouiller le départ du lundi 12 octobre par écrit avant tout paiement (confirmé d'office seulement sur le Lanakila), et transmettre les passeports tôt pour le permis (Padar limité à 60 personnes par jour).",
   "Le ferry Java-Bali du 8 octobre : billets uniquement sur l'application Ferizy, à acheter la veille au soir — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port.",
   "Le volcan Lewotobi peut perturber les vols de Labuan Bajo : billets intérieurs MODIFIABLES obligatoires, et les deux nuits tampons à Labuan Bajo (le 11 et le 14) ne doivent surtout pas être supprimées.",
-  "Vol du jeudi 1er octobre : réserver le direct Lion Air JT963 de 17 h 20 (2 h 50). Plan B : Garuda via Jakarta (éviter le vol Citilink de 9 h 30 qui atterrit au mauvais aéroport, Halim).",
-  "Depuis Canggu, l'aéroport et Gilimanuk sont plus loin que depuis Sanur : prévoir ~1 h pour l'aéroport le dimanche 11, et 4-5 h de route depuis le ferry le jeudi 8. À anticiper, sans plus.",
+  "Vol du jeudi 1er octobre : réserver le direct Lion Air JT963 de 17 h 20 (2 h 50, sans escale), et non l'autre Lion, le JT935 de 11 h 35, qui met quatre heures à cause d'une escale. Plan B si le direct n'opère plus : un billet unique Garuda via Jakarta (GA 187 puis GA 202) — en transitant par l'aéroport international Soekarno-Hatta (CGK), jamais par Halim.",
+  "Depuis Canggu, l'aéroport et Gilimanuk sont plus loin que depuis Sanur : prévoir ~1 h pour l'aéroport le dimanche 11, et 3 h 30 à 4 h 30 de route depuis le ferry le jeudi 8. À anticiper, sans plus.",
   "Mont Bromo en autonomie : avoir du liquide (pas de distributeur à Cemoro Lawang), partir tôt pour le point de vue, et prévoir l'entrée du parc (~12-15 € par personne) si vous montez au cratère.",
   "Le Kawah Ijen se fait en version « lac depuis la crête » (pas de feu bleu) : plus fiable et bien plus reposant. Vérifier les conditions d'accès la semaine du départ.",
   "Début octobre marque la transition vers la saison des pluies : averses possibles en fin d'après-midi sur Java et Bali.",
