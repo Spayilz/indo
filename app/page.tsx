@@ -380,6 +380,25 @@ export default function Page() {
                     ))}
                   </dl>
 
+                  {/* Photos des cabines (photos officielles des opérateurs, vérifiées le 12/07/2026) */}
+                  {o.photos.length > 0 && (
+                    <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {o.photos.map((p) => (
+                        <figure key={p.src} className="m-0">
+                          <img
+                            src={p.src}
+                            alt={p.legende}
+                            loading="lazy"
+                            className="w-full aspect-[3/2] object-cover rounded-xl border border-[var(--ligne)]"
+                          />
+                          <figcaption className="mt-1.5 text-[13px] leading-snug text-[var(--encre-douce)]">
+                            {p.legende}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
+
                   {/* Le + et le − */}
                   <div className="mt-3 grid sm:grid-cols-2 gap-3">
                     <div className="rounded-xl bg-[#f0faf3] border border-[#cfe9d6] p-3.5">
@@ -436,6 +455,19 @@ export default function Page() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Le message à envoyer */}
+          <div className="mt-4 rounded-2xl bg-white border border-[var(--ligne)] p-5 md:p-6 ombre-douce">
+            <div className="font-bold mb-1.5">
+              📋 Le message à envoyer (copier-coller)
+            </div>
+            <p className="text-[14.5px] leading-relaxed text-[var(--encre-douce)]">
+              {croisiere.messageNote}
+            </p>
+            <pre className="mt-3 whitespace-pre-wrap rounded-xl bg-[var(--fond-chaud)] border border-dashed border-[var(--ligne)] p-4 text-[13.5px] leading-relaxed font-mono">
+              {croisiere.messageType}
+            </pre>
           </div>
         </NumSection>
 
