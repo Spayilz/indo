@@ -7,7 +7,7 @@ export const infos = {
   surtitre: "Indonésie · du 26 septembre au 18 octobre 2026",
   titre: "Notre itinéraire",
   sousTitre:
-    "Sumatra, Java, Bali et Komodo en vingt nuits : les orangs-outans, Borobudur et Prambanan, la cascade de Tumpak Sewu, le mont Bromo, le lac turquoise du Kawah Ijen, les dragons et les raies mantas — et cinq vraies nuits de plage à Bali, dont trois consécutives à Canggu.",
+    "Sumatra, Java, Bali et Komodo en vingt nuits : les orangs-outans, Borobudur et Prambanan, la cascade de Tumpak Sewu, le mont Bromo, le lac turquoise du Kawah Ijen, les dragons et les raies mantas — et six nuits à Bali, du nord de l'île (Lovina, Munduk) aux quatre nuits de Canggu.",
   chiffres: [
     {
       valeur: "20",
@@ -15,9 +15,9 @@ export const infos = {
       detail: "du 27 septembre au 16 octobre inclus",
     },
     {
-      valeur: "5",
-      label: "nuits de plage à Bali",
-      detail: "3 consécutives à Canggu avant Komodo, 2 pour finir",
+      valeur: "6",
+      label: "nuits à Bali",
+      detail: "Lovina, Munduk, puis 4 nuits à Canggu (2 + 2)",
     },
     {
       valeur: "2",
@@ -145,7 +145,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
   },
   {
     titre: "Java — temples et volcans",
-    detail: "1ᵉʳ — 7 octobre",
+    detail: "1ᵉʳ — 6 octobre",
     jours: [
       {
         date: "Jeudi 1ᵉʳ octobre",
@@ -194,62 +194,62 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
           "Matinée libre à Malang, puis transfert l'après-midi vers le village de Cemoro Lawang, au bord de la caldeira.",
         details:
           "Matinée de pause à Malang. En début d'après-midi, transfert vers Cemoro Lawang, le village perché à 2 200 mètres au bord de la caldeira (environ trois heures de route). On fait le Bromo EN AUTONOMIE, sans tour organisé : on loge à Cemoro Lawang, le village le plus proche du point de vue, au Bromo B&B (recommandé par des amis, confort très simple mais idéalement situé, le staff donne plein de bons tuyaux). Important : avoir du liquide sur soi, il n'y a pas de distributeur là-haut. Préparer les vêtements chauds (5 à 10 degrés à l'aube : bonnet, polaire, coupe-vent), dîner tôt, coucher vers 20 h — le réveil sonne à 3 h. Vérifier que le billet électronique du parc est bien sur les téléphones : nominatif (numéros de passeport), obligatoire, acheté à l'avance sur bromotenggersemeru.id, 255 000 roupies par personne.",
-        nuit: "Bromo B&B, Cemoro Lawang · ‼️ à réserver",
+        nuit: "Bromo B&B, Cemoro Lawang · ✅ réservé",
         type: "route",
       },
       {
         date: "Mardi 6 octobre",
         titre: "Lever de soleil sur le mont Bromo, puis route vers l'est",
         resume:
-          "Marche de nuit jusqu'au point de vue pour l'aube, puis six à sept heures de route vers Banyuwangi.",
+          "Marche de nuit jusqu'au point de vue pour l'aube, puis six à sept heures de route vers le Jiwa Jawa Resort Ijen, à la pointe est de Java.",
         details:
-          "Réveil à 3 h. Deux options pour le point de vue : partir à pied depuis l'hôtel (environ 1 h 45 de marche — on part tôt pour arriver les premiers et sécuriser son spot), ou prendre une moto-taxi qui dépose au départ officiel (puis ~1 h de marche). Point GPS du belvédère donné par les amis. Lever du soleil sur le Bromo, le Batok et le Semeru émergeant de la mer de nuages. Pour monter aussi sur le cratère : le patron de l'hôtel indique un chemin gratuit, ou une moto-taxi mène au pied du cratère (prévoir l'entrée village + parc, ~12-15 euros par personne, en liquide). Retour à l'hôtel, petit déjeuner, puis longue route (taxi à réserver) vers Banyuwangi, à la pointe orientale de Java : six à sept heures avec des pauses. Dîner et vraie nuit complète : pas de réveil nocturne, l'Ijen se fera en douceur demain matin.",
-        nuit: "Hôtel à Banyuwangi · ‼️ à réserver",
-        type: "aventure",
-      },
-      {
-        date: "Mercredi 7 octobre",
-        titre: "Le lac turquoise du Kawah Ijen, en douceur",
-        resume:
-          "Montée tranquille en matinée pour le plus grand lac acide du monde — sans le feu bleu, sans réveil nocturne. Après-midi de repos.",
-        details:
-          "Choix assumé : on saute le feu bleu et sa descente nocturne dans les fumées de soufre — instable en 2026 (fermé par intermittence pour travaux), polarisant, et qui imposerait un réveil à minuit et demie. On garde le vrai joyau : le lac turquoise, le plus grand lac acide du monde (pH 0,13, couleur irréelle), accessible depuis la crête. Après une nuit complète, départ vers 6-7 heures pour le parking de Paltuding (environ une heure de route), puis montée régulière de 3 kilomètres (environ deux heures) dans la fraîcheur du matin. Arrivée sur la crête en milieu de matinée : vue plongeante sur le lac fumant et ses mineurs de soufre, panorama sur les volcans alentour. Redescente vers midi, retour à l'hôtel, après-midi de récupération au bord de la piscine. Dernière étape de Java : demain, Bali.",
-        nuit: "Hôtel à Banyuwangi · ‼️ à réserver",
+          "Réveil à 3 h. Deux options pour le point de vue : partir à pied depuis l'hôtel (environ 1 h 45 de marche — on part tôt pour arriver les premiers et sécuriser son spot), ou prendre une moto-taxi qui dépose au départ officiel (puis ~1 h de marche). Point GPS du belvédère donné par les amis. Lever du soleil sur le Bromo, le Batok et le Semeru émergeant de la mer de nuages. Pour monter aussi sur le cratère : le patron de l'hôtel indique un chemin gratuit, ou une moto-taxi mène au pied du cratère (prévoir l'entrée village + parc, ~12-15 euros par personne, en liquide). Retour à la maison d'hôtes vers 8 h 30, petit déjeuner, puis longue route (taxi à réserver) vers l'est de Java : six à sept heures avec des pauses jusqu'au Jiwa Jawa Resort Ijen, posé à Licin dans les plantations, aux portes du volcan. Dîner et vraie nuit complète : pas de réveil nocturne, l'Ijen se fera en douceur demain matin.",
+        nuit: "Jiwa Jawa Resort Ijen (Licin, Banyuwangi) · ✅ réservé",
         type: "aventure",
       },
     ],
   },
   {
-    titre: "Bali — trois nuits à Canggu",
-    detail: "8 — 10 octobre",
+    titre: "Bali — le nord, puis Canggu",
+    detail: "7 — 10 octobre",
     jours: [
       {
-        date: "Jeudi 8 octobre",
-        titre: "Ferry vers Bali et route jusqu'à Canggu",
+        date: "Mercredi 7 octobre",
+        titre: "Le lac turquoise de l'Ijen au matin, ferry vers Bali l'après-midi",
         resume:
-          "Traversée en ferry public, puis route jusqu'à Canggu. Arrivée à l'hôtel en milieu/fin d'après-midi.",
+          "Montée tranquille pour le plus grand lac acide du monde, puis traversée en ferry et route jusqu'à Lovina, sur la côte nord de Bali.",
         details:
-          "Départ de l'hôtel vers 8 heures (heure de Java). Le ferry public de Ketapang vers Gilimanuk fonctionne vingt-quatre heures sur vingt-quatre, départ toutes les vingt à trente minutes, traversée de trente à quarante-cinq minutes. Important depuis décembre 2025 : le billet s'achète en ligne sur l'application Ferizy AVANT d'approcher du port — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port. À acheter la veille au soir, ou via le chauffeur. À l'arrivée, on avance les montres d'une heure (Bali vit à l'heure de l'Indonésie centrale). Puis route vers Canggu avec un chauffeur privé : trois heures et demie à quatre heures et demie en conditions réelles (Canggu est au sud-ouest, un peu plus loin que Sanur — prévoir large), avec une pause déjeuner. Arrivée à l'hôtel vers 15-16 heures : premier plongeon, et trois nuits posées commencent.",
+          "Choix assumé sur l'Ijen : on saute le feu bleu et sa descente nocturne dans les fumées de soufre — instable en 2026 (fermé par intermittence pour travaux), polarisant, et qui imposerait un réveil à minuit et demie. On garde le vrai joyau : le lac turquoise, le plus grand lac acide du monde (pH 0,13, couleur irréelle), accessible depuis la crête. Après une nuit complète, départ vers 6-7 heures pour le parking de Paltuding (environ une heure de route), puis montée régulière de 3 kilomètres (environ deux heures) dans la fraîcheur du matin, avant la grosse chaleur. Arrivée sur la crête en milieu de matinée : vue plongeante sur le lac fumant et ses mineurs de soufre, panorama sur les volcans alentour. Redescente vers midi, puis cap sur Ketapang pour le ferry. Le ferry public de Ketapang vers Gilimanuk fonctionne vingt-quatre heures sur vingt-quatre, départ toutes les vingt à trente minutes, traversée de trente à quarante-cinq minutes. Important depuis décembre 2025 : le billet s'achète en ligne sur l'application Ferizy AVANT d'approcher du port — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port, et il n'y a plus de guichet. À acheter la veille au soir, ou à faire prendre en charge par le chauffeur. À l'arrivée, on avance les montres d'une heure : Bali vit à l'heure de l'Indonésie centrale. Puis route vers Lovina avec un chauffeur privé, deux heures et demie à trois heures le long de la côte nord. Journée longue et bien remplie — l'arrivée se fait en début de soirée, dîner tranquille et au lit.",
+        nuit: "Ju'blu Hotel, Lovina · ✅ réservé (par Agathe)",
+        type: "aventure",
+      },
+      {
+        date: "Jeudi 8 octobre",
+        titre: "La cascade de Sekumpul, puis les hauteurs de Munduk",
+        resume:
+          "Matinée à la cascade de Sekumpul, puis check-in l'après-midi au Munduk Moding Plantation pour la collaboration.",
+        details:
+          "Matinée à la cascade de Sekumpul, à une quarantaine de minutes à l'est de Lovina : la plus spectaculaire de Bali, deux rideaux d'eau jumeaux de 80 mètres au fond d'une vallée de jungle. Accès par un long escalier (compter 300 à 500 marches à la descente comme à la remontée, sol glissant : chaussures à bonne adhérence, maillot et sac étanche). Y aller tôt pour la lumière et le calme. Ensuite, remontée vers les hauteurs de Munduk (environ une heure de route, plantations de café et de clous de girofle, air frais à 900 mètres) et check-in l'après-midi au Munduk Moding Plantation, dans le cadre de la collaboration. Fin de journée sur place : la fameuse piscine à débordement au-dessus de la vallée, coucher de soleil sur la mer au loin, dîner au resort. Il fait nettement plus frais qu'en bas — prévoir une petite laine.",
+        nuit: "Munduk Moding Plantation · ✅ collaboration",
+        type: "aventure",
+      },
+      {
+        date: "Vendredi 9 octobre",
+        titre: "Descente de Munduk vers Canggu",
+        resume:
+          "Matinée tranquille au resort, départ en début d'après-midi, arrivée à Canggu en fin d'après-midi, dîner en ville.",
+        details:
+          "Matinée libre au Munduk Moding Plantation pour profiter du lieu (piscine, plantation, éventuelle balade jusqu'aux cascades de Munduk juste à côté). Départ en début d'après-midi vers Canggu : compter deux heures et demie à trois heures de route en descendant par les lacs et Bedugul, un peu plus si le trafic du sud est chargé. Arrivée à l'hôtel en fin d'après-midi, installation, puis soirée restaurant à Canggu (table à réserver — le quartier se remplit vite le vendredi soir). Deux nuits posées commencent avant Komodo.",
         nuit: "Hôtel à Canggu · ‼️ à réserver",
         type: "route",
       },
       {
-        date: "Vendredi 9 octobre",
-        titre: "Canggu — repos, plage et bonnes adresses",
-        resume:
-          "Journée détente : plage, piscine, boutiques, massage, et un bon restaurant le soir.",
-        details:
-          "Première vraie journée sans obligation, dans le quartier le plus animé de Bali pour les cafés, les boutiques et les beach clubs. Au programme à la carte : grasse matinée, plage de Berawa ou Echo Beach, massage, balade dans les concept-stores, coucher de soleil au beach club et dîner dans un des nombreux restaurants. Le marathon est derrière, on recharge.",
-        nuit: "Hôtel à Canggu · ‼️ à réserver",
-        type: "repos",
-      },
-      {
         date: "Samedi 10 octobre",
-        titre: "Canggu — deuxième jour de repos + préparatifs Komodo",
+        titre: "Canggu — journée repos + préparatifs Komodo",
         resume:
-          "Encore une journée détente, et le soir on prépare le petit sac pour la croisière.",
+          "La seule journée entière sans obligation avant la croisière : plage, boutiques, massage — et le soir, le petit sac pour Komodo.",
         details:
-          "Deuxième journée tranquille à Canggu. Le soir, on prépare un petit sac pour la croisière (maillots, crème solaire, lampe, médicament contre le mal de mer) — l'idéal est de laisser les grosses valises en garde quelque part (à voir avec Jasmine si possible de les déposer à Canggu, sinon en garde à l'hôtel de Labuan Bajo pendant les deux nuits à bord). Retrait d'espèces avant Labuan Bajo (les distributeurs s'y vident le week-end : solde de croisière, frais de parc et pourboires sont souvent en liquide). Coucher tôt : départ très matinal demain.",
+          "Journée à la carte dans le quartier le plus animé de Bali : grasse matinée, plage de Berawa ou Echo Beach, massage, balade dans les concept-stores, coucher de soleil au beach club et dîner au restaurant. Le soir, on prépare un petit sac pour la croisière (maillots, crème solaire, lampe, médicament contre le mal de mer) — l'idéal est de laisser les grosses valises en garde quelque part (à voir avec Jasmine si possible de les déposer à Canggu, sinon en garde à l'hôtel de Labuan Bajo pendant les deux nuits à bord). Retrait d'espèces avant Labuan Bajo (les distributeurs s'y vident le week-end : solde de croisière, frais de parc et pourboires sont souvent en liquide). Coucher tôt : départ très matinal demain.",
         nuit: "Hôtel à Canggu · ‼️ à réserver",
         type: "repos",
       },
@@ -265,8 +265,8 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Vol du matin vers Labuan Bajo, puis journée douce sur place, la veille de l'embarquement.",
         details:
-          "Départ de l'hôtel vers 5 h 15 - 5 h 30 : depuis Canggu, compter environ une heure jusqu'à l'aéroport de Denpasar (un peu plus loin que depuis Sanur, prévoir la marge). Vol du matin pour Labuan Bajo, sur l'île de Florès : AirAsia à 7 h 10 ou Batik Air à 7 h 55 (les deux seules compagnies sur cette ligne, ~1 h 15 de vol) ; billet modifiable obligatoire à cause du volcan Lewotobi. Arrivée en milieu de matinée, installation à l'Airbnb « Hotel Komodo » (déjà réservé), journée tranquille : front de mer, rencontre avec l'opérateur de croisière pour régler le solde et confirmer l'heure d'embarquement, coucher de soleil sur la baie. Arriver la veille est exigé par les opérateurs — c'est la première nuit tampon du plan.",
-        nuit: "Airbnb « Hotel Komodo », Labuan Bajo · ✅ réservé",
+          "Départ de l'hôtel vers 5 h 15 - 5 h 30 : depuis Canggu, compter environ une heure jusqu'à l'aéroport de Denpasar, un peu moins à cette heure-là par la route à péage. Vol du matin pour Labuan Bajo, sur l'île de Florès : AirAsia à 7 h 10 ou Batik Air à 7 h 55 (les deux seules compagnies sur cette ligne, ~1 h 15 de vol) ; billet modifiable obligatoire à cause du volcan Lewotobi. Arrivée en milieu de matinée, installation à la Casa de Capulet (déjà réservée), journée tranquille : front de mer, rencontre avec l'opérateur de croisière pour régler le solde et confirmer l'heure d'embarquement, coucher de soleil sur la baie. Arriver la veille est exigé par les opérateurs — c'est la première nuit tampon du plan.",
+        nuit: "Casa de Capulet, Labuan Bajo · ✅ réservé",
         type: "vol",
       },
       {
@@ -295,8 +295,8 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Dernière baignade, retour à Labuan Bajo entre 10 h 30 et 15 h, et nuit sur la terre ferme.",
         details:
-          "Dernière matinée en mer (snorkeling, tortues selon le bateau), puis retour au port de Labuan Bajo entre 10 h 30 et 15 heures selon l'opérateur. Après-midi tranquille à terre : longue douche, dîner de fruits de mer sur le front de mer. Cette nuit sur la terre ferme est la deuxième nuit tampon : aucun vol n'est programmé le jour du débarquement, par précaution face au volcan Lewotobi et aux heures de retour variables.",
-        nuit: "Hôtel à Labuan Bajo · ‼️ à réserver",
+          "Dernière matinée en mer (snorkeling, tortues selon le bateau), puis retour au port de Labuan Bajo entre 10 h 30 et 15 heures selon l'opérateur. Retour à la Casa de Capulet, déjà réservée pour cette nuit-là. Après-midi tranquille à terre : longue douche, dîner de fruits de mer sur le front de mer. Cette nuit sur la terre ferme est la deuxième nuit tampon : aucun vol n'est programmé le jour du débarquement, par précaution face au volcan Lewotobi et aux heures de retour variables.",
+        nuit: "Casa de Capulet, Labuan Bajo · ✅ réservé",
         type: "bateau",
       },
     ],
@@ -311,8 +311,8 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Vol de Labuan Bajo vers Denpasar, puis retour à Canggu pour finir le voyage dans le quartier que vous aimez.",
         details:
-          "Vol du matin ou de la mi-journée de Labuan Bajo vers Denpasar (~1 h 15, billet modifiable). Puis route vers Canggu (~1 h depuis l'aéroport) pour les deux dernières nuits, là où le voyage a fait sa pause avant Komodo. Après-midi détente : plage de Berawa ou Echo Beach, piscine, et le soir un beach club au coucher du soleil ou un bon restaurant. Envie d'un dîner de poissons grillés les pieds dans le sable ? La baie de Jimbaran est à ~40 minutes si l'occasion se présente.",
-        nuit: "Hôtel à Canggu · ‼️ à réserver",
+          "Vol du matin ou de la mi-journée de Labuan Bajo vers Denpasar (~1 h 15, billet modifiable). Puis route vers Canggu (~1 h depuis l'aéroport) pour les deux dernières nuits, au Plawa Laguna Boutique Hotel & Suites — là où le voyage a fait sa pause avant Komodo. Après-midi détente : plage de Berawa ou Echo Beach, piscine, et le soir un beach club au coucher du soleil ou un bon restaurant. Envie d'un dîner de poissons grillés les pieds dans le sable ? La baie de Jimbaran est à ~40 minutes si l'occasion se présente.",
+        nuit: "Plawa Laguna Boutique Hotel & Suites, Canggu · ✅ réservé (par Agathe)",
         type: "vol",
       },
       {
@@ -321,8 +321,8 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Plage, piscine, dernier massage, derniers achats — et valises tranquilles en fin de journée.",
         details:
-          "Dernière journée entière, zéro obligation : plage, piscine, dernier massage en duo, derniers achats dans les boutiques de Canggu. En fin de journée, boucler les valises et caler le transfert vers l'aéroport pour demain matin (compter ~1 h de route depuis Canggu, donc départ assez tôt). Demander un petit déjeuner servi tôt. Dernier coucher de soleil sur la côte.",
-        nuit: "Hôtel à Canggu · ‼️ à réserver",
+          "Dernière journée entière, zéro obligation : plage, piscine, dernier massage en duo, derniers achats dans les boutiques de Canggu. En fin de journée, boucler les valises et caler le transfert vers l'aéroport pour demain matin (compter ~1 h de route depuis Canggu). Demander un petit déjeuner servi tôt. Dernier coucher de soleil sur la côte.",
+        nuit: "Plawa Laguna Boutique Hotel & Suites, Canggu · ✅ réservé (par Agathe)",
         type: "repos",
       },
     ],
@@ -335,9 +335,9 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         date: "Samedi 17 octobre",
         titre: "Décollage de Bali",
         resume:
-          "Départ de Canggu vers 9 h, envol de Denpasar à 13 h 15 vers Singapour puis Munich.",
+          "Départ de Canggu vers 10 h, envol de Denpasar à 13 h 15 vers Singapour puis Munich.",
         details:
-          "Départ de l'hôtel vers 9 h direction l'aéroport : depuis Canggu, compter environ une heure de route (un peu plus avec le trafic), pour être à l'aéroport vers 10 h 15 — les trois heures d'avance recommandées pour le vol international. Décollage à 13 h 15 vers Singapour (vol opéré par Singapore Airlines). L'escale à Changi dure 6 h 45 : le temps de dîner et d'aller voir la grande cascade intérieure du Jewel. Puis vol de nuit Lufthansa vers Munich.",
+          "Départ de l'hôtel vers 10 h direction l'aéroport : depuis Canggu, compter environ une heure de route (un peu plus avec le trafic), soit une arrivée vers 11 h — deux heures et quart avant le décollage, ça passe, mais partir plutôt vers 9 h donne les trois heures d'avance recommandées sur un vol international un samedi. Décollage à 13 h 15 vers Singapour (vol opéré par Singapore Airlines). L'escale à Changi dure 6 h 45 : le temps de dîner et d'aller voir la grande cascade intérieure du Jewel. Puis vol de nuit Lufthansa vers Munich.",
         nuit: "En vol, entre Singapour et Munich",
         type: "vol",
       },
@@ -347,7 +347,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Correspondance au petit matin à Munich, atterrissage à Luxembourg à 8 h 55.",
         details:
-          "Correspondance au petit matin à Munich (vol LH 2316) puis atterrissage à Luxembourg à 8 h 55 — à la maison pour le petit déjeuner du dimanche, avec la journée entière pour récupérer. Bilan : vingt nuits sur place, les orangs-outans de Sumatra, Borobudur et Prambanan, la cascade de Tumpak Sewu, l'aube sur le mont Bromo, le lac turquoise du Kawah Ijen, les dragons et les raies mantas de Komodo, et cinq vraies nuits de plage à Bali. Une journée de canapé est officiellement prescrite.",
+          "Correspondance au petit matin à Munich (vol LH 2316) puis atterrissage à Luxembourg à 8 h 55 — à la maison pour le petit déjeuner du dimanche, avec la journée entière pour récupérer. Bilan : vingt nuits sur place, les orangs-outans de Sumatra, Borobudur et Prambanan, la cascade de Tumpak Sewu, l'aube sur le mont Bromo, le lac turquoise du Kawah Ijen, la cascade de Sekumpul et les hauteurs de Munduk, les dragons et les raies mantas de Komodo, et quatre nuits à Canggu. Une journée de canapé est officiellement prescrite.",
         nuit: "À la maison",
         type: "vol",
       },
@@ -509,21 +509,22 @@ Thank you!`,
 
 export const baliBase = {
   avant: {
-    zone: "Canggu — 3 nuits, du 8 au 11 octobre",
+    zone: "Le nord, puis Canggu — 4 nuits, du 7 au 11 octobre",
     pourquoi:
-      "Votre choix pour décompresser après le marathon de Java : le quartier le plus vivant de Bali, plein de cafés, boutiques, beach clubs et bons restaurants (et un ami sur place, Jasmine). À savoir honnêtement : Canggu est plus loin de Gilimanuk (3 h 30 à 4 h 30 de route depuis le ferry) et de l'aéroport (~1 heure) qu'un Sanur — d'où un transfert un peu plus long le dimanche matin pour le vol vers Komodo. Rien de bloquant, juste à anticiper.",
+      "On arrive par le ferry au nord-ouest de l'île, donc on descend en douceur au lieu de foncer sur le sud : une nuit tampon à Lovina le soir du ferry (2 h 30 à 3 h de route au lieu de 4 h et plus jusqu'à Canggu, après une journée déjà bien chargée par l'Ijen), une nuit dans les hauteurs de Munduk pour la collaboration, puis deux nuits à Canggu pour décompresser avant Komodo. À anticiper : Canggu est à ~1 heure de l'aéroport, d'où un réveil très matinal le dimanche 11 pour le vol vers Labuan Bajo.",
     hotels: [
-      "À choisir selon le budget et l'ambiance recherchée (boutique, beach club, villa avec piscine) — Canggu regorge d'adresses ; réservez tôt car octobre reste prisé.",
-      "Repères : la zone de Berawa (beach clubs, restaurants) ou Echo Beach (plus surf/tranquille) sont les plus agréables pour 3 nuits.",
+      "7 octobre — Ju'blu Hotel, Lovina · ✅ réservé (par Agathe) : la nuit tampon après le ferry, sur la côte nord.",
+      "8 octobre — Munduk Moding Plantation · ✅ collaboration : le resort dans les plantations de café, piscine à débordement au-dessus de la vallée. Cascade de Sekumpul le matin même, en route depuis Lovina.",
+      "9 et 10 octobre — hôtel à Canggu · ‼️ à réserver : viser Berawa (beach clubs, restaurants) ou Echo Beach (plus surf, plus calme). Réserver tôt, octobre reste prisé — et réserver aussi la table du vendredi soir.",
     ],
   },
   apres: {
     zone: "Canggu — 2 nuits, du 15 au 17 octobre",
     pourquoi:
-      "Votre choix : finir le voyage là où il a fait sa pause, dans le quartier que vous aimez. À anticiper pour le départ du samedi : l'aéroport est à ~1 heure de Canggu, donc on part assez tôt le matin (vers 9 h) pour le vol de 13 h 15. Et si l'envie d'un dîner de poissons grillés à Jimbaran se présente un soir, c'est à ~40 minutes.",
+      "Finir le voyage là où il a fait sa pause, dans le quartier que vous aimez. À anticiper pour le départ du samedi : l'aéroport est à ~1 heure de Canggu, et le carnet prévoit un départ vers 10 h pour un vol à 13 h 15 — partir vers 9 h laisserait plus de marge. Et si l'envie d'un dîner de poissons grillés à Jimbaran se présente un soir, c'est à ~40 minutes.",
     hotels: [
-      "Même quartier que le premier séjour : vous pouvez reprendre le même hôtel, ou en changer pour varier (Berawa pour les beach clubs, Echo Beach pour le calme).",
-      "Réservez tôt : octobre reste prisé à Canggu.",
+      "15 et 16 octobre — Plawa Laguna Boutique Hotel & Suites, Canggu · ✅ réservé (par Agathe), les deux dernières nuits du voyage.",
+      "Rien de plus à réserver ici : il reste juste à caler le transfert vers l'aéroport pour le samedi matin et à demander un petit déjeuner servi tôt.",
     ],
   },
 };
@@ -531,7 +532,7 @@ export const baliBase = {
 export const checklist = [
   {
     quand: "✅ Déjà réservé",
-    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10) · Airbnb « Hotel Komodo », Labuan Bajo (nuit tampon du 11/10, avant la croisière).",
+    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé, solde de 4 629 000 IDR à régler en espèces à l'arrivée · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10) · Bromo B&B, Cemoro Lawang (5/10) · Jiwa Jawa Resort Ijen (6/10) · Ju'blu Hotel, Lovina (7/10, par Agathe) · Munduk Moding Plantation (8/10, collaboration) · Casa de Capulet, Labuan Bajo (les deux nuits tampons, 11 et 14/10) · Plawa Laguna Boutique Hotel & Suites, Canggu (15 et 16/10, par Agathe).",
   },
   {
     quand: "Le plus urgent",
@@ -543,7 +544,7 @@ export const checklist = [
   },
   {
     quand: "Dès que possible",
-    quoi: "Réserver les hôtels encore ouverts : Bromo B&B (5/10), Banyuwangi ×2 nuits (6 et 7/10), Canggu (les deux séjours : 8-10/10 puis 15-16/10), et l'hôtel post-croisière à Labuan Bajo (nuit tampon du 14/10).",
+    quoi: "Réserver le seul hébergement encore ouvert : l'hôtel de Canggu pour les nuits du vendredi 9 et du samedi 10 octobre (Berawa ou Echo Beach). Tout le reste du logement est bouclé.",
   },
   {
     quand: "Dès que possible",
@@ -559,20 +560,26 @@ export const checklist = [
   },
   {
     quand: "Début septembre",
-    quoi: "Faire les demandes de visa électronique en ligne, et réserver les chauffeurs privés (Tumpak Sewu le 4/10, transfert vers Cemoro Lawang le 5/10, taxi Bromo → Banyuwangi le 6/10, et le chauffeur du ferry vers Canggu le 8/10).",
+    quoi: "Faire les demandes de visa électronique en ligne, et réserver les chauffeurs privés : Tumpak Sewu le 4/10, transfert vers Cemoro Lawang le 5/10, taxi Bromo → Jiwa Jawa Ijen le 6/10, la grosse journée du 7/10 (hôtel → Paltuding → port de Ketapang, puis Gilimanuk → Lovina côté Bali), Lovina → Sekumpul → Munduk le 8/10, et Munduk → Canggu le 9/10.",
+  },
+  {
+    quand: "Avant l'arrivée à Canggu",
+    quoi: "Réserver la table du vendredi soir 9 octobre à Canggu (le quartier se remplit vite), et voir avec Jasmine s'il est possible d'y laisser les grosses valises pendant la croisière.",
   },
   {
     quand: "La semaine du départ",
-    quoi: "Consulter Magma Indonesia pour l'état des volcans (Bromo, Kawah Ijen, Lewotobi), et acheter les billets du ferry sur l'application Ferizy la veille (impossible près du port).",
+    quoi: "Consulter Magma Indonesia pour l'état des volcans (Bromo, Kawah Ijen, Lewotobi), et acheter les billets du ferry sur l'application Ferizy le mardi 6 au soir — impossible à moins de 2,6 km du port le jour même.",
   },
 ];
 
 export const vigilance = [
   "Croisière Komodo : verrouiller le départ du lundi 12 octobre par écrit avant tout paiement (confirmé aux calendriers chez Lanakila, IndonesiaJuara et Sailnesia/GetYourGuide — le Naturalia est incompatible, vendredis uniquement), et transmettre les passeports tôt pour le permis SiORA (Padar limité à 60 personnes par jour).",
-  "Le ferry Java-Bali du 8 octobre : billets uniquement sur l'application Ferizy, à acheter la veille au soir — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port.",
+  "Le ferry Java-Bali est passé au mercredi 7 octobre, l'après-midi même de l'Ijen : billets uniquement sur l'application Ferizy, à acheter le mardi soir — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port, et il n'y a plus de guichet.",
+  "Le 7 octobre est la journée la plus chargée du voyage : lever vers 5 h 30, montée de l'Ijen, redescente vers midi, route jusqu'à Ketapang, ferry, +1 heure de décalage horaire, puis 2 h 30 à 3 h de route jusqu'à Lovina — arrivée en début de soirée. Un seul chauffeur pour toute la journée côté Java, et un autre qui attend à Gilimanuk : à caler à l'avance.",
   "Le volcan Lewotobi peut perturber les vols de Labuan Bajo : billets intérieurs MODIFIABLES obligatoires, et les deux nuits tampons à Labuan Bajo (le 11 et le 14) ne doivent surtout pas être supprimées.",
   "Vol du jeudi 1er octobre : réserver le direct Lion Air JT963 de 17 h 20 (2 h 50, sans escale), et non l'autre Lion, le JT935 de 11 h 35, qui met quatre heures à cause d'une escale. Plan B si le direct n'opère plus : un billet unique Garuda via Jakarta (GA 187 puis GA 202) — en transitant par l'aéroport international Soekarno-Hatta (CGK), jamais par Halim.",
-  "Depuis Canggu, l'aéroport et Gilimanuk sont plus loin que depuis Sanur : prévoir ~1 h pour l'aéroport le dimanche 11, et 3 h 30 à 4 h 30 de route depuis le ferry le jeudi 8. À anticiper, sans plus.",
+  "Canggu est à environ une heure de l'aéroport : départ 5 h 15 - 5 h 30 le dimanche 11 pour le vol vers Labuan Bajo, et départ le samedi 17 vers 10 h comme prévu au carnet (9 h serait plus confortable pour un international à 13 h 15).",
+  "Le seul hébergement encore ouvert est Canggu pour les nuits du 9 et du 10 octobre : à boucler vite, octobre est prisé et le reste du logement est déjà réservé autour.",
   "Mont Bromo en autonomie : avoir du liquide (pas de distributeur à Cemoro Lawang), partir tôt pour le point de vue, et prévoir l'entrée du parc (~12-15 € par personne) si vous montez au cratère.",
   "Le Kawah Ijen se fait en version « lac depuis la crête » (pas de feu bleu) : plus fiable et bien plus reposant. Vérifier les conditions d'accès la semaine du départ.",
   "Début octobre marque la transition vers la saison des pluies : averses possibles en fin d'après-midi sur Java et Bali.",
@@ -602,6 +609,7 @@ export const etapesCarte: EtapeCarte[] = [
   { id: "tumpak", nom: "Tumpak Sewu", coords: [-8.2289, 112.9151], couleur: "#15803d" },
   { id: "bromo", nom: "Mont Bromo", coords: [-7.9176, 112.954], couleur: "#15803d" },
   { id: "ijen", nom: "Kawah Ijen", coords: [-8.0581, 114.2421], couleur: "#15803d" },
+  { id: "nord-bali", nom: "Lovina · Munduk", coords: [-8.2, 115.05], couleur: "#15803d" },
   { id: "canggu", nom: "Canggu (Bali)", coords: [-8.6478, 115.1385], couleur: "#b45309" },
   { id: "labuan-bajo", nom: "Labuan Bajo", coords: [-8.4885, 119.877] },
   { id: "komodo", nom: "Parc de Komodo", coords: [-8.6536, 119.5734], couleur: "#0e7490" },
@@ -615,7 +623,8 @@ export const trajetsCarte: { de: string; vers: string; mode: "avion" | "route" |
   { de: "malang", vers: "tumpak", mode: "route" },
   { de: "malang", vers: "bromo", mode: "route" },
   { de: "bromo", vers: "ijen", mode: "route" },
-  { de: "ijen", vers: "canggu", mode: "bateau" },
+  { de: "ijen", vers: "nord-bali", mode: "bateau" },
+  { de: "nord-bali", vers: "canggu", mode: "route" },
   { de: "canggu", vers: "labuan-bajo", mode: "avion" },
   { de: "labuan-bajo", vers: "komodo", mode: "bateau" },
   { de: "labuan-bajo", vers: "canggu", mode: "avion" },

@@ -25,7 +25,7 @@ const phaseStyle: Record<string, { couleur: string; icone: string }> = {
   "Le départ": { couleur: "var(--depart)", icone: "🛫" },
   "Sumatra — les orangs-outans": { couleur: "var(--sumatra)", icone: "🦧" },
   "Java — temples et volcans": { couleur: "var(--java)", icone: "🌋" },
-  "Bali — trois nuits à Canggu": { couleur: "var(--bali)", icone: "🏝️" },
+  "Bali — le nord, puis Canggu": { couleur: "var(--bali)", icone: "🏝️" },
   "Komodo — la croisière": { couleur: "var(--komodo)", icone: "🐉" },
   "Bali — le final à Canggu": { couleur: "var(--bali)", icone: "🌅" },
   "Le retour": { couleur: "var(--depart)", icone: "🛬" },
@@ -476,7 +476,7 @@ export default function Page() {
           id="bali"
           num="04"
           titre="Où dormir à Bali"
-          intro="Cinq nuits de plage : trois pour souffler avant Komodo, deux pour finir en douceur."
+          intro="Six nuits : le nord de l'île en arrivant par le ferry (Lovina, Munduk), deux nuits à Canggu pour souffler avant Komodo, deux pour finir en douceur."
         >
           <div className="grid md:grid-cols-2 gap-4">
             {[
