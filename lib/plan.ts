@@ -359,47 +359,23 @@ export const croisiere = {
   cadre:
     "Croisière partagée de trois jours et deux nuits au départ de Labuan Bajo, dans une cabine privée climatisée avec salle de bain à bord d'un phinisi (voilier traditionnel en bois). Embarquement le lundi 12 octobre en matinée (8 h à 11 h selon l'opérateur), retour le mercredi 14 octobre entre 10 h 30 et 13 h. Tous les bateaux sérieux couvrent les quatre incontournables : l'île de Padar, la Pink Beach, les dragons sur l'île de Komodo et la nage avec les raies mantas à Manta Point. Dossier revérifié le 12 juillet 2026 : chaque date, prix et photo de cabine a été relevé sur les pages des opérateurs puis contre-vérifié par une seconde équipe (conversions au taux du jour, 1 € ≈ 20 635 IDR ≈ 1,142 USD).",
   recommande:
-    "Notre n°1 pour ce départ du lundi : le Lanakila Cruise — créneau « 12–14 Oct 2026 Monday–Wednesday » affiché tel quel chez deux revendeurs, meilleur prix du marché en direct (Deluxe vue mer ≈ 267 €/pers.) et avis parfaits mais encore peu nombreux. Le dossier le plus solide en volume d'avis est IndonesiaJuara (841 avis à 4,9/5, créneau du 12 au calendrier officiel, embarquement à 11 h). Le plan B sans risque : la fiche GetYourGuide de Sailnesia, annulation gratuite jusqu'à 24 h avant. En pratique : écrire à Lanakila et IndonesiaJuara en parallèle, vérifier la fiche GetYourGuide dans un navigateur, et prendre le premier qui confirme tout par écrit.",
+    "Où on en est : les 6 opérateurs ont été contactés par WhatsApp. Ci-dessous, ils sont classés par SÛRETÉ — volume et qualité des avis, ce qu'en disent les vrais voyageurs, et ce que c'est. En attendant les réponses, bloquer le filet de sécurité GRATUIT : la fiche GetYourGuide de Sailnesia (annulation gratuite jusqu'à 24 h avant, payer plus tard) garantit une croisière sans rien risquer, et s'annule d'un clic si un direct fait mieux. À chaque réponse « dispo », renvoyer le message plus bas pour tout verrouiller par écrit, puis prendre le mieux placé — acompte partiel seulement, jamais 100 % d'avance.",
   operateurs: [
     {
       rang: 1,
-      nom: "Lanakila Cruise (en direct)",
-      bateau:
-        "Phinisi en bois de 2024, 29 mètres · 8 cabines, toutes climatisées avec salle de bain privée (2 Master balcon, 2 Deluxe vue mer, 4 Superior) · 16 invités maximum",
-      prix: "Prix directs officiels, par personne : Superior 4 750 000 IDR ≈ 230 € · Deluxe vue mer 5 500 000 IDR ≈ 267 € · Master balcon 6 500 000 IDR ≈ 315 € (chez le revendeur divetrips : 254 / 291 / 339 €)",
-      departLundi:
-        "Confirmé — le créneau « 12–14 Oct 2026 Monday–Wednesday » est affiché tel quel aux calendriers de divetrips.id et phinisitrip.com, et le site officiel annonce des départs chaque lundi. Reste à faire verrouiller la dispo par WhatsApp.",
-      avis: "5,0 / 5 sur TripAdvisor (10 avis, tous d'avril à juin 2026, zéro négatif) — jeune bateau, volume encore faible",
-      pour:
-        "Verrouille le départ du lundi, votre critère décisif, au meilleur prix du marché. Itinéraire complet vérifié (Padar au lever du soleil, Pink Beach, dragons sur l'île de Komodo, Manta Point), retour au port le mercredi vers 11 h-12 h, équipage et cuisine loués dans tous les avis.",
-      contre:
-        "Jeune opérateur (10 avis), pas de réservation en ligne. Acompte NON remboursable en direct — via divetrips (~24 € de plus par personne), 50 % d'acompte remboursable à +60 jours : paradoxalement plus protecteur. Prise en charge entre 8 h et 10 h 30 le lundi, pas 11 h.",
-      reserver:
-        "WhatsApp +62 813-6749-5700 ou hello@lanakilacruise.com. Faire confirmer par écrit : départ du lundi 12 octobre, cabine exacte (viser Deluxe ou Master), heure de prise en charge, prix net avec frais du parc chiffrés.",
-      photos: [
-        { src: "/croisiere/lanakila-superior-1.jpg", legende: "Superior — pont inférieur, hublot · 4 750 000 IDR ≈ 230 €/pers." },
-        { src: "/croisiere/lanakila-superior-sdb.jpg", legende: "Superior — la salle de bain privée" },
-        { src: "/croisiere/lanakila-deluxe-1.jpg", legende: "Deluxe vue mer — pont principal · 5 500 000 IDR ≈ 267 €/pers." },
-        { src: "/croisiere/lanakila-deluxe-vue.jpg", legende: "Deluxe — la fenêtre vue mer" },
-        { src: "/croisiere/lanakila-master-1.jpg", legende: "Master — pont supérieur · 6 500 000 IDR ≈ 315 €/pers." },
-        { src: "/croisiere/lanakila-master-balcon.jpg", legende: "Master — le balcon privé" },
-      ],
-    },
-    {
-      rang: 2,
-      nom: "IndonesiaJuara Trip (bateau au choix — viser l'Ahsana)",
-      bateau:
-        "Neuf phinisi en open trip, cabines privées climatisées avec salle de bain — le meilleur choix : Ahsana (30 m, jacuzzi), sinon Ocean Pro II (38 m) ou Yumana (32 m)",
-      prix: "Par personne : Ahsana Superior 310 USD ≈ 271 € · Ahsana Deluxe vue mer 400 USD ≈ 350 € · Ahsana Deluxe Balcony 480 USD ≈ 420 € · Ocean Pro II Double Ocean View 440 USD ≈ 385 € · Yumana Superior 330 USD ≈ 289 €",
-      departLundi:
-        "Confirmé sur la PAGE OFFICIELLE : le tableau « 2026 Weekday Schedule » liste le créneau 12–14 octobre, embarquement à 11 h, retour mercredi 10 h 30 — exactement le format du carnet.",
-      avis: "4,9 / 5 sur 841 avis TripAdvisor (dont juin-juillet 2026), Travelers' Choice 2026 — le dossier de fiabilité le plus épais du marché",
-      pour:
-        "Le seul dont le site officiel publie noir sur blanc le départ du 12 octobre avec embarquement à 11 h. Volume d'avis massif, neuf bateaux (si l'un est complet, un autre reste dispo), documentation photo/drone incluse.",
-      contre:
-        "Plus cher que Lanakila à confort égal. Acompte 50 % par virement bancaire indonésien, solde à J-14 non remboursable, pas de protection plateforme (leur fiche Viator est suspendue). Éviter les cabines de pont inférieur (avis récents : exiguës, odeurs de carburant).",
-      reserver:
-        "WhatsApp +62 811-994-1919 ou sales@indonesiajuara.asia. Demander la dispo du 12-14/10 sur l'Ahsana (Deluxe vue mer ou Balcony), et le nom du bateau sur le reçu avant l'acompte.",
+      nom: "IndonesiaJuara",
+      surete: "Le plus prouvé — 841 avis",
+      contacte: true,
+      prix: "Ahsana ≈ 271–420 €/pers.",
+      ceQueCest:
+        "Grande agence-opérateur du groupe Juara Holding (10+ ans), qui possède sa propre flotte de neuf phinisi — viser l'Ahsana (30 m, jacuzzi).",
+      avis: "4,9 / 5 sur 841 avis TripAdvisor + Travelers' Choice 2026 — de très loin le plus gros volume de preuves du lot.",
+      sentiment:
+        "Massivement positif (« on s'est sentis en sécurité »). Peu de bouche-à-oreille spontané sur les forums, mais un mur d'avis solide.",
+      bemol:
+        "Plus cher, et acompte 50 % par virement bancaire (pas de protection plateforme). Éviter les cabines de pont inférieur (avis récents : exiguës, odeurs) — demander l'Ahsana en pont principal ou supérieur.",
+      contact:
+        "WhatsApp +62 811-994-1919 · sales@indonesiajuara.asia — demander l'Ahsana Deluxe vue mer ou Balcony, nom du bateau sur le reçu.",
       photos: [
         { src: "/croisiere/ahsana-superior-1.jpg", legende: "Ahsana · Superior — queen, hublot · 310 USD ≈ 271 €/pers." },
         { src: "/croisiere/ahsana-deluxe-1.jpg", legende: "Ahsana · Deluxe vue mer · 400 USD ≈ 350 €/pers." },
@@ -410,39 +386,52 @@ export const croisiere = {
       ],
     },
     {
+      rang: 2,
+      nom: "Long Lasting Trip",
+      surete: "Chouchou des voyageurs — lundi confirmé",
+      contacte: true,
+      prix: "Cabine privée ≈ 285 €/pers.",
+      ceQueCest:
+        "Opérateur direct de Labuan Bajo depuis 2014. Pour le lundi, c'est le bateau RB2 (les 3 autres partent d'autres jours) — cabine privée clim + sdb.",
+      avis: "Fiche TripAdvisor dédiée, majoritairement 5 étoiles (« best boat trip », « amazing experience »).",
+      sentiment:
+        "L'alternative n°1 sur Reddit, choisie précisément pour ses départs du lundi (moins de foule) et moins d'avis 1 étoile que Travass.",
+      bemol:
+        "Un avis négatif (Padar sauté pour météo, annoncé après l'embarquement). Bien demander le bateau RB2 par écrit — les 3 autres bateaux ne partent pas le lundi.",
+      contact:
+        "WhatsApp +62 811 382 0219 · IG @longlastingtrip · info@longlastingtrip.com — page RB2 : longlastingtrip.com/tour-packages/open-trip/rb2-boat-3d2n",
+      photos: [] as { src: string; legende: string }[],
+    },
+    {
       rang: 3,
-      nom: "Sailnesia (via GetYourGuide) — le plan B sans risque",
-      bateau:
-        "Fiche GetYourGuide « Labuan Bajo: 3-Day Komodo Sailing Tour » · cabines privées climatisées, options avec salle de bain privée (Queens/Superior/Studio) ou balcon (Kings)",
-      prix: "À partir de 328 USD ≈ 287 € par personne (prix plancher de la fiche, applicable au 12 octobre) — le détail par cabine s'affiche dans le calendrier de réservation",
-      departLundi:
-        "Départs lundis + vendredis ; le 12 octobre 2026 était marqué disponible (et au tarif plancher) sur deux relevés de la fiche (février et avril 2026). À recontrôler en ouvrant la fiche dans un navigateur — les plateformes bloquent les robots.",
-      avis: "4,94 / 5 sur 19 avis GetYourGuide (fiche récente) · TripAdvisor de l'opérateur 4,6 / 5",
-      pour:
-        "La seule option avec VRAIE protection : annulation gratuite jusqu'à 24 h avant, « réserver maintenant, payer plus tard », paiement carte protégé par la plateforme. Zéro acompte à risquer pendant que les autres répondent.",
-      contre:
-        "Fiche récente (19 avis). Un litige de double paiement (juillet 2026) chez cet opérateur en réservation DIRECTE — donc réserver via GetYourGuide uniquement, jamais en direct.",
-      reserver:
-        "Chercher « Labuan Bajo 3-Day Komodo Sailing Tour » sur getyourguide.com, sélectionner le 12 octobre 2026, viser une cabine Queens ou Kings sur le Boat 2, réserver avec annulation gratuite.",
-      photos: [
-        { src: "/croisiere/sailnesia-cabine.jpg", legende: "Cabine panoramique (photo de la fiche GetYourGuide) — options Queens / Superior / Studio avec sdb privée, dès 328 USD ≈ 287 €/pers." },
-      ],
+      nom: "Travass Life (Papiton Duwa)",
+      surete: "Le plus recommandé — mais verrouiller",
+      contacte: true,
+      prix: "Cabine privée ≈ 350–400 €/pers.",
+      ceQueCest:
+        "Opérateur direct réputé de Labuan Bajo, grosse présence sociale (Instagram 41K). Bateau Papiton Duwa (2019), cabines 100 % privatives.",
+      avis: "TripAdvisor 5 étoiles, mais un peu plus d'avis 1 étoile que Long Lasting Trip.",
+      sentiment:
+        "LE nom le plus cité sur Reddit pour cette croisière exacte (« j'ai fait beaucoup de recherches, Travass est arrivé en tête »).",
+      bemol:
+        "Un cas d'annulation de dernière minute signalé — à garder, mais VERROUILLER le bateau + la date par écrit avant tout acompte.",
+      contact: "WhatsApp +62 811-3818-808 · IG @travass.life · hello@travass.life.",
+      photos: [] as { src: string; legende: string }[],
     },
     {
       rang: 4,
-      nom: "Vinca Voyages (via PhinisiTrip ou EasyKomodo)",
-      bateau:
-        "Phinisi de 2020, 31 mètres · 6 cabines climatisées avec salle de bain privée et eau chaude (2 Western avec baignoire, 2 Japanese, 2 Balinese)",
-      prix: "Par personne : Balinese 6 950 000 IDR ≈ 337 € (EasyKomodo) à 7 500 000 IDR ≈ 363 € (PhinisiTrip) · Western/Japanese 8 500 000 IDR ≈ 412 € à 9 000 000 IDR ≈ 436 €",
-      departLundi:
-        "Créneau « 12–14 Oct 2026 Monday–Wednesday » affiché au calendrier de PhinisiTrip UNIQUEMENT — Komodo Luxury ne vend ce bateau que le vendredi. Confirmation écrite indispensable.",
-      avis: "4,9 / 5 sur sa propre page TripAdvisor (15 avis, dont juin 2026) · un avis 3/5 d'octobre 2024 : « bateau différent des photos »",
-      pour:
-        "Bateau avec six ans d'historique et de vrais avis indépendants, cabines Western/Japanese avec baignoire, paddle et canoë à bord, ambiance intime.",
-      contre:
-        "Le 12 octobre ne repose que sur un seul agent. Site officiel du bateau hors service (tout passe par des revendeurs, prix variables selon l'agent). Annulation punitive partout (au mieux 40 % remboursés à +60 jours).",
-      reserver:
-        "PhinisiTrip +62 811 9600 3034 (a le calendrier du 12/10) et EasyKomodo +62 877 6592 4641 (moins cher) — mettre en concurrence, exiger le départ du lundi par écrit.",
+      nom: "Vinca Voyages",
+      surete: "Vérifiable — peu d'avis",
+      contacte: true,
+      prix: "≈ 337–436 €/pers.",
+      ceQueCest:
+        "Opérateur direct, marque propre (phinisi de 2020, 31 m), Instagram 24K + TikTok. Cabines Western/Japanese avec baignoire.",
+      avis: "TripAdvisor 4,9 / 5 mais ~15 avis seulement + Travelers' Choice.",
+      sentiment:
+        "Quasi rien sur les forums — ni éloge ni alerte. Un avis 3/5 d'octobre 2024 (« bateau différent des photos »).",
+      bemol:
+        "Plus cher, site officiel en refonte (résa via revendeurs, prix variables), annulation punitive. Bonne cible collab par ailleurs (besoin de visuels frais).",
+      contact: "WhatsApp +62 813-3848-2228 · IG @vincavoyages · hello@vincavoyages.com.",
       photos: [
         { src: "/croisiere/vinca-balinese-1.jpg", legende: "Balinese — pont inférieur, hublots · 6 950 000–7 500 000 IDR ≈ 337–363 €/pers." },
         { src: "/croisiere/vinca-western-1.jpg", legende: "Western — avec baignoire · 8 500 000–9 000 000 IDR ≈ 412–436 €/pers." },
@@ -452,24 +441,48 @@ export const croisiere = {
     },
     {
       rang: 5,
-      nom: "Naturalia (Komodo Luxury) — ÉCARTÉ pour ce départ",
-      bateau:
-        "Phinisi de 33 mètres (photos de janvier 2026) · cabines climatisées avec salle de bain privée — le bateau reste beau, c'est la date qui ne va pas",
-      prix: "Lagoon 400 USD ≈ 350 € · Tide privatisée 480 USD ≈ 420 € par personne — mais sur des départs du vendredi",
-      departLundi:
-        "⚠️ NON — le calendrier officiel 2026 du Naturalia ne propose que des départs le VENDREDI en octobre (2, 9, 16, 23, 30). Le créneau 12-14 octobre de Komodo Luxury existe, mais sur d'autres bateaux de la flotte.",
-      avis: "Agence Komodo Luxury 4,9 / 5 (~502 avis), MAIS avis de mai-juillet 2026 sévères sur d'autres bateaux de la flotte (vétusté vendue comme luxe, surcharge carburant ~100 € réclamée à bord)",
-      pour:
-        "À ne considérer que si vous acceptiez de décaler la croisière au vendredi 9 octobre — ce qui casserait Canggu. En l'état : incompatible.",
-      contre:
-        "Pas de lundi 12. Conditions très dures : acompte 50 % non remboursable, annulation = 100 % perdu même à plus de 30 jours, force majeure sans remboursement.",
-      reserver:
-        "Ne pas réserver pour ce créneau. Si Komodo Luxury propose « le 12 octobre », exiger le nom du bateau réellement embarqué : ce ne sera pas le Naturalia.",
+      nom: "Lanakila",
+      surete: "Parfait mais tout jeune — ~10 avis",
+      contacte: true,
+      prix: "Deluxe vue mer ≈ 267 €/pers.",
+      ceQueCest:
+        "Jeune marque mono-bateau (phinisi de 2024, 8 cabines), gérée par une agence. Le meilleur rapport prix/date du lot.",
+      avis: "5,0 / 5 sur TripAdvisor, mais seulement ~10 avis (tous d'avril-juin 2026, zéro négatif).",
+      sentiment:
+        "Rien sur les forums — il n'apparaît que comme bateau du catalogue EasyKomodo, pas en bouche-à-oreille spontané.",
+      bemol:
+        "Base d'avis minuscule et Instagram dormant. Vérifiable, mais le moins « éprouvé » — reste le meilleur prix qui colle au 12 octobre.",
+      contact:
+        "WhatsApp +62 813-6749-5700 · hello@lanakilacruise.com — viser Deluxe ou Master.",
+      photos: [
+        { src: "/croisiere/lanakila-superior-1.jpg", legende: "Superior — pont inférieur, hublot · 4 750 000 IDR ≈ 230 €/pers." },
+        { src: "/croisiere/lanakila-superior-sdb.jpg", legende: "Superior — la salle de bain privée" },
+        { src: "/croisiere/lanakila-deluxe-1.jpg", legende: "Deluxe vue mer — pont principal · 5 500 000 IDR ≈ 267 €/pers." },
+        { src: "/croisiere/lanakila-deluxe-vue.jpg", legende: "Deluxe — la fenêtre vue mer" },
+        { src: "/croisiere/lanakila-master-1.jpg", legende: "Master — pont supérieur · 6 500 000 IDR ≈ 315 €/pers." },
+        { src: "/croisiere/lanakila-master-balcon.jpg", legende: "Master — le balcon privé" },
+      ],
+    },
+    {
+      rang: 6,
+      nom: "EasyKomodo",
+      surete: "Revendeur légitime — repère de prix",
+      contacte: true,
+      prix: "selon le bateau choisi",
+      ceQueCest:
+        "Ce n'est pas un bateau, c'est un revendeur multi-bateaux (basé à Bali/Labuan Bajo depuis 2022) : il liste ~25 phinisi, dont Lanakila et Vinca.",
+      avis: "Légitime (aucune arnaque connue, Scamadviser « safe »), mais seulement 8 avis sur sa propre fiche TripAdvisor.",
+      sentiment:
+        "Sur Reddit, cité uniquement comme « repère de prix », jamais comme un opérateur qu'on a testé.",
+      bemol:
+        "Le vrai risque, c'est QUELLE coque il te vend — beaucoup sont anonymes, sans avis. Exiger le nom exact du bateau + photos par écrit. À utiliser surtout pour comparer les prix.",
+      contact:
+        "WhatsApp +62 877-6592-4641 — demander le nom du bateau et l'itinéraire complet avant de payer.",
       photos: [] as { src: string; legende: string }[],
     },
   ],
   messageNote:
-    "À envoyer tel quel sur WhatsApp à Lanakila (+62 813-6749-5700) et IndonesiaJuara (+62 811-994-1919). Ne verser l'acompte qu'une fois les 7 points confirmés par écrit — et jamais 100 % d'avance.",
+    "Le message à renvoyer à chaque opérateur qui répond « dispo », pour tout verrouiller par écrit avant de verser un acompte — et jamais 100 % d'avance.",
   messageType: `Hello! We'd like to book your Komodo 3D2N shared cruise,
 boarding Monday October 12th, 2026 (return Wednesday 14th),
 for 2 adults, in a private double cabin (AC + private bathroom).
@@ -536,7 +549,7 @@ export const checklist = [
   },
   {
     quand: "Le plus urgent",
-    quoi: "Réserver la croisière Komodo du lundi 12 octobre : écrire à Lanakila (WhatsApp +62 813-6749-5700, Deluxe vue mer ≈ 267 €/pers.) et IndonesiaJuara (+62 811-994-1919, Ahsana ≈ 271-420 €/pers.) en parallèle, vérifier la fiche GetYourGuide de Sailnesia en plan B (annulation gratuite), et prendre le premier qui confirme PAR ÉCRIT bateau + cabine + date. Transmettre les passeports pour les permis SiORA (Padar limité à 60 visiteurs par jour).",
+    quoi: "Croisière Komodo du lundi 12 octobre : les 6 opérateurs sont contactés (voir le classement par sûreté). Reste à — 1) bloquer le filet GRATUIT sur GetYourGuide (Sailnesia, annulation gratuite, payer plus tard) ; 2) à chaque réponse « dispo », renvoyer le message de verrouillage (nom du bateau + cabine + date + prix net par écrit) ; 3) comparer et prendre le mieux placé, acompte partiel seulement, jamais 100 % d'avance ; 4) transmettre les passeports pour les permis SiORA (Padar limité à 60 visiteurs par jour).",
   },
   {
     quand: "Dès que possible",
@@ -573,7 +586,7 @@ export const checklist = [
 ];
 
 export const vigilance = [
-  "Croisière Komodo : verrouiller le départ du lundi 12 octobre par écrit avant tout paiement (confirmé aux calendriers chez Lanakila, IndonesiaJuara et Sailnesia/GetYourGuide — le Naturalia est incompatible, vendredis uniquement), et transmettre les passeports tôt pour le permis SiORA (Padar limité à 60 personnes par jour).",
+  "Croisière Komodo : les opérateurs sont contactés — verrouiller PAR ÉCRIT le nom du bateau + la cabine + le départ du 12 octobre avant tout acompte, et garder le filet GetYourGuide (annulation gratuite) tant que rien n'est confirmé. Transmettre les passeports tôt pour le permis SiORA (Padar limité à 60 personnes par jour).",
   "Le ferry Java-Bali est passé au mercredi 7 octobre, l'après-midi même de l'Ijen : billets uniquement sur l'application Ferizy, à acheter le mardi soir — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port, et il n'y a plus de guichet.",
   "Le 7 octobre est la journée la plus chargée du voyage : lever vers 5 h 30, montée de l'Ijen, redescente vers midi, route jusqu'à Ketapang, ferry, +1 heure de décalage horaire, puis 2 h 30 à 3 h de route jusqu'à Lovina — arrivée en début de soirée. Un seul chauffeur pour toute la journée côté Java, et un autre qui attend à Gilimanuk : à caler à l'avance.",
   "Le volcan Lewotobi peut perturber les vols de Labuan Bajo : billets intérieurs MODIFIABLES obligatoires, et les deux nuits tampons à Labuan Bajo (le 11 et le 14) ne doivent surtout pas être supprimées.",

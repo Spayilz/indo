@@ -311,7 +311,7 @@ export default function Page() {
             style={{ background: "linear-gradient(135deg, #1f7a8c, #166374)" }}
           >
             <div className="text-[13px] font-bold uppercase tracking-wide opacity-90">
-              ⭐ Le verdict des deux équipes
+              ⭐ Où on en est · classement par sûreté
             </div>
             <p className="mt-2 text-[16.5px] leading-relaxed">
               {croisiere.recommande}
@@ -343,14 +343,20 @@ export default function Page() {
                         {o.rang}
                       </span>
                       <div>
-                        <div className="font-bold text-[18px] leading-tight">
+                        <div className="font-bold text-[18px] leading-tight flex items-center gap-2 flex-wrap">
                           {o.nom}
+                          {o.contacte && (
+                            <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#eef7f0] text-[#1f7a4b]">
+                              ✅ Contacté
+                            </span>
+                          )}
                         </div>
-                        {gagnant && (
-                          <div className="text-[13px] font-bold text-[#1f7a8c]">
-                            Notre recommandation
-                          </div>
-                        )}
+                        <div
+                          className="text-[13px] font-bold"
+                          style={{ color: gagnant ? "#1f7a8c" : "var(--encre-douce)" }}
+                        >
+                          {o.surete}
+                        </div>
                       </div>
                     </div>
                     <div
@@ -364,13 +370,13 @@ export default function Page() {
                   {/* Tableau de la fiche */}
                   <dl className="mt-4 divide-y divide-[var(--ligne)] text-[15.5px]">
                     {[
-                      ["Bateau", o.bateau],
-                      ["Départ lundi", o.departLundi],
+                      ["Ce que c'est", o.ceQueCest],
                       ["Avis", o.avis],
+                      ["Ce qu'en disent les gens", o.sentiment],
                     ].map(([k, v]) => (
                       <div
                         key={k}
-                        className="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-x-4 gap-y-0.5 py-2.5"
+                        className="grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-x-4 gap-y-0.5 py-2.5"
                       >
                         <dt className="font-semibold text-[var(--encre-douce)]">
                           {k}
@@ -380,7 +386,7 @@ export default function Page() {
                     ))}
                   </dl>
 
-                  {/* Photos des cabines (photos officielles des opérateurs, vérifiées le 12/07/2026) */}
+                  {/* Photos des cabines (photos officielles des opérateurs) */}
                   {o.photos.length > 0 && (
                     <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {o.photos.map((p) => (
@@ -399,28 +405,20 @@ export default function Page() {
                     </div>
                   )}
 
-                  {/* Le + et le − */}
-                  <div className="mt-3 grid sm:grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-[#f0faf3] border border-[#cfe9d6] p-3.5">
-                      <div className="text-[12.5px] font-bold uppercase tracking-wide text-[#1f7a4b] mb-1">
-                        ＋ Le point fort
-                      </div>
-                      <p className="text-[14.5px] leading-relaxed">{o.pour}</p>
+                  {/* Le bémol */}
+                  <div className="mt-3 rounded-xl bg-[#fdf4f1] border border-[#f1d6cc] p-3.5">
+                    <div className="text-[12.5px] font-bold uppercase tracking-wide text-[#b5471f] mb-1">
+                      ⚠️ Le bémol
                     </div>
-                    <div className="rounded-xl bg-[#fdf4f1] border border-[#f1d6cc] p-3.5">
-                      <div className="text-[12.5px] font-bold uppercase tracking-wide text-[#b5471f] mb-1">
-                        － La réserve
-                      </div>
-                      <p className="text-[14.5px] leading-relaxed">{o.contre}</p>
-                    </div>
+                    <p className="text-[14.5px] leading-relaxed">{o.bemol}</p>
                   </div>
 
-                  {/* Comment réserver */}
+                  {/* Contact */}
                   <div className="mt-3 text-[14.5px] leading-relaxed text-[var(--encre-douce)]">
                     <span className="font-semibold text-[var(--encre)]">
-                      Réserver :{" "}
+                      Contact :{" "}
                     </span>
-                    {o.reserver}
+                    {o.contact}
                   </div>
                 </div>
               );
