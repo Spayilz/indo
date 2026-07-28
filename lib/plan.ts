@@ -24,11 +24,6 @@ export const infos = {
       label: "réveils tôt",
       detail: "Borobudur et Bromo — l'Ijen se fait désormais en douceur",
     },
-    {
-      valeur: "≈ 6 450 €",
-      label: "budget total à deux",
-      detail: "vols internationaux compris (fourchette 5 450 à 7 750 €)",
-    },
   ],
 };
 
@@ -359,7 +354,7 @@ export const croisiere = {
   cadre:
     "Croisière partagée de trois jours et deux nuits au départ de Labuan Bajo, dans une cabine privée climatisée avec salle de bain à bord d'un phinisi (voilier traditionnel en bois). Embarquement le lundi 12 octobre en matinée (8 h à 11 h selon l'opérateur), retour le mercredi 14 octobre entre 10 h 30 et 13 h. Tous les bateaux sérieux couvrent les quatre incontournables : l'île de Padar, la Pink Beach, les dragons sur l'île de Komodo et la nage avec les raies mantas à Manta Point. Dossier revérifié le 12 juillet 2026 : chaque date, prix et photo de cabine a été relevé sur les pages des opérateurs puis contre-vérifié par une seconde équipe (conversions au taux du jour, 1 € ≈ 20 635 IDR ≈ 1,142 USD).",
   recommande:
-    "Où on en est : les 6 opérateurs ont été contactés par WhatsApp. Ci-dessous, ils sont classés par SÛRETÉ — volume et qualité des avis, ce qu'en disent les vrais voyageurs, et ce que c'est. En attendant les réponses, bloquer le filet de sécurité GRATUIT : la fiche GetYourGuide de Sailnesia (annulation gratuite jusqu'à 24 h avant, payer plus tard) garantit une croisière sans rien risquer, et s'annule d'un clic si un direct fait mieux. À chaque réponse « dispo », renvoyer le message plus bas pour tout verrouiller par écrit, puis prendre le mieux placé — acompte partiel seulement, jamais 100 % d'avance.",
+    "Où on en est : les 6 opérateurs ont été contactés par WhatsApp. Ci-dessous, ils sont classés par SÛRETÉ — volume et qualité des avis, ce qu'en disent les vrais voyageurs, et ce que c'est. En attendant les réponses, bloquer le filet de sécurité GRATUIT : la fiche GetYourGuide de Sailnesia (annulation gratuite jusqu'à 24 h avant, payer plus tard) garantit une croisière sans rien risquer, et s'annule d'un clic si un direct fait mieux. À chaque réponse « dispo », tout faire reconfirmer par écrit (nom exact du bateau, cabine, départ du 12 octobre, prix net avec frais de parc) avant tout acompte, puis prendre le mieux placé — acompte partiel seulement, jamais 100 % d'avance.",
   operateurs: [
     {
       rang: 1,
@@ -481,22 +476,6 @@ export const croisiere = {
       photos: [] as { src: string; legende: string }[],
     },
   ],
-  messageNote:
-    "Le message à renvoyer à chaque opérateur qui répond « dispo », pour tout verrouiller par écrit avant de verser un acompte — et jamais 100 % d'avance.",
-  messageType: `Hello! We'd like to book your Komodo 3D2N shared cruise,
-boarding Monday October 12th, 2026 (return Wednesday 14th),
-for 2 adults, in a private double cabin (AC + private bathroom).
-
-Before paying a deposit, could you please confirm IN WRITING:
-1. Departure Monday Oct 12, 2026 — boarding time?
-2. Exact boat name (on the receipt) + cabin category and name/number
-3. Recent photos of that exact cabin
-4. Total net price for 2, INCLUDING Komodo NP fees (or exact amount due on site)
-5. Return time to Labuan Bajo on Oct 14
-6. Deposit % and payment method (card / secure link preferred), cancellation terms
-7. You handle the SiORA nominative permits (we'll send passports) incl. Padar
-
-Thank you!`,
   aRetenir: [
     "Verrouiller le départ du lundi 12 octobre PAR ÉCRIT avant tout paiement : confirmé aux calendriers en ligne chez Lanakila (revendeurs), IndonesiaJuara (page officielle) et Sailnesia (GetYourGuide) — mais seule une confirmation écrite avec le nom du bateau fait foi.",
     "Exiger le nom exact du bateau, le numéro de la cabine privée et des photos datées de cette cabine précise (climatisée + salle de bain). Le nom du bateau doit figurer sur le reçu — c'est la preuve clé en cas de litige.",
@@ -518,28 +497,6 @@ Thank you!`,
     "Tout prix nettement sous le marché (une cabine privée crédible coûte ~230 à 450 € par personne) avec paiement à 100 % d'avance par virement : appât classique avant disparition.",
     "Les phinisi « standard » vendus en marque blanche sans nom d'armateur : c'était le profil du KM Putri Sakinah, naufragé de nuit le 26 décembre 2025 (4 morts, capitaine inculpé). Vérifier gilets, radeau et certificat de sécurité, ne jamais naviguer par grosse houle.",
   ],
-};
-
-export const baliBase = {
-  avant: {
-    zone: "Le nord, puis Canggu — 4 nuits, du 7 au 11 octobre",
-    pourquoi:
-      "On arrive par le ferry au nord-ouest de l'île, donc on descend en douceur au lieu de foncer sur le sud : une nuit tampon à Lovina le soir du ferry (2 h 30 à 3 h de route au lieu de 4 h et plus jusqu'à Canggu, après une journée déjà bien chargée par l'Ijen), une nuit dans les hauteurs de Munduk pour la collaboration, puis deux nuits à Canggu pour décompresser avant Komodo. À anticiper : Canggu est à ~1 heure de l'aéroport, d'où un réveil très matinal le dimanche 11 pour le vol vers Labuan Bajo.",
-    hotels: [
-      "7 octobre — Ju'blu Hotel, Lovina · ✅ réservé (par Agathe) : la nuit tampon après le ferry, sur la côte nord.",
-      "8 octobre — Munduk Moding Plantation · ✅ collaboration : le resort dans les plantations de café, piscine à débordement au-dessus de la vallée. Cascade de Sekumpul le matin même, en route depuis Lovina.",
-      "9 et 10 octobre — hôtel à Canggu · ‼️ à réserver : viser Berawa (beach clubs, restaurants) ou Echo Beach (plus surf, plus calme). Réserver tôt, octobre reste prisé — et réserver aussi la table du vendredi soir.",
-    ],
-  },
-  apres: {
-    zone: "Canggu — 2 nuits, du 15 au 17 octobre",
-    pourquoi:
-      "Finir le voyage là où il a fait sa pause, dans le quartier que vous aimez. À anticiper pour le départ du samedi : l'aéroport est à ~1 heure de Canggu, et le carnet prévoit un départ vers 10 h pour un vol à 13 h 15 — partir vers 9 h laisserait plus de marge. Et si l'envie d'un dîner de poissons grillés à Jimbaran se présente un soir, c'est à ~40 minutes.",
-    hotels: [
-      "15 et 16 octobre — Plawa Laguna Boutique Hotel & Suites, Canggu · ✅ réservé (par Agathe), les deux dernières nuits du voyage.",
-      "Rien de plus à réserver ici : il reste juste à caler le transfert vers l'aéroport pour le samedi matin et à demander un petit déjeuner servi tôt.",
-    ],
-  },
 };
 
 export const checklist = [
@@ -597,12 +554,6 @@ export const vigilance = [
   "Le Kawah Ijen se fait en version « lac depuis la crête » (pas de feu bleu) : plus fiable et bien plus reposant. Vérifier les conditions d'accès la semaine du départ.",
   "Début octobre marque la transition vers la saison des pluies : averses possibles en fin d'après-midi sur Java et Bali.",
 ];
-
-export const budget = {
-  bas: 5450,
-  moyen: 6450,
-  haut: 7750,
-};
 
 // ─── Carte ───────────────────────────────────────────────────
 

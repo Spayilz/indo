@@ -1,14 +1,13 @@
 import Carte from "@/components/Carte";
+import NavFlottante from "@/components/NavFlottante";
 import {
   infos,
   volsAller,
   volsRetour,
   phases,
   croisiere,
-  baliBase,
   checklist,
   vigilance,
-  budget,
 } from "@/lib/plan";
 
 /* Badge par type de journée */
@@ -35,9 +34,9 @@ const navLiens = [
   { href: "#itineraire", label: "Jour par jour" },
   { href: "#vols", label: "Vols" },
   { href: "#croisiere", label: "Croisière" },
-  { href: "#bali", label: "Bali" },
   { href: "#carte", label: "Carte" },
   { href: "#reservations", label: "À réserver" },
+  { href: "#vigilance", label: "Vigilance" },
 ];
 
 function NumSection({
@@ -54,22 +53,22 @@ function NumSection({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mt-24 scroll-mt-20">
+    <section id={id} className="mt-16 md:mt-24 scroll-mt-[68px]">
       <div className="flex items-center gap-3">
         <span className="serif text-[var(--accent)] text-2xl font-semibold">
           {num}
         </span>
         <span className="h-px flex-1 bg-[var(--ligne)]" />
       </div>
-      <h2 className="serif mt-3 text-3xl md:text-[40px] font-semibold leading-tight">
+      <h2 className="serif mt-3 text-[28px] md:text-[40px] font-semibold leading-tight">
         {titre}
       </h2>
       {intro && (
-        <p className="mt-3 text-[17px] text-[var(--encre-douce)] max-w-2xl">
+        <p className="mt-3 text-[16px] md:text-[17px] text-[var(--encre-douce)] max-w-2xl">
           {intro}
         </p>
       )}
-      <div className="mt-8">{children}</div>
+      <div className="mt-6 md:mt-8">{children}</div>
     </section>
   );
 }
@@ -129,7 +128,7 @@ export default function Page() {
           </div>
 
           {/* Chiffres clés */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
             {infos.chiffres.map((c) => (
               <div
                 key={c.label}
@@ -149,19 +148,7 @@ export default function Page() {
       </header>
 
       {/* ════════ NAVIGATION FLOTTANTE ════════ */}
-      <nav className="nav-flottante">
-        <div className="mx-auto max-w-[920px] px-5 md:px-8 py-3 flex gap-1.5 overflow-x-auto">
-          {navLiens.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="shrink-0 px-3.5 py-1.5 rounded-full text-[14px] font-semibold text-[var(--encre-douce)] hover:bg-[var(--accent-clair)] hover:text-[var(--accent)] transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
-      </nav>
+      <NavFlottante liens={navLiens} />
 
       <main className="mx-auto max-w-[920px] px-5 md:px-8 pb-32">
         {/* ════════ JOUR PAR JOUR (la pièce maîtresse) ════════ */}
@@ -455,64 +442,16 @@ export default function Page() {
             </ul>
           </div>
 
-          {/* Le message à envoyer */}
-          <div className="mt-4 rounded-2xl bg-white border border-[var(--ligne)] p-5 md:p-6 ombre-douce">
-            <div className="font-bold mb-1.5">
-              📋 Le message à envoyer (copier-coller)
-            </div>
-            <p className="text-[14.5px] leading-relaxed text-[var(--encre-douce)]">
-              {croisiere.messageNote}
-            </p>
-            <pre className="mt-3 whitespace-pre-wrap rounded-xl bg-[var(--fond-chaud)] border border-dashed border-[var(--ligne)] p-4 text-[13.5px] leading-relaxed font-mono">
-              {croisiere.messageType}
-            </pre>
-          </div>
-        </NumSection>
-
-        {/* ════════ BALI ════════ */}
-        <NumSection
-          id="bali"
-          num="04"
-          titre="Où dormir à Bali"
-          intro="Six nuits : le nord de l'île en arrivant par le ferry (Lovina, Munduk), deux nuits à Canggu pour souffler avant Komodo, deux pour finir en douceur."
-        >
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { ...baliBase.avant, tag: "Avant la croisière", emoji: "🏝️" },
-              { ...baliBase.apres, tag: "Après la croisière", emoji: "🌅" },
-            ].map((b, i) => (
-              <div
-                key={i}
-                className="rounded-2xl bg-white border border-[var(--ligne)] p-6 ombre-douce"
-              >
-                <div className="text-[13px] font-bold uppercase tracking-wide text-[var(--bali)]">
-                  {b.emoji} {b.tag}
-                </div>
-                <div className="serif mt-2 text-2xl font-semibold">{b.zone}</div>
-                <p className="mt-2 text-[15.5px] leading-relaxed text-[var(--encre-douce)]">
-                  {b.pourquoi}
-                </p>
-                <ul className="mt-4 space-y-2 text-[15px]">
-                  {b.hotels.map((h, j) => (
-                    <li key={j} className="flex gap-2.5">
-                      <span className="text-[var(--bali)] mt-0.5">★</span>
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </NumSection>
 
         {/* ════════ CARTE ════════ */}
         <NumSection
           id="carte"
-          num="05"
+          num="04"
           titre="La carte du voyage"
           intro="D'ouest en est : Sumatra, Java, Bali, puis les îles de Komodo — et retour à Bali pour finir."
         >
-          <div className="h-[460px] rounded-2xl overflow-hidden border border-[var(--ligne)] ombre-carte">
+          <div className="h-[340px] md:h-[460px] rounded-2xl overflow-hidden border border-[var(--ligne)] ombre-carte">
             <Carte />
           </div>
         </NumSection>
@@ -520,7 +459,7 @@ export default function Page() {
         {/* ════════ CHECKLIST ════════ */}
         <NumSection
           id="reservations"
-          num="06"
+          num="05"
           titre="Quoi réserver, et quand"
           intro="Dans l'ordre. La toute première ligne est la plus urgente : c'est elle qui bloque le reste."
         >
@@ -544,34 +483,14 @@ export default function Page() {
           </ol>
         </NumSection>
 
-        {/* ════════ BUDGET + VIGILANCE ════════ */}
+        {/* ════════ VIGILANCE ════════ */}
         <NumSection
-          id="budget"
-          num="07"
-          titre="Budget et points de vigilance"
+          id="vigilance"
+          num="06"
+          titre="Points de vigilance"
+          intro="Les quelques pièges à garder en tête pour que tout roule sur place."
         >
-          <div
-            className="rounded-2xl p-6 md:p-8 ombre-carte text-white"
-            style={{
-              background: "linear-gradient(135deg, #c2683a, #a8512a)",
-            }}
-          >
-            <div className="text-[13px] font-bold uppercase tracking-wide opacity-90">
-              Budget total estimé pour 2 personnes, vols compris
-            </div>
-            <div className="mt-3 flex items-baseline gap-4 flex-wrap">
-              <span className="serif text-5xl font-semibold">
-                {budget.moyen.toLocaleString("fr-FR")} €
-              </span>
-              <span className="opacity-90">en moyenne</span>
-            </div>
-            <div className="mt-1 text-[15px] opacity-90">
-              fourchette : {budget.bas.toLocaleString("fr-FR")} € en voyageant
-              simplement, jusqu'à {budget.haut.toLocaleString("fr-FR")} € en
-              confort partout.
-            </div>
-          </div>
-          <div className="mt-6 grid gap-3">
+          <div className="grid gap-3">
             {vigilance.map((v, i) => (
               <div
                 key={i}

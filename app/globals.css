@@ -54,6 +54,23 @@ h3 {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 68px;
+}
+
+/* Masque la barre de défilement de la nav (mobile) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 ::selection {
