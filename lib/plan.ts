@@ -146,9 +146,9 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         date: "Jeudi 1ᵉʳ octobre",
         titre: "De la jungle de Sumatra à Yogyakarta — vol direct l'après-midi",
         resume:
-          "Navette jusqu'à l'aéroport de Medan, puis vol DIRECT Lion Air vers Yogyakarta (17 h 20 → 20 h 10).",
+          "Navette jusqu'à l'aéroport de Medan, puis vol DIRECT Lion Air vers Yogyakarta (17 h 20 → 20 h 10) · ✅ vol réservé.",
         details:
-          "Navette Bukit Lawang → aéroport de Medan à réserver (compter 3 à 4 heures de route). On prend ensuite le vol DIRECT Lion Air JT963 à 17 h 20, arrivée à Yogyakarta à 20 h 10 — deux heures cinquante, sans escale, environ 146 euros par personne. À éviter : l'autre vol Lion (numéro JT935) de 11 h 35, qui met quatre heures à cause d'une escale. Plan B si le direct ne devait plus opérer : un billet unique Garuda via Jakarta (vol GA 187 puis GA 202). À l'arrivée, 45 minutes à une heure de route jusqu'à la villa.",
+          "Navette Bukit Lawang → aéroport de Kualanamu (Medan) à réserver — compter 3 à 4 heures de route, et viser large : le vol part à 17 h 20 et l'enregistrement ferme 45 minutes avant. Le vol est réservé : Lion Air JT963, Boeing 737-900, décollage de Kualanamu (KNO) à 17 h 20, arrivée à Yogyakarta (YIA) à 20 h 10 — deux heures cinquante, sans escale, aucun repas servi à bord (prévoir de quoi grignoter et de l'eau). Attention à l'aéroport d'arrivée : c'est YIA, le nouvel aéroport international de Kulon Progo, à 45-50 kilomètres du centre — compter 1 heure à 1 h 30 de route de nuit jusqu'à la villa (et non l'ancien aéroport JOG, tout proche du centre). Arrivée à la villa vers 21 h 30 - 22 h : prévenir Bohemian Jogja Villas de l'heure tardive et prévoir le dîner (ou un arrêt en route).",
         nuit: "Bohemian Jogja Villas, Yogyakarta · ✅ réservé",
         type: "vol",
       },
@@ -502,7 +502,7 @@ export const croisiere = {
 export const checklist = [
   {
     quand: "✅ Déjà réservé",
-    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé, solde de 4 629 000 IDR à régler en espèces à l'arrivée · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10) · Bromo B&B, Cemoro Lawang (5/10) · Jiwa Jawa Resort Ijen (6/10) · Ju'blu Hotel, Lovina (7/10, par Agathe) · Munduk Moding Plantation (8/10, collaboration) · Casa de Capulet, Labuan Bajo (les deux nuits tampons, 11 et 14/10) · Plawa Laguna Boutique Hotel & Suites, Canggu (15 et 16/10, par Agathe).",
+    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · Vol intérieur Medan → Yogyakarta : Lion Air JT963 du 1er octobre, 17 h 20 (KNO) → 20 h 10 (YIA) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé, solde de 4 629 000 IDR à régler en espèces à l'arrivée · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10) · Bromo B&B, Cemoro Lawang (5/10) · Jiwa Jawa Resort Ijen (6/10) · Ju'blu Hotel, Lovina (7/10, par Agathe) · Munduk Moding Plantation (8/10, collaboration) · Casa de Capulet, Labuan Bajo (les deux nuits tampons, 11 et 14/10) · Plawa Laguna Boutique Hotel & Suites, Canggu (15 et 16/10, par Agathe).",
   },
   {
     quand: "Le plus urgent",
@@ -510,7 +510,7 @@ export const checklist = [
   },
   {
     quand: "Dès que possible",
-    quoi: "Réserver le vol direct Lion Air JT963 Medan → Yogyakarta du jeudi 1er octobre (17 h 20), et la navette Bukit Lawang → aéroport de Medan le même jour.",
+    quoi: "Réserver la navette Bukit Lawang → aéroport de Kualanamu (Medan) pour le jeudi 1er octobre : 3 à 4 heures de route, à caler pour être à l'aéroport vers 15 h 30 (le vol JT963 part à 17 h 20). À demander directement à Sumatra Orangutan Explore, qui organise ce transfert. Prévoir aussi le transport YIA → villa à l'arrivée : 1 h à 1 h 30 de route de nuit.",
   },
   {
     quand: "Dès que possible",
@@ -547,7 +547,7 @@ export const vigilance = [
   "Le ferry Java-Bali est passé au mercredi 7 octobre, l'après-midi même de l'Ijen : billets uniquement sur l'application Ferizy, à acheter le mardi soir — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port, et il n'y a plus de guichet.",
   "Le 7 octobre est la journée la plus chargée du voyage : lever vers 5 h 30, montée de l'Ijen, redescente vers midi, route jusqu'à Ketapang, ferry, +1 heure de décalage horaire, puis 2 h 30 à 3 h de route jusqu'à Lovina — arrivée en début de soirée. Un seul chauffeur pour toute la journée côté Java, et un autre qui attend à Gilimanuk : à caler à l'avance.",
   "Le volcan Lewotobi peut perturber les vols de Labuan Bajo : billets intérieurs MODIFIABLES obligatoires, et les deux nuits tampons à Labuan Bajo (le 11 et le 14) ne doivent surtout pas être supprimées.",
-  "Vol du jeudi 1er octobre : réserver le direct Lion Air JT963 de 17 h 20 (2 h 50, sans escale), et non l'autre Lion, le JT935 de 11 h 35, qui met quatre heures à cause d'une escale. Plan B si le direct n'opère plus : un billet unique Garuda via Jakarta (GA 187 puis GA 202) — en transitant par l'aéroport international Soekarno-Hatta (CGK), jamais par Halim.",
+  "Vol du jeudi 1er octobre (✅ réservé, Lion Air JT963, 17 h 20 → 20 h 10) : le vrai point de vigilance est désormais la navette Bukit Lawang → Kualanamu, 3 à 4 heures de route sans marge d'erreur — partir tôt, l'enregistrement ferme 45 minutes avant le départ. Aucun repas à bord. Et l'arrivée se fait à YIA, à 45-50 km de Yogyakarta : 1 h à 1 h 30 de route de nuit, donc villa vers 21 h 30 - 22 h.",
   "Canggu est à environ une heure de l'aéroport : départ 5 h 15 - 5 h 30 le dimanche 11 pour le vol vers Labuan Bajo, et départ le samedi 17 vers 10 h comme prévu au carnet (9 h serait plus confortable pour un international à 13 h 15).",
   "Le seul hébergement encore ouvert est Canggu pour les nuits du 9 et du 10 octobre : à boucler vite, octobre est prisé et le reste du logement est déjà réservé autour.",
   "Mont Bromo en autonomie : avoir du liquide (pas de distributeur à Cemoro Lawang), partir tôt pour le point de vue, et prévoir l'entrée du parc (~12-15 € par personne) si vous montez au cratère.",
