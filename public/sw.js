@@ -9,13 +9,13 @@
  *  - ensuite : page = réseau d'abord puis cache ; assets = cache d'abord.
  */
 
-const CACHE = "indo-trip-v1";
-const TUILES = "indo-trip-tuiles-v1";
+const CACHE = "indo-trip-v2";
+const TUILES = "indo-trip-tuiles-v2";
 const ORIGINE = self.location.origin;
 
 // Emprise de la carte (Sumatra → Komodo) et niveaux de zoom préchargés
 const EMPRISE = { latMin: -10.5, latMax: 5.5, lngMin: 95, lngMax: 122 };
-const ZOOMS = [4, 5, 6, 7];
+const ZOOMS = [5, 6, 7];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -63,8 +63,8 @@ self.addEventListener("fetch", (event) => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
 
-  // Tuiles de carte : cache d'abord (clé sans sous-domaine a/b/c)
-  if (url.hostname.endsWith("basemaps.cartocdn.com")) {
+  // Tuiles de carte OpenStreetMap : cache d'abord
+  if (url.hostname === "tile.openstreetmap.org") {
     event.respondWith(tuile(req, url));
     return;
   }
@@ -82,7 +82,7 @@ self.addEventListener("fetch", (event) => {
           return rep;
         } catch {
           const cache = await caches.open(CACHE);
-          return (await cache.match("/")) || (await cache.match(req)) || Response.error();
+          return (await cache.match(req)) || (await cache.match("/")) || Response.error();
         }
       })(),
     );
@@ -157,8 +157,7 @@ async function precachePage() {
 }
 
 function cleTuile(url) {
-  // https://a.basemaps.cartocdn.com/... → même clé quel que soit le sous-domaine
-  return "https://basemaps.cartocdn.com" + url.pathname;
+  return "https://tile.openstreetmap.org" + url.pathname;
 }
 
 async function tuile(req, url) {
@@ -186,27 +185,22 @@ function latVersY(lat, z) {
 async function precacheTuiles() {
   const cache = await caches.open(TUILES);
   const taches = [];
-  const sd = "abc";
   for (const z of ZOOMS) {
     const x0 = lngVersX(EMPRISE.lngMin, z), x1 = lngVersX(EMPRISE.lngMax, z);
     const y0 = latVersY(EMPRISE.latMax, z), y1 = latVersY(EMPRISE.latMin, z);
     for (let x = x0; x <= x1; x++) {
       for (let y = y0; y <= y1; y++) {
-        for (const r of ["", "@2x"]) {
-          const chemin = `/rastertiles/voyager/${z}/${x}/${y}${r}.png`;
-          const cle = "https://basemaps.cartocdn.com" + chemin;
-          taches.push(async () => {
-            if (await cache.match(cle)) return;
-            const s = sd[Math.abs(x + y) % sd.length];
-            const rep = await fetch(`https://${s}.basemaps.cartocdn.com${chemin}`);
-            if (rep.ok) await cache.put(cle, rep);
-          });
-        }
+        const cle = `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
+        taches.push(async () => {
+          if (await cache.match(cle)) return;
+          const rep = await fetch(cle);
+          if (rep.ok) await cache.put(cle, rep);
+        });
       }
     }
   }
-  // Par paquets de 8 pour ne pas saturer le réseau
-  for (let i = 0; i < taches.length; i += 8) {
-    await Promise.allSettled(taches.slice(i, i + 8).map((t) => t()));
+  // Par paquets de 4, en douceur (politique d'usage des tuiles OSM)
+  for (let i = 0; i < taches.length; i += 4) {
+    await Promise.allSettled(taches.slice(i, i + 4).map((t) => t()));
   }
 }

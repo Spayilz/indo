@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import ModeNuit from "./ModeNuit";
 
 type Lien = { href: string; label: string };
 
@@ -8,27 +9,28 @@ export default function NavFlottante({ liens }: { liens: Lien[] }) {
   const [actif, setActif] = useState<string>(liens[0]?.href.slice(1) ?? "");
   const barreRef = useRef<HTMLDivElement>(null);
 
-  // Surligne la section visible pendant le défilement (scroll-spy)
+  // Scroll-spy : la dernière section dont le haut est passé sous la barre
   useEffect(() => {
     const ids = liens.map((l) => l.href.slice(1));
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => el !== null);
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        const visibles = entries
-          .filter((e) => e.isIntersecting)
-          .sort(
-            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top,
-          );
-        if (visibles[0]) setActif(visibles[0].target.id);
-      },
-      { rootMargin: "-68px 0px -72% 0px", threshold: 0 },
-    );
-
-    sections.forEach((s) => obs.observe(s));
-    return () => obs.disconnect();
+    let demande = 0;
+    const calc = () => {
+      demande = 0;
+      let courant = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 90) courant = id;
+      }
+      setActif(courant);
+    };
+    const surScroll = () => {
+      if (!demande) demande = requestAnimationFrame(calc);
+    };
+    window.addEventListener("scroll", surScroll, { passive: true });
+    calc();
+    return () => {
+      window.removeEventListener("scroll", surScroll);
+      if (demande) cancelAnimationFrame(demande);
+    };
   }, [liens]);
 
   // Garde la pastille active visible dans la barre scrollable (mobile)
@@ -44,29 +46,32 @@ export default function NavFlottante({ liens }: { liens: Lien[] }) {
 
   return (
     <nav className="nav-flottante">
-      <div
-        ref={barreRef}
-        className="mx-auto max-w-[920px] px-4 md:px-8 py-2.5 flex gap-1.5 overflow-x-auto scrollbar-hide"
-      >
-        {liens.map((l) => {
-          const id = l.href.slice(1);
-          const on = actif === id;
-          return (
-            <a
-              key={l.href}
-              href={l.href}
-              data-id={id}
-              aria-current={on ? "location" : undefined}
-              className={`shrink-0 px-3.5 py-2 rounded-full text-[14px] font-semibold transition-colors ${
-                on
-                  ? "bg-[var(--accent)] text-white"
-                  : "text-[var(--encre-douce)] hover:bg-[var(--accent-clair)] hover:text-[var(--accent)]"
-              }`}
-            >
-              {l.label}
-            </a>
-          );
-        })}
+      <div className="mx-auto max-w-[920px] pl-3 md:pl-8 pr-2 flex items-center gap-1">
+        <div
+          ref={barreRef}
+          className="flex-1 py-1.5 flex gap-1 overflow-x-auto scrollbar-hide nav-masque"
+        >
+          {liens.map((l) => {
+            const id = l.href.slice(1);
+            const on = actif === id;
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                data-id={id}
+                aria-current={on ? "location" : undefined}
+                className={`shrink-0 min-h-[44px] px-3.5 rounded-full text-[14px] font-semibold flex items-center transition-colors ${
+                  on
+                    ? "bg-[var(--accent)] text-white"
+                    : "text-[var(--encre-douce)] hover:bg-[var(--accent-clair)] hover:text-[var(--accent)]"
+                }`}
+              >
+                {l.label}
+              </a>
+            );
+          })}
+        </div>
+        <ModeNuit />
       </div>
     </nav>
   );

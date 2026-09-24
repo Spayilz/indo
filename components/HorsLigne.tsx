@@ -3,9 +3,22 @@
 import { useEffect, useState } from "react";
 
 type Etat = "inconnu" | "preparation" | "pret" | "hors-ligne" | "erreur";
+const CLE_CACHE = "indo-cache-date";
+
+function formatDate(iso: string | null) {
+  if (!iso) return null;
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return null;
+  return new Intl.DateTimeFormat("fr-FR", {
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(d);
+}
 
 /* Enregistre le service worker, déclenche le préchargement du carnet
- * et affiche une petite pastille : « prêt hors ligne » / « hors ligne ». */
+ * et affiche une pastille : « prêt hors ligne » / « hors ligne ». */
 export default function HorsLigne() {
   const [etat, setEtat] = useState<Etat>("inconnu");
   const [visible, setVisible] = useState(false);
@@ -13,28 +26,30 @@ export default function HorsLigne() {
   useEffect(() => {
     if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
 
-    const majReseau = () => {
-      if (!navigator.onLine) {
-        setEtat("hors-ligne");
-        setVisible(true);
-      }
+    const surHorsLigne = () => {
+      setEtat("hors-ligne");
+      setVisible(true);
     };
-    window.addEventListener("online", () => {
+    const surEnLigne = () => {
       setVisible(false);
       setEtat("inconnu");
-    });
-    window.addEventListener("offline", majReseau);
-    majReseau();
+    };
+    window.addEventListener("online", surEnLigne);
+    window.addEventListener("offline", surHorsLigne);
+    if (!navigator.onLine) surHorsLigne();
 
     const surMessage = (e: MessageEvent) => {
       if (e.data === "precache-ok") {
+        try {
+          localStorage.setItem(CLE_CACHE, new Date().toISOString());
+        } catch {}
+        window.dispatchEvent(new Event("carnet-cache"));
         setEtat("pret");
         setVisible(true);
         setTimeout(() => setVisible(false), 4000);
       } else if (e.data === "precache-ko") {
         setEtat("erreur");
         setVisible(true);
-        setTimeout(() => setVisible(false), 6000);
       }
     };
     navigator.serviceWorker.addEventListener("message", surMessage);
@@ -44,7 +59,6 @@ export default function HorsLigne() {
       .then(async (reg) => {
         await navigator.serviceWorker.ready;
         if (navigator.onLine) {
-          setEtat("preparation");
           (reg.active ?? reg.waiting ?? reg.installing)?.postMessage("precache");
         }
       })
@@ -52,7 +66,8 @@ export default function HorsLigne() {
 
     return () => {
       navigator.serviceWorker.removeEventListener("message", surMessage);
-      window.removeEventListener("offline", majReseau);
+      window.removeEventListener("offline", surHorsLigne);
+      window.removeEventListener("online", surEnLigne);
     };
   }, []);
 
@@ -69,13 +84,72 @@ export default function HorsLigne() {
   return (
     <div
       role="status"
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full text-[13.5px] font-semibold shadow-lg"
+      onClick={() => setVisible(false)}
+      className="fixed left-1/2 -translate-x-1/2 z-50 px-4 min-h-[40px] flex items-center rounded-full text-[14px] font-semibold shadow-lg"
       style={{
+        bottom: "calc(12px + env(safe-area-inset-bottom))",
         background: etat === "hors-ligne" || etat === "erreur" ? "#3f3a34" : "#1f7a4b",
         color: "white",
       }}
     >
       {libelle[etat]}
+    </div>
+  );
+}
+
+/* Pied de page : version du carnet, date de mise en cache, bouton rafraîchir. */
+export function VersionCarnet({ version }: { version: string }) {
+  const [cache, setCache] = useState<string | null>(null);
+  const [enCours, setEnCours] = useState(false);
+
+  useEffect(() => {
+    const lire = () => {
+      try {
+        setCache(localStorage.getItem(CLE_CACHE));
+      } catch {}
+    };
+    lire();
+    window.addEventListener("carnet-cache", lire);
+    return () => window.removeEventListener("carnet-cache", lire);
+  }, []);
+
+  const rafraichir = async () => {
+    setEnCours(true);
+    try {
+      const reg = await navigator.serviceWorker?.getRegistration();
+      if (reg) {
+        await reg.update();
+        (reg.active ?? reg.waiting)?.postMessage("precache");
+        const attente = new Promise<void>((res) => {
+          const h = (e: MessageEvent) => {
+            if (e.data === "precache-ok" || e.data === "precache-ko") {
+              navigator.serviceWorker.removeEventListener("message", h);
+              res();
+            }
+          };
+          navigator.serviceWorker.addEventListener("message", h);
+          setTimeout(res, 20000);
+        });
+        await attente;
+      }
+    } catch {}
+    window.location.reload();
+  };
+
+  return (
+    <div className="mt-3 text-[13px] text-[var(--encre-douce)] flex flex-col items-center gap-2">
+      <div>
+        Version du carnet : {formatDate(version) ?? version}
+        {cache && ` · en cache sur ce téléphone depuis le ${formatDate(cache)}`}
+      </div>
+      <button
+        type="button"
+        onClick={rafraichir}
+        disabled={enCours}
+        className="min-h-[40px] px-4 rounded-full border border-[var(--ligne)] font-semibold text-[var(--accent)] disabled:opacity-50"
+      >
+        {enCours ? "Mise à jour…" : "↻ Rafraîchir le carnet (avec du réseau)"}
+      </button>
     </div>
   );
 }

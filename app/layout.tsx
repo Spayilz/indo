@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import HorsLigne from "@/components/HorsLigne";
 import { Fraunces, Figtree } from "next/font/google";
+import HorsLigne from "@/components/HorsLigne";
 import "./globals.css";
 
 const titres = Fraunces({
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: "Indonésie 2026 — Notre carnet de voyage",
   description:
     "Le plan des vacances, jour par jour. Du 26 septembre au 18 octobre 2026.",
+  robots: { index: false, follow: false },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
@@ -34,10 +35,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#c2683a",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#15120e" },
+    { color: "#c2683a" },
+  ],
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
+
+// Applique le thème mémorisé avant le premier rendu (pas de flash)
+const scriptTheme = `try{var t=localStorage.getItem("indo-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -46,6 +54,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${titres.variable} ${corps.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: scriptTheme }} />
+      </head>
       <body>
         {children}
         <HorsLigne />

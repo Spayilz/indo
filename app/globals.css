@@ -3,21 +3,100 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   --fond: #faf5ec;
   --fond-chaud: #f4ecdd;
   --carte: #ffffff;
   --encre: #221d16;
-  --encre-douce: #6a6155;
+  --encre-douce: #55493c;
   --ligne: #e9e0d1;
   --accent: #c2683a;
   --accent-clair: #f6e6d8;
 
-  /* Couleurs par région */
+  /* États */
+  --ok-fond: #eef7f0;
+  --ok-texte: #1f7a4b;
+  --info-fond: #eef4ff;
+  --info-texte: #2552c4;
+  --attention-fond: #fdf2e3;
+  --attention-texte: #8a5810;
+  --alerte-fond: #fdf3f0;
+  --alerte-texte: #b5471f;
+  --nuit-fond: #fdf6ee;
+  --nuit-bord: #f0dcc4;
+
+  /* Couleurs par région (traits, fonds) et variantes texte lisibles */
   --depart: #8a7a63;
+  --depart-texte: #6b5d48;
   --sumatra: #2f7d54;
   --java: #c14a2b;
   --bali: #d08a1f;
+  --bali-texte: #9a6412;
   --komodo: #1f7a8c;
+
+  --nav-fond: rgba(250, 245, 236, 0.88);
+}
+
+/* ── Mode nuit : automatique (réglage du téléphone) ou forcé ── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --fond: #15120e;
+    --fond-chaud: #1f1a14;
+    --carte: #211c16;
+    --encre: #f1e9dc;
+    --encre-douce: #b8ad9c;
+    --ligne: #3a3128;
+    --accent: #e0895a;
+    --accent-clair: #3a2a1f;
+    --ok-fond: #17301f;
+    --ok-texte: #7fd39c;
+    --info-fond: #1a2540;
+    --info-texte: #9db8ff;
+    --attention-fond: #33260f;
+    --attention-texte: #f0c060;
+    --alerte-fond: #3a1d15;
+    --alerte-texte: #ff9f7a;
+    --nuit-fond: #2a2117;
+    --nuit-bord: #4a3a28;
+    --depart: #b9a88c;
+    --depart-texte: #b9a88c;
+    --sumatra: #5fb283;
+    --java: #e57a5a;
+    --bali: #e8b04a;
+    --bali-texte: #e8b04a;
+    --komodo: #4fb3c8;
+    --nav-fond: rgba(21, 18, 14, 0.88);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --fond: #15120e;
+  --fond-chaud: #1f1a14;
+  --carte: #211c16;
+  --encre: #f1e9dc;
+  --encre-douce: #b8ad9c;
+  --ligne: #3a3128;
+  --accent: #e0895a;
+  --accent-clair: #3a2a1f;
+  --ok-fond: #17301f;
+  --ok-texte: #7fd39c;
+  --info-fond: #1a2540;
+  --info-texte: #9db8ff;
+  --attention-fond: #33260f;
+  --attention-texte: #f0c060;
+  --alerte-fond: #3a1d15;
+  --alerte-texte: #ff9f7a;
+  --nuit-fond: #2a2117;
+  --nuit-bord: #4a3a28;
+  --depart: #b9a88c;
+  --depart-texte: #b9a88c;
+  --sumatra: #5fb283;
+  --java: #e57a5a;
+  --bali: #e8b04a;
+  --bali-texte: #e8b04a;
+  --komodo: #4fb3c8;
+  --nav-fond: rgba(21, 18, 14, 0.88);
 }
 
 html,
@@ -32,13 +111,13 @@ body {
   font-family: var(--font-corps), ui-sans-serif, system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.65;
-  /* texture papier très légère */
   background-image: radial-gradient(
     circle at 50% 0,
     rgba(194, 104, 58, 0.05),
     transparent 60%
   );
   background-attachment: fixed;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 h1,
@@ -67,6 +146,12 @@ html {
   display: none;
 }
 
+/* Indice visuel : la barre continue à droite */
+.nav-masque {
+  -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, #000 90%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -84,8 +169,64 @@ html {
   top: 0;
   z-index: 40;
   backdrop-filter: blur(10px);
-  background: rgba(250, 245, 236, 0.85);
+  background: var(--nav-fond);
   border-bottom: 1px solid var(--ligne);
+  padding-top: env(safe-area-inset-top);
+}
+
+/* ── Puces d'action (Maps, WhatsApp, billets) ────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--ligne);
+  background: var(--carte);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--encre);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.chip-accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.chip-tel {
+  background: var(--ok-fond);
+  color: var(--ok-texte);
+  border-color: transparent;
+}
+
+/* ── Journées ────────────────────────────────────── */
+.jour-actuel {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-clair);
+}
+
+details.recit > summary {
+  list-style: none;
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--accent);
+}
+details.recit > summary::-webkit-details-marker {
+  display: none;
+}
+details.recit > summary::after {
+  content: "⌄";
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+details.recit[open] > summary::after {
+  transform: rotate(180deg);
 }
 
 /* ── Timeline ────────────────────────────────────── */
@@ -119,7 +260,7 @@ html {
   border: 3px solid var(--couleur-phase, var(--accent));
 }
 
-/* ── Carte (claire) ──────────────────────────────── */
+/* ── Carte ───────────────────────────────────────── */
 .leaflet-container {
   background: #e9ece6 !important;
   font-family: var(--font-corps), sans-serif !important;
@@ -159,6 +300,22 @@ html {
   border-radius: 7px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.zoom-loin .marqueur-etiquette {
+  display: none;
+}
+
+:root[data-theme="dark"] .leaflet-tile,
+:root:not([data-theme="light"]) .leaflet-tile {
+  filter: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .leaflet-tile {
+    filter: brightness(0.85) saturate(0.85);
+  }
+}
+:root[data-theme="dark"] .leaflet-tile {
+  filter: brightness(0.85) saturate(0.85);
 }
 
 /* ── Ombres douces ───────────────────────────────── */
