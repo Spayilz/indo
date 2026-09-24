@@ -58,6 +58,7 @@ const statutStyle: Record<string, string> = {
   "💵 solde sur place": "bg-[var(--attention-fond)] text-[var(--attention-texte)]",
   "‼️ à faire": "bg-[var(--alerte-fond)] text-[var(--alerte-texte)]",
   "‼️ à réserver": "bg-[var(--alerte-fond)] text-[var(--alerte-texte)]",
+  "⚠️ à annuler": "bg-[var(--attention-fond)] text-[var(--attention-texte)]",
 };
 
 const navLiens = [
@@ -356,6 +357,7 @@ export default function Page() {
                       {h.note}
                     </div>
                   )}
+                  {h.captures && h.captures.length > 0 && <Galerie captures={h.captures} />}
                   {(h.tel || h.ref) && (
                     <div className="mt-2 flex flex-wrap gap-2">
                       {h.tel && (
@@ -367,7 +369,7 @@ export default function Page() {
                     </div>
                   )}
                 </div>
-                {h.statut !== "‼️ à réserver" && (
+                {h.statut !== "‼️ à réserver" && h.statut !== "⚠️ à annuler" && (
                   <a
                     href={mapsUrl(h.q)}
                     target="_blank"

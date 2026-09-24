@@ -17,7 +17,7 @@ export const infos = {
     {
       valeur: "7",
       label: "nuits à Bali",
-      detail: "Lovina, Munduk, puis 5 nuits à Canggu (2 + 3, retour de Komodo le 14 au soir)",
+      detail: "Lovina, Munduk, puis 5 nuits en villa à Seseh, côté Canggu (2 + 3)",
     },
     {
       valeur: "1",
@@ -192,7 +192,7 @@ export const reservations: Reservation[] = [
     statut: "✅ payé",
     infos: [
       "Vol direct 1 h 10, classe économique, PT Indonesia AirAsia. Enregistrement en ligne AirAsia ouvert 14 jours avant. On part avec un petit sac cabine chacun (7 kg max chez AirAsia) : les grosses valises restent chez Jasmine à Bali du 11 au 14.",
-      "Depuis Canggu, compter environ une heure jusqu'à l'aéroport : quitter l'hôtel vers 12 h 45 - 13 h pour être au terminal domestique 2 h avant.",
+      "Check-out de la villa à 11 h. Depuis Seseh, compter environ une heure jusqu'à l'aéroport : partir vers 12 h 45 - 13 h pour être au terminal domestique 2 h avant.",
       "Arrivée à Labuan Bajo à 16 h 55 (heure de Bali = heure de Florès), 15 min de route jusqu'à la Casa de Capulet.",
     ],
     liens: [
@@ -234,7 +234,7 @@ export const reservations: Reservation[] = [
     infos: [
       "Même réservation PFIPUG que l'aller. Vol direct 1 h 10.",
       "Le bateau est de retour au port vers 12 h, l'aéroport de Komodo est à 10 min : le temps d'un déjeuner et d'une douche (demander à la Casa de Capulet ou à Travass où se poser) avant d'aller à l'aéroport vers 15 h 30. Bagage cabine seulement : les valises sont restées chez Jasmine à Bali. Enregistrement fermé 45 min avant, à faire en ligne la veille depuis le bateau si le réseau passe.",
-      "Arrivée à Denpasar 18 h 35, puis environ une heure de route vers Canggu : hôtel vers 20 h. La nuit du 14 à Canggu reste à réserver.",
+      "Arrivée à Denpasar 18 h 35, puis environ une heure de route vers Seseh : villa vers 20 h (check-in dès 15 h — prévenir Mr G de l'arrivée tardive via Airbnb).",
     ],
     liens: [
       { label: "🗺️ Aéroport de Komodo", href: "https://www.google.com/maps/search/?api=1&query=Komodo+Airport+Labuan+Bajo" },
@@ -588,12 +588,13 @@ export const phases: Phase[] = [
         horaires: [
           { h: "Matin", quoi: "Libre au resort (piscine, plantation, cascades de Munduk)" },
           { h: "~13:00", quoi: "Départ vers Canggu (2 h 30 - 3 h par Bedugul)" },
-          { h: "Fin d'après-midi", quoi: "Installation à l'hôtel de Canggu" },
+          { h: "Dès 15:00", quoi: "Check-in à la villa Airbnb de Max, Jalan Pantai Seseh" },
           { h: "Soir", quoi: "Restaurant à Canggu (table réservée)" },
         ],
-        alerte:
-          "L'hôtel de Canggu pour ce soir et demain reste à réserver.",
-        nuit: "Hôtel à Canggu · ‼️ à réserver",
+        lieux: [
+          { nom: "Villa Airbnb, Jalan Pantai Seseh", q: "Jalan Pantai Seseh, Mengwi, Bali" },
+        ],
+        nuit: "Villa Airbnb, Jalan Pantai Seseh (hôte Max) · ✅ réservé",
         type: "route",
       },
       {
@@ -611,7 +612,7 @@ export const phases: Phase[] = [
         ],
         alerte:
           "Pas de réveil matinal demain : le vol est à 15 h 45.",
-        nuit: "Hôtel à Canggu · ‼️ à réserver",
+        nuit: "Villa Airbnb, Jalan Pantai Seseh (hôte Max) · ✅ réservé",
         type: "repos",
       },
     ],
@@ -630,8 +631,8 @@ export const phases: Phase[] = [
           "Grasse matinée et dernier café à Canggu. Départ de l'hôtel vers 12 h 45 - 13 h : compter environ une heure jusqu'à l'aéroport de Denpasar (terminal domestique), pour être sur place deux heures avant. Vol AirAsia direct pour Labuan Bajo, sur l'île de Florès : décollage 15 h 45, atterrissage 16 h 55 (1 h 10, référence PFIPUG, enregistrement en ligne possible dès 14 jours avant). Pas de décalage horaire entre Bali et Florès. Installation à la Casa de Capulet (déjà réservée), à un quart d'heure de l'aéroport, puis coucher de soleil sur la baie et dîner de fruits de mer sur le front de mer. Confirmer par WhatsApp avec Travass Life l'heure et le lieu du rendez-vous du lendemain matin (trip prévu à 8 h) et préparer le petit sac de croisière. Arriver la veille est exigé par Travass — c'est la nuit tampon du plan.",
         iso: "2026-10-11",
         horaires: [
-          { h: "Matin", quoi: "Libre à Canggu" },
-          { h: "12:45", quoi: "Départ pour l'aéroport de Denpasar (≈ 1 h), terminal domestique" },
+          { h: "11:00", quoi: "Check-out de la villa de Seseh (valises chez Jasmine)" },
+          { h: "12:45", quoi: "Départ pour l'aéroport de Denpasar (≈ 1 h depuis Seseh), terminal domestique" },
           { h: "15:45", quoi: "AirAsia → Labuan Bajo (réf. PFIPUG)" },
           { h: "16:55", quoi: "Arrivée, 15 min → Casa de Capulet" },
           { h: "Soir", quoi: "WhatsApp Travass : lieu du rendez-vous de demain 8 h · coucher de soleil sur la baie" },
@@ -693,14 +694,15 @@ export const phases: Phase[] = [
           { h: "~12:00", quoi: "Retour au port de Labuan Bajo — déjeuner, douche" },
           { h: "15:30", quoi: "Départ pour l'aéroport de Komodo (10 min) · enregistrement fermé 16 h 40" },
           { h: "17:25", quoi: "AirAsia → Denpasar (18 h 35)" },
-          { h: "~20:00", quoi: "Arrivée à Canggu" },
+          { h: "~20:00", quoi: "Arrivée à la villa Airbnb Seseh Beach (Mr G), Jl. Munduk Belan" },
         ],
         alerte:
-          "La nuit de ce soir à Canggu reste à réserver (le Plawa Laguna commence demain).",
+          "Prévenir Mr G via Airbnb de l'arrivée vers 20 h (check-in officiel dès 15 h).",
         lieux: [
           { nom: "Aéroport de Komodo", q: "Komodo Airport Labuan Bajo" },
+          { nom: "Villa Airbnb Seseh Beach", q: "Jl. Munduk Belan, Seseh, Mengwi, Bali" },
         ],
-        nuit: "Canggu · ‼️ nuit du 14 à réserver (le Plawa Laguna commence le 15 — demander une nuit de plus)",
+        nuit: "Villa Airbnb Seseh Beach, Jl. Munduk Belan (hôte Mr G) · ✅ réservé",
         type: "bateau",
       },
     ],
@@ -714,26 +716,27 @@ export const phases: Phase[] = [
         date: "Jeudi 15 octobre",
         titre: "Première journée complète du final à Canggu",
         resume:
-          "Aucun transport aujourd'hui : plage, piscine et beach club, installation au Plawa Laguna pour les deux dernières nuits.",
+          "Aucun transport aujourd'hui : réveil dans la villa de Seseh Beach, piscine, plage, beach club.",
         details:
-          "Réveil sans réveil, après trois jours en mer. Installation au Plawa Laguna Boutique Hotel & Suites (réservé pour les nuits du 15 et du 16 — si la nuit du 14 est prise ailleurs, changer d'hôtel dans la matinée). Journée détente : plage de Berawa ou Echo Beach, piscine, massage pour dérouiller les jambes, et le soir un beach club au coucher du soleil ou un bon restaurant. Envie d'un dîner de poissons grillés les pieds dans le sable ? La baie de Jimbaran est à ~40 minutes si l'occasion se présente.",
+          "Réveil sans réveil, après trois jours en mer, dans la villa Airbnb de Seseh Beach (piscine privée, à deux pas de la plage de Seseh, un quart d'heure de Canggu). Journée détente : plage de Berawa ou Echo Beach, piscine, massage pour dérouiller les jambes, et le soir un beach club au coucher du soleil ou un bon restaurant. Envie d'un dîner de poissons grillés les pieds dans le sable ? La baie de Jimbaran est à ~40 minutes si l'occasion se présente.",
         iso: "2026-10-15",
         horaires: [
-          { h: "Matin", quoi: "Installation au Plawa Laguna (deux nuits)" },
+          { h: "Matin", quoi: "Grasse matinée, piscine de la villa" },
           { h: "Journée", quoi: "Plage, piscine, massage" },
           { h: "Soir", quoi: "Beach club au coucher du soleil ou dîner de poissons à Jimbaran (≈ 40 min)" },
         ],
         lieux: [
-          { nom: "Plawa Laguna Boutique Hotel & Suites", q: "Plawa Laguna Boutique Hotel Canggu" },
+          { nom: "Villa Airbnb Seseh Beach", q: "Jl. Munduk Belan, Seseh, Mengwi, Bali" },
+          { nom: "Plage de Seseh", q: "Seseh Beach Bali" },
         ],
-        nuit: "Plawa Laguna Boutique Hotel & Suites, Canggu · ✅ réservé (par Agathe)",
+        nuit: "Villa Airbnb Seseh Beach, Jl. Munduk Belan (hôte Mr G) · ✅ réservé",
         type: "repos",
       },
       {
         date: "Vendredi 16 octobre",
         titre: "Dernière journée complète à Bali",
         resume:
-          "Plage, piscine, dernier massage, derniers achats — et valises tranquilles en fin de journée.",
+          "Plage, piscine, dernier massage, derniers achats — valises tranquilles, check-out demain à 12 h.",
         details:
           "Dernière journée entière, zéro obligation : plage, piscine, dernier massage en duo, derniers achats dans les boutiques de Canggu. En fin de journée, boucler les valises et caler le transfert vers l'aéroport pour demain matin (compter ~1 h de route depuis Canggu). Demander un petit déjeuner servi tôt. Dernier coucher de soleil sur la côte.",
         iso: "2026-10-16",
@@ -741,7 +744,7 @@ export const phases: Phase[] = [
           { h: "Journée", quoi: "Libre : plage, piscine, derniers achats" },
           { h: "Fin de journée", quoi: "Valises ; confirmer le transfert de demain 9 h et un petit déjeuner tôt" },
         ],
-        nuit: "Plawa Laguna Boutique Hotel & Suites, Canggu · ✅ réservé (par Agathe)",
+        nuit: "Villa Airbnb Seseh Beach, Jl. Munduk Belan (hôte Mr G) · ✅ réservé",
         type: "repos",
       },
     ],
@@ -760,7 +763,7 @@ export const phases: Phase[] = [
           "Départ de l'hôtel vers 10 h direction l'aéroport : depuis Canggu, compter environ une heure de route (un peu plus avec le trafic), soit une arrivée vers 11 h — deux heures et quart avant le décollage, ça passe, mais partir plutôt vers 9 h donne les trois heures d'avance recommandées sur un vol international un samedi. Décollage à 13 h 15 vers Singapour (vol opéré par Singapore Airlines). L'escale à Changi dure 6 h 45 : le temps de dîner et d'aller voir la grande cascade intérieure du Jewel. Puis vol de nuit Lufthansa vers Munich.",
         iso: "2026-10-17",
         horaires: [
-          { h: "09:00", quoi: "Départ de Canggu (≈ 1 h de route)" },
+          { h: "09:00", quoi: "Départ de la villa de Seseh (≈ 1 h de route, check-out 12 h au plus tard)" },
           { h: "10:00", quoi: "Aéroport de Denpasar, 3 h avant l'international" },
           { h: "13:15", quoi: "SQ 9768 → Singapour (16 h 00)" },
           { h: "16:00 – 22:45", quoi: "Escale à Changi : dîner, cascade du Jewel" },
@@ -831,9 +834,10 @@ export const croisiere = {
 
 export type Hebergement = {
   nom: string;
+  captures?: { src: string; legende: string }[];
   ville: string;
   nuits: string[];
-  statut: "✅ réservé" | "🤝 collaboration" | "‼️ à réserver";
+  statut: "✅ réservé" | "🤝 collaboration" | "‼️ à réserver" | "⚠️ à annuler";
   reservePar?: string;
   q: string;
   ref?: string;
@@ -850,10 +854,10 @@ export const hebergements: Hebergement[] = [
   { nom: "Jiwa Jawa Resort Ijen", ville: "Licin, Banyuwangi", nuits: ["2026-10-06"], statut: "✅ réservé", q: "Jiwa Jawa Resort Ijen", note: "Dans les plantations, aux portes du volcan. Acheter le ferry Ferizy le soir même." },
   { nom: "Ju'blu Hotel", ville: "Lovina", nuits: ["2026-10-07"], statut: "✅ réservé", reservePar: "Agathe", q: "Ju'blu Hotel Lovina" },
   { nom: "Munduk Moding Plantation", ville: "Munduk", nuits: ["2026-10-08"], statut: "🤝 collaboration", q: "Munduk Moding Plantation", note: "Check-in l'après-midi, dans le cadre de la collaboration." },
-  { nom: "Hôtel à Canggu (Berawa ou Echo Beach)", ville: "Canggu", nuits: ["2026-10-09", "2026-10-10"], statut: "‼️ à réserver", q: "Canggu Bali" },
+  { nom: "Villa Airbnb — Jalan Pantai Seseh (hôte Max)", ville: "Seseh, Mengwi", nuits: ["2026-10-09", "2026-10-10"], statut: "✅ réservé", reservePar: "Airbnb", q: "Jalan Pantai Seseh, Mengwi, Bali", note: "Arrivée ven. 9 à partir de 15 h, départ dim. 11 avant 11 h. Piscine, à 15 min de Canggu. Adresse exacte et manuel de la maison dans l'appli Airbnb.", captures: [{ src: "/billets/airbnb-seseh-max.jpg", legende: "Airbnb — villa de Max, 9 → 11 oct." }] },
   { nom: "Casa de Capulet", ville: "Labuan Bajo", nuits: ["2026-10-11"], statut: "✅ réservé", q: "Casa de Capulet Labuan Bajo", note: "À 15 min de l'aéroport. La nuit du 14 est abandonnée (vérifier l'annulation) ; leur demander une douche l'après-midi du 14." },
-  { nom: "Hôtel à Canggu — nuit du retour de Komodo", ville: "Canggu", nuits: ["2026-10-14"], statut: "‼️ à réserver", q: "Plawa Laguna Boutique Hotel Canggu", note: "Demander d'abord au Plawa Laguna d'ajouter une nuit avant celles du 15 et du 16." },
-  { nom: "Plawa Laguna Boutique Hotel & Suites", ville: "Canggu", nuits: ["2026-10-15", "2026-10-16"], statut: "✅ réservé", reservePar: "Agathe", q: "Plawa Laguna Boutique Hotel Canggu", note: "Transfert vers l'aéroport le 17 à 9 h, petit déjeuner tôt à demander." },
+  { nom: "Villa Airbnb — Seseh Beach, Jl. Munduk Belan (hôte Mr G)", ville: "Seseh, Mengwi", nuits: ["2026-10-14", "2026-10-15", "2026-10-16"], statut: "✅ réservé", reservePar: "Airbnb", q: "Jl. Munduk Belan, Seseh, Mengwi, Bali", note: "Arrivée mer. 14 à partir de 15 h (on arrive vers 20 h : prévenir Mr G), départ sam. 17 avant 12 h. Piscine privée. Transfert aéroport le 17 à 9 h.", captures: [{ src: "/billets/airbnb-seseh-beach-mrg.jpg", legende: "Airbnb — villa Seseh Beach de Mr G, 14 → 17 oct." }] },
+  { nom: "Plawa Laguna Boutique Hotel & Suites", ville: "Canggu", nuits: ["2026-10-15", "2026-10-16"], statut: "⚠️ à annuler", reservePar: "Agathe", q: "Plawa Laguna Boutique Hotel Canggu", note: "Doublon avec la villa Seseh Beach (14 → 17) : à annuler si ce n'est pas déjà fait." },
 ];
 
 // ─── Pratique : contacts, urgences, espèces, fuseaux, mots ───
@@ -871,6 +875,8 @@ export const contacts: Contact[] = [
   { nom: "Travass Life (Admin 02)", role: "Croisière Komodo — Andalucia, commande 14875", whatsapp: "6281138282828", email: "hello@travass.life", note: "Ouvert 8 h - 21 h. Autre numéro : +62 811-3818-808." },
   { nom: "Sumatra Orangutan Explore", role: "Trek, lodge, voiture Medan ↔ Bukit Lawang, navette aéroport du 1er", note: "Numéro WhatsApp à compléter depuis la confirmation de réservation." },
   { nom: "KAI — service client", role: "Train Yogyakarta → Malang, booking 3E49U4B", whatsapp: "628111211121", tel: "+628111211121", email: "cs@kai.id" },
+  { nom: "Max (Airbnb)", role: "Villa Jalan Pantai Seseh, 9 → 11 octobre", note: "Messagerie Airbnb — manuel de la maison et code d'accès dans l'appli." },
+  { nom: "Mr G (Airbnb)", role: "Villa Seseh Beach, 14 → 17 octobre", note: "Messagerie Airbnb — prévenir de l'arrivée vers 20 h le 14." },
   { nom: "Jasmine", role: "Garde les valises à Bali du 11 au 14", note: "Numéro et adresse à compléter." },
   { nom: "Bohemian Jogja Villas", role: "Prévenir de l'arrivée tardive le 1er octobre", note: "Numéro à compléter depuis la réservation." },
 ];
@@ -891,7 +897,7 @@ export const especes: Espece[] = [
   { quand: "27/9 soir · DAB de Kualanamu", pour: "Voiture Medan → Bukit Lawang (800 000) + péages (66 000) + solde du trek (4 629 000) + navette retour (≈ 800 000) + pourboires guide et porteur (≈ 500 000)", montant: 6800000, note: "Plusieurs retraits d'affilée (plafond souvent 1,25 à 3 M par retrait). Aucun DAB à Bukit Lawang." },
   { quand: "5/10 matin · Malang", pour: "Bromo : entrée village + cratère (≈ 250 000 × 2), moto-taxis, repas au B&B, taxi vers l'Ijen si payé en espèces", montant: 1500000, note: "Aucun DAB à Cemoro Lawang." },
   { quand: "6/10 · Jiwa Jawa", pour: "Entrée du Kawah Ijen (≈ 100 000 × 2), parking, chauffeur de la journée du 7", montant: 800000 },
-  { quand: "10/10 · Canggu", pour: "Komodo : frais du parc si non inclus (375 000 × 2 pers. × 2-3 jours + garde ≈ 2 M), pourboires équipage (≈ 500 000), repas à Labuan Bajo", montant: 3000000, note: "Les DAB de Labuan Bajo se vident le week-end." },
+  { quand: "10/10 · Seseh / Canggu", pour: "Komodo : frais du parc si non inclus (375 000 × 2 pers. × 2-3 jours + garde ≈ 2 M), pourboires équipage (≈ 500 000), repas à Labuan Bajo", montant: 3000000, note: "Les DAB de Labuan Bajo se vident le week-end." },
 ];
 
 export const fuseaux = [
