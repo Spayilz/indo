@@ -837,7 +837,7 @@ export type Hebergement = {
   captures?: { src: string; legende: string }[];
   ville: string;
   nuits: string[];
-  statut: "✅ réservé" | "🤝 collaboration" | "‼️ à réserver" | "⚠️ à annuler";
+  statut: "✅ réservé" | "🤝 collaboration" | "‼️ à réserver";
   reservePar?: string;
   q: string;
   ref?: string;
@@ -857,7 +857,6 @@ export const hebergements: Hebergement[] = [
   { nom: "Villa Airbnb — Jalan Pantai Seseh (hôte Max)", ville: "Seseh, Mengwi", nuits: ["2026-10-09", "2026-10-10"], statut: "✅ réservé", reservePar: "Airbnb", q: "Jalan Pantai Seseh, Mengwi, Bali", note: "Arrivée ven. 9 à partir de 15 h, départ dim. 11 avant 11 h. Piscine, à 15 min de Canggu. Adresse exacte et manuel de la maison dans l'appli Airbnb.", captures: [{ src: "/billets/airbnb-seseh-max.jpg", legende: "Airbnb — villa de Max, 9 → 11 oct." }] },
   { nom: "Casa de Capulet", ville: "Labuan Bajo", nuits: ["2026-10-11"], statut: "✅ réservé", q: "Casa de Capulet Labuan Bajo", note: "À 15 min de l'aéroport. La nuit du 14 est abandonnée (vérifier l'annulation) ; leur demander une douche l'après-midi du 14." },
   { nom: "Villa Airbnb — Seseh Beach, Jl. Munduk Belan (hôte Mr G)", ville: "Seseh, Mengwi", nuits: ["2026-10-14", "2026-10-15", "2026-10-16"], statut: "✅ réservé", reservePar: "Airbnb", q: "Jl. Munduk Belan, Seseh, Mengwi, Bali", note: "Arrivée mer. 14 à partir de 15 h (on arrive vers 20 h : prévenir Mr G), départ sam. 17 avant 12 h. Piscine privée. Transfert aéroport le 17 à 9 h.", captures: [{ src: "/billets/airbnb-seseh-beach-mrg.jpg", legende: "Airbnb — villa Seseh Beach de Mr G, 14 → 17 oct." }] },
-  { nom: "Plawa Laguna Boutique Hotel & Suites", ville: "Canggu", nuits: ["2026-10-15", "2026-10-16"], statut: "⚠️ à annuler", reservePar: "Agathe", q: "Plawa Laguna Boutique Hotel Canggu", note: "Doublon avec la villa Seseh Beach (14 → 17) : à annuler si ce n'est pas déjà fait." },
 ];
 
 // ─── Pratique : contacts, urgences, espèces, fuseaux, mots ───

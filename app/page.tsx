@@ -58,7 +58,6 @@ const statutStyle: Record<string, string> = {
   "💵 solde sur place": "bg-[var(--attention-fond)] text-[var(--attention-texte)]",
   "‼️ à faire": "bg-[var(--alerte-fond)] text-[var(--alerte-texte)]",
   "‼️ à réserver": "bg-[var(--alerte-fond)] text-[var(--alerte-texte)]",
-  "⚠️ à annuler": "bg-[var(--attention-fond)] text-[var(--attention-texte)]",
 };
 
 const navLiens = [
@@ -369,7 +368,7 @@ export default function Page() {
                     </div>
                   )}
                 </div>
-                {h.statut !== "‼️ à réserver" && h.statut !== "⚠️ à annuler" && (
+                {h.statut !== "‼️ à réserver" && (
                   <a
                     href={mapsUrl(h.q)}
                     target="_blank"
