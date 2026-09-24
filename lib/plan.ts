@@ -922,24 +922,6 @@ export const aSavoir = [
   "Temples : épaules et genoux couverts (sarong fourni à Borobudur). Eau du robinet non potable. Pourboires : guide de trek 100 000 à 200 000 IDR par jour, chauffeur à la journée 50 000 à 100 000, équipage du bateau ≈ 100 000 par personne et par jour.",
 ];
 
-// ─── Avant de partir (disparaît de la page après le 26/9) ─────
-
-export const avantDepart = [
-  "Réserver l'hôtel de Canggu pour les nuits du 9 et du 10 octobre.",
-  "Réserver la nuit du 14 octobre à Canggu (demander une nuit de plus au Plawa Laguna).",
-  "Vérifier l'annulation de la nuit du 14 à la Casa de Capulet.",
-  "Travass Life : envoyer les deux passeports (permis SiORA), faire confirmer « Andalucia · VIP Room · 12/10 à 8 h », le lieu de rendez-vous, et si les frais de parc sont inclus.",
-  "Sumatra Orangutan Explore : réserver la navette Bukit Lawang → Kualanamu du 1er octobre (départ 11 h 30).",
-  "Acheter le billet nominatif du mont Bromo (bromotenggersemeru.id, 255 000 IDR par personne, passeports 22IK82830 et 21DI57178).",
-  "Visa électronique (e-VoA) pour les deux : numéros et captures dans le téléphone.",
-  "Caler les chauffeurs : Borobudur 2/10 (départ 7 h), gare 3/10 (9 h 30), Tumpak Sewu 4/10, Cemoro Lawang 5/10, Bromo → Ijen 6/10, la journée du 7/10 (Java puis Bali), Sekumpul → Munduk 8/10, Munduk → Canggu 9/10.",
-  "Table du vendredi 9 au soir à Canggu ; dépôt des valises chez Jasmine avant le 11.",
-  "Ajouter au carnet : contacts WhatsApp SOE, Jasmine, villas ; GPS du belvédère Bromo ; PNR Lufthansa et captures des cartes d'embarquement.",
-  "Google Maps : télécharger les zones hors ligne (Medan–Bukit Lawang, Yogyakarta, Malang–Bromo, Banyuwangi, nord Bali, Canggu, Labuan Bajo).",
-  "Installer le carnet sur les deux téléphones (Safari → Partager → Sur l'écran d'accueil) et l'ouvrir une fois en ligne.",
-  "Semaine du départ : Magma Indonesia pour les volcans, appli Ferizy installée (billet ferry à acheter le 6 au soir).",
-];
-
 // ─── Carte ───────────────────────────────────────────────────
 
 export type EtapeCarte = {

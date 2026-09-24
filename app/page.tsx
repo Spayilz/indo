@@ -2,7 +2,6 @@ import Carte from "@/components/Carte";
 import NavFlottante from "@/components/NavFlottante";
 import Galerie from "@/components/Galerie";
 import Aujourdhui from "@/components/Aujourdhui";
-import AvantDepart from "@/components/AvantDepart";
 import Copier from "@/components/Copier";
 import { VersionCarnet } from "@/components/HorsLigne";
 import {
@@ -135,8 +134,6 @@ export default function Page() {
           <div className="mt-5">
             <Aujourdhui />
           </div>
-
-          <AvantDepart />
         </header>
 
         {/* ════════ JOUR PAR JOUR ════════ */}
