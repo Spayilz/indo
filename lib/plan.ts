@@ -7,7 +7,7 @@ export const infos = {
   surtitre: "Indonésie · du 26 septembre au 18 octobre 2026",
   titre: "Notre itinéraire",
   sousTitre:
-    "Sumatra, Java, Bali et Komodo en vingt nuits : les orangs-outans, Borobudur et Prambanan, la cascade de Tumpak Sewu, le mont Bromo, le lac turquoise du Kawah Ijen, les dragons et les raies mantas — et six nuits à Bali, du nord de l'île (Lovina, Munduk) aux quatre nuits de Canggu.",
+    "Sumatra, Java, Bali et Komodo en vingt nuits : les orangs-outans, Borobudur et Prambanan, la cascade de Tumpak Sewu, le mont Bromo, le lac turquoise du Kawah Ijen, les dragons et les raies mantas — et sept nuits à Bali, du nord de l'île (Lovina, Munduk) aux cinq nuits de Canggu.",
   chiffres: [
     {
       valeur: "20",
@@ -15,14 +15,14 @@ export const infos = {
       detail: "du 27 septembre au 16 octobre inclus",
     },
     {
-      valeur: "6",
+      valeur: "7",
       label: "nuits à Bali",
-      detail: "Lovina, Munduk, puis 4 nuits à Canggu (2 + 2)",
+      detail: "Lovina, Munduk, puis 5 nuits à Canggu (2 + 3, retour de Komodo le 14 au soir)",
     },
     {
-      valeur: "2",
-      label: "réveils tôt",
-      detail: "Borobudur et Bromo — l'Ijen se fait désormais en douceur",
+      valeur: "1",
+      label: "réveil vraiment tôt",
+      detail: "le Bromo à 3 h — Borobudur se fait au créneau de 8 h 30 - 10 h, l'Ijen en douceur",
     },
   ],
 };
@@ -63,6 +63,134 @@ export const volsRetour = [
     trajet: "Munich → Luxembourg",
     horaire: "dimanche 18 · 7 h 50 → 8 h 55",
     compagnie: "Lufthansa (vol LH 2316) · 1 h 05",
+  },
+];
+
+export const volsInterieurs = [
+  {
+    trajet: "Medan (KNO) → Yogyakarta (YIA)",
+    horaire: "jeudi 1ᵉʳ octobre · 17 h 20 → 20 h 10",
+    compagnie:
+      "Lion Air JT963 · Boeing 737-900 · 2 h 50 direct · aucun repas à bord · ✅ réservé",
+  },
+  {
+    trajet: "Bali (DPS) → Labuan Bajo (LBJ)",
+    horaire: "dimanche 11 octobre · 15 h 45 → 16 h 55",
+    compagnie:
+      "AirAsia (PT Indonesia AirAsia) · 1 h 10 direct · réf. PFIPUG · ✅ réservé",
+  },
+  {
+    trajet: "Labuan Bajo (LBJ) → Bali (DPS)",
+    horaire: "mercredi 14 octobre · 17 h 25 → 18 h 35",
+    compagnie:
+      "AirAsia (PT Indonesia AirAsia) · 1 h 10 direct · réf. PFIPUG · ✅ réservé",
+  },
+];
+
+// ─── Billets & réservations — tout à portée de main sur place ───
+
+export type Reservation = {
+  quand: string;
+  titre: string;
+  ref: string;
+  statut: "✅ payé" | "✅ réservé" | "💵 solde sur place" | "‼️ à faire";
+  infos: string[];
+  contact?: string;
+};
+
+export const reservations: Reservation[] = [
+  {
+    quand: "Tout le voyage",
+    titre: "Les voyageurs — identités à recopier",
+    ref: "Franck Monardo · Agathe Roncalli",
+    statut: "✅ réservé",
+    infos: [
+      "Franck MONARDO · né le 15 mai 1993 · passeport 22IK82830",
+      "Agathe RONCALLI · née le 23 juillet 1990 · passeport 21DI57178",
+      "Ces numéros sont ceux saisis sur le train (KAI), les vols Lion Air et AirAsia : ce sont les passeports à présenter à l'embarquement. À réutiliser pour le billet Bromo (nominatif) et le permis SiORA de Komodo.",
+    ],
+  },
+  {
+    quand: "Lun. 28 sept. · 11 h",
+    titre: "Trek orangs-outans — Sumatra Orangutan Explore",
+    ref: "New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9)",
+    statut: "💵 solde sur place",
+    infos: [
+      "Prise en charge à 11 h au JW Marriott Medan, voiture privée 800 000 IDR (+ péage 33 000 IDR par trajet, en espèces au chauffeur).",
+      "Solde du trek à régler en espèces à l'arrivée au lodge : environ 4 629 000 IDR (acompte déjà versé). Aucun distributeur à Bukit Lawang — retirer à Medan.",
+      "Chambre Family Room à l'étage, trek 2 400 000 IDR par personne tout compris (guide, porteur, cuisinier, repas, camping, parc).",
+      "Leur demander aussi la navette Bukit Lawang → aéroport de Kualanamu du jeudi 1ᵉʳ octobre (départ vers 11 h 30 au plus tard).",
+    ],
+  },
+  {
+    quand: "Jeu. 1ᵉʳ oct. · 17 h 20",
+    titre: "Vol Medan → Yogyakarta — Lion Air JT963",
+    ref: "KNO 17 h 20 → YIA 20 h 10 · Boeing 737-900 · Economy",
+    statut: "✅ payé",
+    infos: [
+      "Passagers : FRANCK MONARDO et AGATHE RONCALLI (billets adultes, noms identiques aux passeports).",
+      "Enregistrement fermé 45 min avant le départ : être à Kualanamu vers 15 h 30. Aucun repas à bord.",
+      "Arrivée à YIA (Kulon Progo), à 45-50 km du centre : 1 h à 1 h 30 de route jusqu'à Bohemian Jogja Villas.",
+    ],
+  },
+  {
+    quand: "Ven. 2 oct. · 8 h 30 - 10 h",
+    titre: "Borobudur — montée sur le temple, créneau 8 h 30 - 10 h",
+    ref: "Billets Goers V7F40-25E17A094 · V7F40-25E17A196",
+    statut: "✅ payé",
+    infos: [
+      "2 billets « 08:30 - Foreigner Adult » (créneau 8 h 30 - 10 h) au nom de Monardo Franck, QR codes dans le lien t.goersapp.com reçu par WhatsApp (bouton « Cetak Tiket » pour imprimer). Faire des captures d'écran des deux QR codes hors ligne.",
+      "Partir de la villa vers 7 h (environ une heure de route, 40 km au nord-ouest) pour être au guichet 20-30 min avant le créneau, passeports en main.",
+      "Sandales « upanat » et sarong fournis sur place ; le créneau court de 8 h 30 à 10 h sur la structure du temple, avec guide — se présenter à l'heure, le créneau ne se décale pas.",
+    ],
+  },
+  {
+    quand: "Sam. 3 oct. · 10 h 50",
+    titre: "Train Yogyakarta → Malang — Malioboro Ekspres (170B)",
+    ref: "Booking 3E49U4B · sièges EKS-2 · 6C (Franck) et 6D (Agathe)",
+    statut: "✅ payé",
+    infos: [
+      "Classe Executive AC · départ gare de Tugu Yogyakarta (Jl. Ps. Kembang 21) à 10 h 50 · arrivée gare de Malang (Jl. Trunojoyo 10) vers 17 h 30 · 41,51 € par personne, acheté sur 12go le 24 septembre.",
+      "Le e-ticket n'est PAS une carte d'embarquement : l'imprimer à la borne libre-service de la gare (dès 7 jours avant) avec le code 3E49U4B et le passeport. Être en gare 60 min avant le départ.",
+      "Bagages : 1 valise de 20 kg max (70×48×30 cm) + bagages à main. On peut apporter à manger et à boire.",
+    ],
+    contact: "KAI : cs@kai.id · +62 811-1211-1121 · 12go : compte en ligne, booking 3E49U4B",
+  },
+  {
+    quand: "Dim. 11 oct. · 15 h 45",
+    titre: "Vol Bali → Labuan Bajo — AirAsia",
+    ref: "Réf. PFIPUG · DPS 15 h 45 → LBJ 16 h 55",
+    statut: "✅ payé",
+    infos: [
+      "Vol direct 1 h 10, classe économique, PT Indonesia AirAsia. Enregistrement en ligne AirAsia ouvert 14 jours avant.",
+      "Depuis Canggu, compter environ une heure jusqu'à l'aéroport : quitter l'hôtel vers 12 h 45 - 13 h pour être au terminal domestique 2 h avant.",
+      "Arrivée à Labuan Bajo à 16 h 55 (heure de Bali = heure de Florès), 15 min de route jusqu'à la Casa de Capulet.",
+    ],
+  },
+  {
+    quand: "Lun. 12 oct. · 8 h",
+    titre: "Croisière Komodo 3J/2N — Travass Life · bateau Andalucia · VIP Room",
+    ref: "Commande n° 14875 · 18 892 950 IDR (≈ 915 € pour deux) · payée le 6 août 2026 via Xendit",
+    statut: "✅ payé",
+    infos: [
+      "Produit : « 3D2N Komodo Sailing | Comfortable Semi-Deluxe | ANDALUCIA », package VIP ROOM, 2 adultes, trip date 12 octobre 2026 à 8 h.",
+      "Retour au port de Labuan Bajo le mercredi 14 vers 12 h (confirmé par Travass) : large marge avant le vol de 17 h 25.",
+      "Demander par WhatsApp le lieu exact de rendez-vous le lundi matin (prise en charge à l'hôtel ou au port) et si les frais du parc national et le permis SiORA sont inclus.",
+      "Prendre le mail « Order received » (commande 14875) sur le téléphone comme preuve de paiement.",
+    ],
+    contact:
+      "Travass Life · WhatsApp +62 811-3828-2828 (Admin 02, ouvert 8 h - 21 h) · hello@travass.life · IG @travass.life",
+  },
+  {
+    quand: "Mer. 14 oct. · 17 h 25",
+    titre: "Vol Labuan Bajo → Bali — AirAsia",
+    ref: "Réf. PFIPUG · LBJ 17 h 25 → DPS 18 h 35",
+    statut: "✅ payé",
+    infos: [
+      "Même réservation PFIPUG que l'aller. Vol direct 1 h 10.",
+      "Le bateau est de retour au port vers 12 h, l'aéroport de Komodo est à 10 min : le temps d'un déjeuner et d'une douche (demander à la Casa de Capulet ou à Travass où se poser) avant d'aller à l'aéroport vers 15 h 30. Enregistrement fermé 45 min avant, à faire en ligne la veille depuis le bateau si le réseau passe.",
+      "Arrivée à Denpasar 18 h 35, puis environ une heure de route vers Canggu : hôtel vers 20 h. La nuit du 14 à Canggu reste à réserver.",
+    ],
   },
 ];
 
@@ -154,11 +282,11 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
       },
       {
         date: "Vendredi 2 octobre",
-        titre: "Borobudur et Prambanan",
+        titre: "Borobudur au créneau de 8 h 30 - 10 h, puis Prambanan",
         resume:
-          "Borobudur le matin (au lever du soleil ou en matinée), puis le temple de Prambanan l'après-midi.",
+          "Montée sur le temple de Borobudur de 8 h 30 à 10 h · ✅ billets réservés (Goers, 2 × Foreigner Adult), puis le temple de Prambanan l'après-midi.",
         details:
-          "Borobudur le matin — le plus grand temple bouddhiste du monde. Deux options : la formule « Borobudur Sunrise » d'InJourney pour monter sur le temple au lever du soleil (100 places par jour, environ 55 euros par personne, réservation par WhatsApp au +62 857 2758 7800, départ ~3 h 45 de Yogyakarta), ou une visite plus tranquille en matinée à l'ouverture (la montée sur le temple se réserve sur ticket.borobudurpark.com). L'après-midi, cap sur Prambanan, le grand ensemble de temples hindous aux flèches élancées et aux reliefs du Ramayana (à une trentaine de minutes à l'est). Vendredi est un jour de semaine sans vacances scolaires : affluence faible.",
+          "Borobudur le matin — le plus grand temple bouddhiste du monde. Les billets de montée sur la structure sont réservés pour le créneau de 8 h 30 à 10 h (2 billets « Foreigner Adult » au nom de Monardo Franck, numéros V7F40-25E17A094 et V7F40-25E17A196, QR codes dans le lien t.goersapp.com reçu par WhatsApp — garder une capture d'écran hors ligne). Départ de la villa vers 7 h avec un chauffeur (environ une heure de route), passeports sur soi, au guichet 20-30 minutes avant le créneau : sandales et sarong sont fournis, la montée se fait en groupe accompagné, jusqu'à 10 h sur le monument, puis le parc et le musée à son rythme. L'après-midi, cap sur Prambanan, le grand ensemble de temples hindous aux flèches élancées et aux reliefs du Ramayana (à une heure de route vers l'est de Borobudur, trente minutes du centre de Yogyakarta ; billets à prendre sur place ou en ligne, non réservés pour l'instant). Vendredi est un jour de semaine sans vacances scolaires : affluence faible. Pas de réveil à 3 h — le lever de soleil n'a pas été retenu.",
         nuit: "Bohemian Jogja Villas, Yogyakarta · ✅ réservé",
         type: "aventure",
       },
@@ -166,9 +294,9 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         date: "Samedi 3 octobre",
         titre: "Traversée de Java en train jusqu'à Malang",
         resume:
-          "Train direct de 10 h 45 à environ 17 h, à travers les rizières et les volcans.",
+          "Malioboro Ekspres de 10 h 50 à 17 h 30, classe Executive, sièges 6C et 6D · ✅ billets réservés (booking 3E49U4B).",
         details:
-          "Matinée tranquille, puis train au départ de Yogyakarta vers 10 h 45, arrivée à Malang vers 17 h. Train de jour confortable en classe exécutive, avec des paysages superbes. Billets à acheter dès l'ouverture des ventes (45 jours avant, soit vers la mi-août, sur l'application Access by KAI). Installation au Shalimar Boutique Hotel, beau bâtiment colonial restauré, et dîner dans le quartier.",
+          "Matinée tranquille, puis départ de la gare de Tugu Yogyakarta (Jl. Ps. Kembang 21, à dix minutes de Malioboro) à 10 h 50 avec le Malioboro Ekspres (train 170B), arrivée à la gare de Malang (Jl. Trunojoyo 10) vers 17 h 30. Billets réservés : classe Executive AC, voiture EKS-2, sièges 6C (Franck) et 6D (Agathe), booking 3E49U4B, 41,51 € par personne. Attention, le e-ticket n'est pas une carte d'embarquement : à la gare, l'imprimer à la borne libre-service avec le code de réservation et les passeports (ceux saisis à l'achat : 22IK82830 et 21DI57178), et être là 60 minutes avant le départ — donc partir de la villa vers 9 h 30. Une valise de 20 kg par personne, on peut apporter de quoi manger. Six heures et demie de paysages, rizières et volcans. Installation au Shalimar Boutique Hotel, beau bâtiment colonial restauré, et dîner dans le quartier.",
         nuit: "Shalimar Boutique Hotel, Malang · ✅ réservé",
         type: "route",
       },
@@ -244,7 +372,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "La seule journée entière sans obligation avant la croisière : plage, boutiques, massage — et le soir, le petit sac pour Komodo.",
         details:
-          "Journée à la carte dans le quartier le plus animé de Bali : grasse matinée, plage de Berawa ou Echo Beach, massage, balade dans les concept-stores, coucher de soleil au beach club et dîner au restaurant. Le soir, on prépare un petit sac pour la croisière (maillots, crème solaire, lampe, médicament contre le mal de mer) — l'idéal est de laisser les grosses valises en garde quelque part (à voir avec Jasmine si possible de les déposer à Canggu, sinon en garde à l'hôtel de Labuan Bajo pendant les deux nuits à bord). Retrait d'espèces avant Labuan Bajo (les distributeurs s'y vident le week-end : solde de croisière, frais de parc et pourboires sont souvent en liquide). Coucher tôt : départ très matinal demain.",
+          "Journée à la carte dans le quartier le plus animé de Bali : grasse matinée, plage de Berawa ou Echo Beach, massage, balade dans les concept-stores, coucher de soleil au beach club et dîner au restaurant. Le soir, on prépare un petit sac pour la croisière (maillots, crème solaire, lampe, médicament contre le mal de mer) — l'idéal est de laisser les grosses valises en garde quelque part (à voir avec Jasmine si possible de les déposer à Canggu, sinon en garde à l'hôtel de Labuan Bajo pendant les deux nuits à bord). Retrait d'espèces avant Labuan Bajo (les distributeurs s'y vident le week-end : frais de parc éventuels et pourboires sont souvent en liquide — la croisière, elle, est déjà payée). Pas de réveil matinal : le vol de demain est à 15 h 45.",
         nuit: "Hôtel à Canggu · ‼️ à réserver",
         type: "repos",
       },
@@ -256,22 +384,22 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
     jours: [
       {
         date: "Dimanche 11 octobre",
-        titre: "Vol vers Labuan Bajo — nuit tampon pré-croisière",
+        titre: "Vol de l'après-midi vers Labuan Bajo — nuit tampon pré-croisière",
         resume:
-          "Vol du matin vers Labuan Bajo, puis journée douce sur place, la veille de l'embarquement.",
+          "Matinée libre à Canggu, vol AirAsia 15 h 45 → 16 h 55 · ✅ réservé (réf. PFIPUG), soirée sur le front de mer la veille de l'embarquement.",
         details:
-          "Départ de l'hôtel vers 5 h 15 - 5 h 30 : depuis Canggu, compter environ une heure jusqu'à l'aéroport de Denpasar, un peu moins à cette heure-là par la route à péage. Vol du matin pour Labuan Bajo, sur l'île de Florès : AirAsia à 7 h 10 ou Batik Air à 7 h 55 (les deux seules compagnies sur cette ligne, ~1 h 15 de vol) ; billet modifiable obligatoire à cause du volcan Lewotobi. Arrivée en milieu de matinée, installation à la Casa de Capulet (déjà réservée), journée tranquille : front de mer, rencontre avec l'opérateur de croisière pour régler le solde et confirmer l'heure d'embarquement, coucher de soleil sur la baie. Arriver la veille est exigé par les opérateurs — c'est la première nuit tampon du plan.",
+          "Grasse matinée et dernier café à Canggu. Départ de l'hôtel vers 12 h 45 - 13 h : compter environ une heure jusqu'à l'aéroport de Denpasar (terminal domestique), pour être sur place deux heures avant. Vol AirAsia direct pour Labuan Bajo, sur l'île de Florès : décollage 15 h 45, atterrissage 16 h 55 (1 h 10, référence PFIPUG, enregistrement en ligne possible dès 14 jours avant). Pas de décalage horaire entre Bali et Florès. Installation à la Casa de Capulet (déjà réservée), à un quart d'heure de l'aéroport, puis coucher de soleil sur la baie et dîner de fruits de mer sur le front de mer. Confirmer par WhatsApp avec Travass Life l'heure et le lieu du rendez-vous du lendemain matin (trip prévu à 8 h) et préparer le petit sac de croisière. Arriver la veille est exigé par les opérateurs — c'est la nuit tampon du plan.",
         nuit: "Casa de Capulet, Labuan Bajo · ✅ réservé",
         type: "vol",
       },
       {
         date: "Lundi 12 octobre",
-        titre: "Croisière Komodo — jour 1 : embarquement",
+        titre: "Croisière Komodo — jour 1 : embarquement sur l'Andalucia",
         resume:
-          "Embarquement en matinée (8 h à 11 h selon l'opérateur) sur le voilier en bois, en cabine privée climatisée. Première après-midi de navigation.",
+          "Rendez-vous à 8 h avec Travass Life, embarquement sur le phinisi Andalucia en cabine VIP Room · ✅ croisière payée (commande 14875). Première après-midi de navigation.",
         details:
-          "Prise en charge à l'hôtel le matin — entre 8 h et 10 h 30 chez Lanakila, à 11 h chez IndonesiaJuara — puis embarquement sur le phinisi (voilier traditionnel en bois), en cabine privée climatisée avec salle de bain. Croisière partagée de trois jours et deux nuits. Première après-midi de navigation et de snorkeling, mouillage au coucher du soleil. Le bateau est à réserver (voir le classement vérifié plus bas — Lanakila et IndonesiaJuara en tête, tous deux avec le départ du lundi 12 confirmé aux calendriers). Les frais du parc national (32 à 70 euros par personne selon ce que couvre l'opérateur, permis nominatif SiORA obligatoire) sont à régler en plus, souvent en espèces.",
-        nuit: "À bord du phinisi, cabine privée · ‼️ croisière à réserver",
+          "Départ à 8 h (trip date de la commande) : Travass Life précisera par WhatsApp (+62 811-3828-2828) si la prise en charge se fait à la Casa de Capulet ou directement au port. Embarquement sur l'Andalucia, phinisi (voilier traditionnel en bois) de la catégorie « Comfortable Semi-Deluxe », en cabine VIP Room privée, climatisée, avec salle de bain. Croisière partagée de trois jours et deux nuits, payée en totalité (18 892 950 IDR pour deux, ≈ 915 €, via Xendit le 6 août). Première après-midi de navigation et de snorkeling (souvent Kelor, Rinca ou Kalong et ses chauves-souris au coucher du soleil), mouillage pour la nuit. Point à vérifier avant de partir : si les frais du parc national (permis nominatif SiORA, grille 2026 à 375 000 IDR par personne et par jour + ranger) ne sont pas inclus, ils se règlent en espèces — d'où le retrait à Bali.",
+        nuit: "À bord de l'Andalucia, cabine VIP Room · ✅ réservé",
         type: "bateau",
       },
       {
@@ -281,34 +409,34 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
           "Lever de soleil sur l'île de Padar, Pink Beach, les dragons de Komodo, puis la nage avec les raies mantas.",
         details:
           "La grande journée. Lever de soleil sur l'île de Padar et son panorama sur les trois baies, l'un des plus célèbres d'Indonésie. Puis Pink Beach et son sable rosé, marche sur l'île de Komodo à la rencontre des dragons (accompagnés d'un garde du parc), nage avec les raies mantas à Manta Point, et banc de sable de Taka Makassar. Soirée et nuit à bord au mouillage.",
-        nuit: "À bord du phinisi, cabine privée",
+        nuit: "À bord de l'Andalucia, cabine VIP Room · ✅ réservé",
         type: "bateau",
       },
       {
         date: "Mercredi 14 octobre",
-        titre: "Croisière — jour 3 : retour au port, nuit tampon",
+        titre: "Croisière — jour 3 : retour au port, puis vol du soir vers Bali",
         resume:
-          "Dernière baignade, retour à Labuan Bajo entre 10 h 30 et 15 h, et nuit sur la terre ferme.",
+          "Dernière baignade, retour au port de Labuan Bajo vers 12 h, vol AirAsia 17 h 25 → 18 h 35 · ✅ réservé (réf. PFIPUG), nuit à Canggu.",
         details:
-          "Dernière matinée en mer (snorkeling, tortues selon le bateau), puis retour au port de Labuan Bajo entre 10 h 30 et 15 heures selon l'opérateur. Retour à la Casa de Capulet, déjà réservée pour cette nuit-là. Après-midi tranquille à terre : longue douche, dîner de fruits de mer sur le front de mer. Cette nuit sur la terre ferme est la deuxième nuit tampon : aucun vol n'est programmé le jour du débarquement, par précaution face au volcan Lewotobi et aux heures de retour variables.",
-        nuit: "Casa de Capulet, Labuan Bajo · ✅ réservé",
+          "Dernière matinée en mer (snorkeling, tortues selon le programme), puis retour au port de Labuan Bajo vers 12 h, comme confirmé par Travass Life. Cinq heures devant soi : déjeuner de fruits de mer sur le front de mer, douche et valises (voir avec la Casa de Capulet pour garder les bagages et utiliser une salle de bain, ou un day pass), puis départ pour l'aéroport vers 15 h 30. L'aéroport de Komodo est à dix minutes du port : décollage AirAsia à 17 h 25 (enregistrement fermé 45 minutes avant, le faire en ligne la veille si le réseau passe), atterrissage à Denpasar à 18 h 35, puis environ une heure de route jusqu'à Canggu — hôtel vers 20 h, longue douche et dîner tardif. On ne dort plus à Labuan Bajo ce soir-là : la nuit du 14 se passe à Bali. Si le volcan Lewotobi clouait les avions au sol, le plan B serait de reprendre une chambre sur place et de décaler le vol au lendemain.",
+        nuit: "Canggu · ‼️ nuit du 14 à réserver (le Plawa Laguna commence le 15 — demander une nuit de plus)",
         type: "bateau",
       },
     ],
   },
   {
     titre: "Bali — le final à Canggu",
-    detail: "15 — 16 octobre",
+    detail: "14 — 16 octobre",
     jours: [
       {
         date: "Jeudi 15 octobre",
-        titre: "Retour à Canggu pour les deux dernières nuits",
+        titre: "Première journée complète du final à Canggu",
         resume:
-          "Vol de Labuan Bajo vers Denpasar, puis retour à Canggu pour finir le voyage dans le quartier que vous aimez.",
+          "Aucun transport aujourd'hui : plage, piscine et beach club, installation au Plawa Laguna pour les deux dernières nuits.",
         details:
-          "Vol du matin ou de la mi-journée de Labuan Bajo vers Denpasar (~1 h 15, billet modifiable). Puis route vers Canggu (~1 h depuis l'aéroport) pour les deux dernières nuits, au Plawa Laguna Boutique Hotel & Suites — là où le voyage a fait sa pause avant Komodo. Après-midi détente : plage de Berawa ou Echo Beach, piscine, et le soir un beach club au coucher du soleil ou un bon restaurant. Envie d'un dîner de poissons grillés les pieds dans le sable ? La baie de Jimbaran est à ~40 minutes si l'occasion se présente.",
+          "Réveil sans réveil, après trois jours en mer. Installation au Plawa Laguna Boutique Hotel & Suites (réservé pour les nuits du 15 et du 16 — si la nuit du 14 est prise ailleurs, changer d'hôtel dans la matinée). Journée détente : plage de Berawa ou Echo Beach, piscine, massage pour dérouiller les jambes, et le soir un beach club au coucher du soleil ou un bon restaurant. Envie d'un dîner de poissons grillés les pieds dans le sable ? La baie de Jimbaran est à ~40 minutes si l'occasion se présente.",
         nuit: "Plawa Laguna Boutique Hotel & Suites, Canggu · ✅ réservé (par Agathe)",
-        type: "vol",
+        type: "repos",
       },
       {
         date: "Vendredi 16 octobre",
@@ -342,7 +470,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Correspondance au petit matin à Munich, atterrissage à Luxembourg à 8 h 55.",
         details:
-          "Correspondance au petit matin à Munich (vol LH 2316) puis atterrissage à Luxembourg à 8 h 55 — à la maison pour le petit déjeuner du dimanche, avec la journée entière pour récupérer. Bilan : vingt nuits sur place, les orangs-outans de Sumatra, Borobudur et Prambanan, la cascade de Tumpak Sewu, l'aube sur le mont Bromo, le lac turquoise du Kawah Ijen, la cascade de Sekumpul et les hauteurs de Munduk, les dragons et les raies mantas de Komodo, et quatre nuits à Canggu. Une journée de canapé est officiellement prescrite.",
+          "Correspondance au petit matin à Munich (vol LH 2316) puis atterrissage à Luxembourg à 8 h 55 — à la maison pour le petit déjeuner du dimanche, avec la journée entière pour récupérer. Bilan : vingt nuits sur place, les orangs-outans de Sumatra, Borobudur et Prambanan, la cascade de Tumpak Sewu, l'aube sur le mont Bromo, le lac turquoise du Kawah Ijen, la cascade de Sekumpul et les hauteurs de Munduk, les dragons et les raies mantas de Komodo, et cinq nuits à Canggu. Une journée de canapé est officiellement prescrite.",
         nuit: "À la maison",
         type: "vol",
       },
@@ -352,9 +480,9 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
 
 export const croisiere = {
   cadre:
-    "Croisière partagée de trois jours et deux nuits au départ de Labuan Bajo, dans une cabine privée climatisée avec salle de bain à bord d'un phinisi (voilier traditionnel en bois). Embarquement le lundi 12 octobre en matinée (8 h à 11 h selon l'opérateur), retour le mercredi 14 octobre entre 10 h 30 et 13 h. Tous les bateaux sérieux couvrent les quatre incontournables : l'île de Padar, la Pink Beach, les dragons sur l'île de Komodo et la nage avec les raies mantas à Manta Point. Dossier revérifié le 12 juillet 2026 : chaque date, prix et photo de cabine a été relevé sur les pages des opérateurs puis contre-vérifié par une seconde équipe (conversions au taux du jour, 1 € ≈ 20 635 IDR ≈ 1,142 USD).",
+    "✅ Réservée et payée. Croisière partagée de trois jours et deux nuits au départ de Labuan Bajo, du lundi 12 octobre (rendez-vous 8 h) au mercredi 14 octobre, à bord de l'Andalucia, un phinisi (voilier traditionnel en bois) de la catégorie « Comfortable Semi-Deluxe » vendu par Travass Life, en cabine VIP Room privée, climatisée, avec salle de bain. Au programme les quatre incontournables : l'île de Padar, la Pink Beach, les dragons sur l'île de Komodo et la nage avec les raies mantas à Manta Point. Le comparatif des six opérateurs ci-dessous est l'archive du dossier vérifié du 12 juillet 2026 (1 € ≈ 20 635 IDR).",
   recommande:
-    "Où on en est : les 6 opérateurs ont été contactés par WhatsApp. Ci-dessous, ils sont classés par SÛRETÉ — volume et qualité des avis, ce qu'en disent les vrais voyageurs, et ce que c'est. En attendant les réponses, bloquer le filet de sécurité GRATUIT : la fiche GetYourGuide de Sailnesia (annulation gratuite jusqu'à 24 h avant, payer plus tard) garantit une croisière sans rien risquer, et s'annule d'un clic si un direct fait mieux. À chaque réponse « dispo », tout faire reconfirmer par écrit (nom exact du bateau, cabine, départ du 12 octobre, prix net avec frais de parc) avant tout acompte, puis prendre le mieux placé — acompte partiel seulement, jamais 100 % d'avance.",
+    "Réservé le 6 août 2026 sur le site de Travass Life : commande n° 14875, produit « 3D2N Komodo Sailing | Comfortable Semi-Deluxe | Solo Traveler Friendly | ANDALUCIA », package VIP ROOM, 2 adultes, trip date 12 octobre 2026 à 8 h, total 18 892 950 IDR (≈ 915 € pour deux, ≈ 458 € par personne) payé en ligne via Xendit — garder le mail « Order received » comme preuve. Contact : WhatsApp +62 811-3828-2828 (Admin 02, 8 h - 21 h). Reste à faire confirmer par écrit avant le départ : le lieu de rendez-vous du 12 à 8 h, si les frais du parc national et le permis SiORA sont inclus (transmettre les deux passeports) et des photos récentes de la VIP Room. Retour au port le 14 vers 12 h (confirmé) — le vol pour Bali décolle à 17 h 25, la marge est confortable.",
   operateurs: [
     {
       rang: 1,
@@ -399,18 +527,19 @@ export const croisiere = {
     },
     {
       rang: 3,
-      nom: "Travass Life (Papiton Duwa)",
-      surete: "Le plus recommandé — mais verrouiller",
+      nom: "Travass Life (Andalucia · VIP Room)",
+      surete: "✅ C'est ici qu'on a réservé — 458 €/pers., payé",
       contacte: true,
-      prix: "Cabine privée ≈ 350–400 €/pers.",
+      reserve: true,
+      prix: "VIP Room ≈ 458 €/pers. (payé)",
       ceQueCest:
         "Opérateur direct réputé de Labuan Bajo, grosse présence sociale (Instagram 41K). Bateau Papiton Duwa (2019), cabines 100 % privatives.",
       avis: "TripAdvisor 5 étoiles, mais un peu plus d'avis 1 étoile que Long Lasting Trip.",
       sentiment:
         "LE nom le plus cité sur Reddit pour cette croisière exacte (« j'ai fait beaucoup de recherches, Travass est arrivé en tête »).",
       bemol:
-        "Un cas d'annulation de dernière minute signalé — à garder, mais VERROUILLER le bateau + la date par écrit avant tout acompte.",
-      contact: "WhatsApp +62 811-3818-808 · IG @travass.life · hello@travass.life.",
+        "Un cas d'annulation de dernière minute signalé par le passé : faire reconfirmer par écrit, quelques jours avant, le bateau (Andalucia), la cabine (VIP Room) et le rendez-vous du 12 à 8 h. Retour au port le 14 vers 12 h confirmé — plan B (nuit à Labuan Bajo + vol modifié) seulement en cas de volcan ou de grosse houle.",
+      contact: "WhatsApp +62 811-3828-2828 (Admin 02, ouvert 8 h - 21 h) · aussi +62 811-3818-808 · IG @travass.life · hello@travass.life.",
       photos: [] as { src: string; legende: string }[],
     },
     {
@@ -477,6 +606,7 @@ export const croisiere = {
     },
   ],
   aRetenir: [
+    "Maintenant que c'est payé : demander à Travass Life, par écrit, la confirmation « Andalucia · VIP Room · lundi 12 octobre 8 h », le lieu exact du rendez-vous (retour au port le 14 vers 12 h, déjà confirmé), et si les frais de parc + permis SiORA sont compris dans les 18 892 950 IDR — sinon, combien en espèces.",
     "Verrouiller le départ du lundi 12 octobre PAR ÉCRIT avant tout paiement : confirmé aux calendriers en ligne chez Lanakila (revendeurs), IndonesiaJuara (page officielle) et Sailnesia (GetYourGuide) — mais seule une confirmation écrite avec le nom du bateau fait foi.",
     "Exiger le nom exact du bateau, le numéro de la cabine privée et des photos datées de cette cabine précise (climatisée + salle de bain). Le nom du bateau doit figurer sur le reçu — c'est la preuve clé en cas de litige.",
     "Bien préciser « cabine privée fermée, base 2 personnes », et non un simple lit dans une cabine partagée : c'est le piège classique des tarifs bas en open trip.",
@@ -488,7 +618,7 @@ export const croisiere = {
   ],
   aEviter: [
     "Captain Komodo / Alcira : opérateur fiable (4,9/5, 918 avis) mais AUCUN départ le 12 octobre (créneaux 11-13 et 14-16) et pas de salle de bain privée (2 sdb partagées pour 12 passagers) — hors critères.",
-    "Andalucia / « Andalusia 2 » (divetrips, 267 €/pers.) : plainte grave de juin 2024 sur ce bateau précis (infestation de cafards, remboursement dérisoire) et note TripAdvisor invérifiable.",
+    "Point d'attention sur le bateau réservé : une plainte de juin 2024 visait un « Andalusia 2 » vendu par divetrips (cafards, remboursement dérisoire). Notre Andalucia est vendu par Travass Life en catégorie Semi-Deluxe — demander des photos récentes de la VIP Room et le nom exact de la coque, et signaler tout problème d'hygiène dès l'embarquement.",
     "Zada Liveaboard (Zada Ulla/Nara/Mega) : passagers réaffectés sur un autre bateau la veille du départ, cafards, literie moisie — 4,4/5 seulement.",
     "Komodo Boat Charter / « Evan » (opère aussi sous KLM Tunggadewi) : remboursements promis jamais versés, départs retardés volontairement.",
     "Molas Lino Trip : arnaque à l'acompte documentée — cesse de répondre au moment du second paiement.",
@@ -502,35 +632,31 @@ export const croisiere = {
 export const checklist = [
   {
     quand: "✅ Déjà réservé",
-    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · Vol intérieur Medan → Yogyakarta : Lion Air JT963 du 1er octobre, 17 h 20 (KNO) → 20 h 10 (YIA) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé, solde de 4 629 000 IDR à régler en espèces à l'arrivée · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10) · Bromo B&B, Cemoro Lawang (5/10) · Jiwa Jawa Resort Ijen (6/10) · Ju'blu Hotel, Lovina (7/10, par Agathe) · Munduk Moding Plantation (8/10, collaboration) · Casa de Capulet, Labuan Bajo (les deux nuits tampons, 11 et 14/10) · Plawa Laguna Boutique Hotel & Suites, Canggu (15 et 16/10, par Agathe).",
+    quoi: "Vols internationaux (Air Dolomiti + Lufthansa/Singapore Airlines) · Vol Medan → Yogyakarta : Lion Air JT963 du 1er octobre, 17 h 20 (KNO) → 20 h 10 (YIA) · Vols Bali ↔ Labuan Bajo : AirAsia réf. PFIPUG, aller le 11/10 à 15 h 45, retour le 14/10 à 17 h 25 · Train Yogyakarta → Malang du 3/10 : Malioboro Ekspres 10 h 50, Executive, sièges 6C-6D, booking 3E49U4B · Borobudur le 2/10 : montée sur le temple au créneau de 8 h 30 - 10 h, 2 billets Goers V7F40-25E17A094 et V7F40-25E17A196 · Croisière Komodo 12-14/10 : Travass Life, bateau Andalucia, VIP Room, commande 14875 payée (18 892 950 IDR) · JW Marriott Medan (27/9) · Trek + lodge Sumatra Orangutan Explore : New SOE Lodge (28 et 30/9) + trek 2J/1N (29-30/9), acompte versé, solde de 4 629 000 IDR à régler en espèces à l'arrivée · Bohemian Jogja Villas (1er et 2/10) · Shalimar Boutique Hotel, Malang (3 et 4/10) · Bromo B&B, Cemoro Lawang (5/10) · Jiwa Jawa Resort Ijen (6/10) · Ju'blu Hotel, Lovina (7/10, par Agathe) · Munduk Moding Plantation (8/10, collaboration) · Casa de Capulet, Labuan Bajo (11/10 uniquement — la nuit du 14 est abandonnée) · Plawa Laguna Boutique Hotel & Suites, Canggu (15 et 16/10, par Agathe).",
   },
   {
     quand: "Le plus urgent",
-    quoi: "Croisière Komodo du lundi 12 octobre : les 6 opérateurs sont contactés (voir le classement par sûreté). Reste à — 1) bloquer le filet GRATUIT sur GetYourGuide (Sailnesia, annulation gratuite, payer plus tard) ; 2) à chaque réponse « dispo », renvoyer le message de verrouillage (nom du bateau + cabine + date + prix net par écrit) ; 3) comparer et prendre le mieux placé, acompte partiel seulement, jamais 100 % d'avance ; 4) transmettre les passeports pour les permis SiORA (Padar limité à 60 visiteurs par jour).",
+    quoi: "Le retour de Komodo est le 14 octobre au soir (vol AirAsia 17 h 25) : 1) réserver la nuit du mercredi 14 à Canggu — d'abord demander au Plawa Laguna d'ajouter une nuit avant celles du 15 et du 16 ; 2) vérifier que la nuit du 14 à la Casa de Capulet est bien annulée (on n'y dort plus) ; 3) leur demander quand même de garder les bagages et de prêter une douche l'après-midi du 14 (le bateau rentre vers 12 h, vol à 17 h 25).",
   },
   {
-    quand: "Dès que possible",
-    quoi: "Réserver la navette Bukit Lawang → aéroport de Kualanamu (Medan) pour le jeudi 1er octobre : 3 à 4 heures de route, à caler pour être à l'aéroport vers 15 h 30 (le vol JT963 part à 17 h 20). À demander directement à Sumatra Orangutan Explore, qui organise ce transfert. Prévoir aussi le transport YIA → villa à l'arrivée : 1 h à 1 h 30 de route de nuit.",
+    quand: "Le plus urgent",
+    quoi: "Réserver l'hôtel de Canggu pour les nuits du vendredi 9 et du samedi 10 octobre (Berawa ou Echo Beach). Avec la nuit du 14, c'est le seul hébergement encore ouvert.",
   },
   {
-    quand: "Dès que possible",
-    quoi: "Réserver le seul hébergement encore ouvert : l'hôtel de Canggu pour les nuits du vendredi 9 et du samedi 10 octobre (Berawa ou Echo Beach). Tout le reste du logement est bouclé.",
+    quand: "Cette semaine",
+    quoi: "Travass Life (WhatsApp +62 811-3828-2828) : envoyer les deux passeports pour le permis SiORA, faire confirmer par écrit « Andalucia · VIP Room · 12/10 à 8 h », le lieu de rendez-vous (retour au port le 14 vers 12 h, confirmé) et si les frais de parc sont inclus. Si un filet GetYourGuide (Sailnesia) avait été bloqué, l'annuler — c'est gratuit jusqu'à 24 h avant.",
   },
   {
-    quand: "Dès que possible",
-    quoi: "Réserver les vols intérieurs Bali → Labuan Bajo (dimanche 11/10) et Labuan Bajo → Bali (jeudi 15/10) en billets MODIFIABLES (risque volcan Lewotobi).",
+    quand: "Cette semaine",
+    quoi: "Réserver la navette Bukit Lawang → aéroport de Kualanamu (Medan) pour le jeudi 1er octobre auprès de Sumatra Orangutan Explore : 3 à 4 heures de route, départ vers 11 h 30 pour être à l'aéroport vers 15 h 30 (le vol JT963 part à 17 h 20). Prévoir aussi le transport YIA → villa à l'arrivée (1 h à 1 h 30 de nuit) : demander à Bohemian Jogja Villas.",
   },
   {
-    quand: "Mi-août (ouverture des ventes)",
-    quoi: "Acheter les billets du train Yogyakarta → Malang du samedi 3 octobre sur l'application Access by KAI (le train est quotidien, il faut juste être au rendez-vous de l'ouverture des ventes).",
+    quand: "Avant le départ",
+    quoi: "Acheter le billet électronique nominatif du mont Bromo pour le 6 octobre sur bromotenggersemeru.id (255 000 IDR par personne, numéros de passeport 22IK82830 et 21DI57178), et les billets de Prambanan pour l'après-midi du 2 octobre (en ligne ou sur place). Faire les demandes de visa électronique (e-VoA) si ce n'est pas encore fait.",
   },
   {
-    quand: "Dès l'ouverture, au plus tard début septembre",
-    quoi: "Réserver le « Borobudur Sunrise » du 2 octobre par WhatsApp au +62 857 2758 7800 (si vous voulez le lever de soleil sur le temple), et le billet électronique nominatif du mont Bromo du 6 octobre sur bromotenggersemeru.id.",
-  },
-  {
-    quand: "Début septembre",
-    quoi: "Faire les demandes de visa électronique en ligne, et réserver les chauffeurs privés : Tumpak Sewu le 4/10, transfert vers Cemoro Lawang le 5/10, taxi Bromo → Jiwa Jawa Ijen le 6/10, la grosse journée du 7/10 (hôtel → Paltuding → port de Ketapang, puis Gilimanuk → Lovina côté Bali), Lovina → Sekumpul → Munduk le 8/10, et Munduk → Canggu le 9/10.",
+    quand: "Avant le départ",
+    quoi: "Caler les chauffeurs privés : Yogyakarta → Borobudur (départ 7 h) → Prambanan → villa le 2/10, villa → gare de Tugu le 3/10 à 9 h 30, Tumpak Sewu le 4/10, transfert vers Cemoro Lawang le 5/10, taxi Bromo → Jiwa Jawa Ijen le 6/10, la grosse journée du 7/10 (hôtel → Paltuding → port de Ketapang, puis Gilimanuk → Lovina côté Bali), Lovina → Sekumpul → Munduk le 8/10, Munduk → Canggu le 9/10, Canggu → aéroport le 11/10 à 12 h 45 et aéroport → Canggu le 14/10 vers 18 h 45.",
   },
   {
     quand: "Avant l'arrivée à Canggu",
@@ -538,19 +664,25 @@ export const checklist = [
   },
   {
     quand: "La semaine du départ",
-    quoi: "Consulter Magma Indonesia pour l'état des volcans (Bromo, Kawah Ijen, Lewotobi), et acheter les billets du ferry sur l'application Ferizy le mardi 6 au soir — impossible à moins de 2,6 km du port le jour même.",
+    quoi: "Consulter Magma Indonesia pour l'état des volcans (Bromo, Kawah Ijen, Lewotobi), acheter les billets du ferry sur l'application Ferizy le mardi 6 au soir (impossible à moins de 2,6 km du port le jour même), et enregistrer les captures d'écran hors ligne de tous les billets : QR Borobudur, e-ticket KAI 3E49U4B, cartes d'embarquement AirAsia PFIPUG, mail Travass n° 14875.",
+  },
+  {
+    quand: "Sur place",
+    quoi: "Le 3/10 : imprimer les cartes d'embarquement du train à la borne de la gare de Tugu avec le code 3E49U4B (dès 7 jours avant). Le 11/10 et le 13/10 : enregistrement en ligne AirAsia (PFIPUG). Espèces à prévoir : solde du trek à Bukit Lawang (4 629 000 IDR), Bromo (pas de distributeur), frais de parc de Komodo si non inclus.",
   },
 ];
 
 export const vigilance = [
-  "Croisière Komodo : les opérateurs sont contactés — verrouiller PAR ÉCRIT le nom du bateau + la cabine + le départ du 12 octobre avant tout acompte, et garder le filet GetYourGuide (annulation gratuite) tant que rien n'est confirmé. Transmettre les passeports tôt pour le permis SiORA (Padar limité à 60 personnes par jour).",
+  "Le vol retour de Labuan Bajo est le 14 octobre à 17 h 25, le jour même du débarquement : le bateau rentre vers 12 h (confirmé par Travass), l'aéroport est à 10 min du port — marge confortable, mais pas de sieste qui traîne : être à l'aéroport vers 15 h 45. La nuit du 14 à Labuan Bajo est abandonnée. Plan B si le volcan Lewotobi perturbe les vols : reprendre une chambre sur place et décaler le vol au 15.",
+  "La nuit du 14 octobre à Bali n'est pas encore réservée (le Plawa Laguna commence le 15) — et celles du 9 et du 10 à Canggu non plus. Ce sont les trois seules nuits ouvertes du voyage.",
+  "Croisière Komodo payée en totalité (Travass Life, Andalucia, VIP Room, commande 14875) : faire reconfirmer par écrit le bateau, la cabine et le rendez-vous du 12 à 8 h quelques jours avant, transmettre les passeports pour le permis SiORA (Padar limité à 60 personnes par jour), et savoir si les frais de parc sont inclus — sinon prévoir des espèces.",
+  "Train du 3 octobre : le e-ticket 12go/KAI n'est PAS une carte d'embarquement. À imprimer à la borne de la gare de Tugu avec le code 3E49U4B et les passeports, 60 minutes avant le départ de 10 h 50 — quitter la villa vers 9 h 30.",
+  "Borobudur le 2 octobre : le créneau de montée est fixe (8 h 30 - 10 h) et les billets nominatifs — partir de la villa vers 7 h, passeports sur soi, QR codes en capture d'écran (le lien t.goersapp.com a besoin de réseau).",
   "Le ferry Java-Bali est passé au mercredi 7 octobre, l'après-midi même de l'Ijen : billets uniquement sur l'application Ferizy, à acheter le mardi soir — un blocage par géolocalisation empêche l'achat à moins de 2,6 kilomètres du port, et il n'y a plus de guichet.",
   "Le 7 octobre est la journée la plus chargée du voyage : lever vers 5 h 30, montée de l'Ijen, redescente vers midi, route jusqu'à Ketapang, ferry, +1 heure de décalage horaire, puis 2 h 30 à 3 h de route jusqu'à Lovina — arrivée en début de soirée. Un seul chauffeur pour toute la journée côté Java, et un autre qui attend à Gilimanuk : à caler à l'avance.",
-  "Le volcan Lewotobi peut perturber les vols de Labuan Bajo : billets intérieurs MODIFIABLES obligatoires, et les deux nuits tampons à Labuan Bajo (le 11 et le 14) ne doivent surtout pas être supprimées.",
-  "Vol du jeudi 1er octobre (✅ réservé, Lion Air JT963, 17 h 20 → 20 h 10) : le vrai point de vigilance est désormais la navette Bukit Lawang → Kualanamu, 3 à 4 heures de route sans marge d'erreur — partir tôt, l'enregistrement ferme 45 minutes avant le départ. Aucun repas à bord. Et l'arrivée se fait à YIA, à 45-50 km de Yogyakarta : 1 h à 1 h 30 de route de nuit, donc villa vers 21 h 30 - 22 h.",
-  "Canggu est à environ une heure de l'aéroport : départ 5 h 15 - 5 h 30 le dimanche 11 pour le vol vers Labuan Bajo, et départ le samedi 17 vers 10 h comme prévu au carnet (9 h serait plus confortable pour un international à 13 h 15).",
-  "Le seul hébergement encore ouvert est Canggu pour les nuits du 9 et du 10 octobre : à boucler vite, octobre est prisé et le reste du logement est déjà réservé autour.",
-  "Mont Bromo en autonomie : avoir du liquide (pas de distributeur à Cemoro Lawang), partir tôt pour le point de vue, et prévoir l'entrée du parc (~12-15 € par personne) si vous montez au cratère.",
+  "Vol du jeudi 1er octobre (✅ réservé, Lion Air JT963, 17 h 20 → 20 h 10) : le vrai point de vigilance est la navette Bukit Lawang → Kualanamu, 3 à 4 heures de route sans marge d'erreur — partir vers 11 h 30, l'enregistrement ferme 45 minutes avant le départ. Aucun repas à bord. Et l'arrivée se fait à YIA, à 45-50 km de Yogyakarta : 1 h à 1 h 30 de route de nuit, donc villa vers 21 h 30 - 22 h.",
+  "Canggu est à environ une heure de l'aéroport : départ 12 h 45 - 13 h le dimanche 11 pour le vol AirAsia de 15 h 45, et départ le samedi 17 vers 9 h - 10 h pour l'international de 13 h 15.",
+  "Mont Bromo en autonomie : avoir du liquide (pas de distributeur à Cemoro Lawang), partir tôt pour le point de vue, et prévoir l'entrée du parc (~12-15 € par personne) si vous montez au cratère. Le billet électronique nominatif n'est pas encore acheté.",
   "Le Kawah Ijen se fait en version « lac depuis la crête » (pas de feu bleu) : plus fiable et bien plus reposant. Vérifier les conditions d'accès la semaine du départ.",
   "Début octobre marque la transition vers la saison des pluies : averses possibles en fin d'après-midi sur Java et Bali.",
 ];

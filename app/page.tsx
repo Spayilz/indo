@@ -4,6 +4,8 @@ import {
   infos,
   volsAller,
   volsRetour,
+  volsInterieurs,
+  reservations,
   phases,
   croisiere,
   checklist,
@@ -33,6 +35,7 @@ const phaseStyle: Record<string, { couleur: string; icone: string }> = {
 const navLiens = [
   { href: "#itineraire", label: "Jour par jour" },
   { href: "#vols", label: "Vols" },
+  { href: "#billets", label: "Billets" },
   { href: "#croisiere", label: "Croisière" },
   { href: "#carte", label: "Carte" },
   { href: "#reservations", label: "À réserver" },
@@ -253,10 +256,13 @@ export default function Page() {
             {[
               { titre: "Aller — samedi 26 septembre", segs: volsAller },
               { titre: "Retour — samedi 17 octobre", segs: volsRetour },
+              { titre: "Vols intérieurs — ✅ tous réservés", segs: volsInterieurs, large: true },
             ].map((bloc) => (
               <div
                 key={bloc.titre}
-                className="rounded-2xl bg-white border border-[var(--ligne)] p-6 ombre-douce"
+                className={`rounded-2xl bg-white border border-[var(--ligne)] p-6 ombre-douce ${
+                  bloc.large ? "md:col-span-2" : ""
+                }`}
               >
                 <div className="font-bold text-lg flex items-center gap-2">
                   <span>✈️</span> {bloc.titre}
@@ -285,10 +291,71 @@ export default function Page() {
           </div>
         </NumSection>
 
+        {/* ════════ BILLETS & RÉSERVATIONS ════════ */}
+        <NumSection
+          id="billets"
+          num="03"
+          titre="Billets et réservations, à portée de main"
+          intro="Tout ce qu'il faut montrer, taper ou payer sur place : références, sièges, horaires, contacts. Faire des captures d'écran de chaque billet avant de partir — le réseau ne suit pas toujours."
+        >
+          <div className="grid gap-4">
+            {reservations.map((r) => {
+              const statutStyle: Record<string, { fond: string; texte: string }> = {
+                "✅ payé": { fond: "#eef7f0", texte: "#1f7a4b" },
+                "✅ réservé": { fond: "#eef7f0", texte: "#1f7a4b" },
+                "💵 solde sur place": { fond: "#fdf2e3", texte: "#b5751e" },
+                "‼️ à faire": { fond: "#fdf3f0", texte: "#b5471f" },
+              };
+              const st = statutStyle[r.statut] ?? statutStyle["✅ réservé"];
+              return (
+                <article
+                  key={r.titre}
+                  className="rounded-2xl bg-white border border-[var(--ligne)] p-5 md:p-6 ombre-douce"
+                >
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <div className="font-bold text-[14px] uppercase tracking-wide text-[var(--accent)]">
+                      {r.quand}
+                    </div>
+                    <span
+                      className="text-[13px] font-bold px-2.5 py-1 rounded-full"
+                      style={{ background: st.fond, color: st.texte }}
+                    >
+                      {r.statut}
+                    </span>
+                  </div>
+                  <h3 className="serif mt-2 text-[22px] md:text-2xl font-semibold leading-snug">
+                    {r.titre}
+                  </h3>
+                  <div className="mt-2 inline-block rounded-lg bg-[var(--fond-chaud)] border border-[var(--ligne)] px-3 py-1.5 text-[15px] font-semibold tracking-wide select-all">
+                    {r.ref}
+                  </div>
+                  <ul className="mt-3 space-y-2">
+                    {r.infos.map((ligne, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-3 text-[15.5px] leading-relaxed text-[var(--encre-douce)]"
+                      >
+                        <span className="text-[var(--accent)] font-bold shrink-0">•</span>
+                        <span>{ligne}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {r.contact && (
+                    <div className="mt-3 pt-3 border-t border-[var(--ligne)] text-[14.5px] leading-relaxed text-[var(--encre-douce)]">
+                      <span className="font-semibold text-[var(--encre)]">Contact : </span>
+                      {r.contact}
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </NumSection>
+
         {/* ════════ CROISIÈRE ════════ */}
         <NumSection
           id="croisiere"
-          num="03"
+          num="04"
           titre="La croisière à Komodo"
           intro={croisiere.cadre}
         >
@@ -298,7 +365,7 @@ export default function Page() {
             style={{ background: "linear-gradient(135deg, #1f7a8c, #166374)" }}
           >
             <div className="text-[13px] font-bold uppercase tracking-wide opacity-90">
-              ⭐ Où on en est · classement par sûreté
+              ✅ Réservée · la fiche de la croisière
             </div>
             <p className="mt-2 text-[16.5px] leading-relaxed">
               {croisiere.recommande}
@@ -308,7 +375,7 @@ export default function Page() {
           {/* Podium — une fiche détaillée par bateau */}
           <div className="mt-5 grid gap-4">
             {croisiere.operateurs.map((o) => {
-              const gagnant = o.rang === 1;
+              const gagnant = "reserve" in o && o.reserve === true;
               return (
                 <div
                   key={o.rang}
@@ -332,10 +399,16 @@ export default function Page() {
                       <div>
                         <div className="font-bold text-[18px] leading-tight flex items-center gap-2 flex-wrap">
                           {o.nom}
-                          {o.contacte && (
-                            <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#eef7f0] text-[#1f7a4b]">
-                              ✅ Contacté
+                          {gagnant ? (
+                            <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1f7a8c] text-white">
+                              ✅ Réservé ici
                             </span>
+                          ) : (
+                            o.contacte && (
+                              <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#eef7f0] text-[#1f7a4b]">
+                                Contacté
+                              </span>
+                            )
                           )}
                         </div>
                         <div
@@ -447,7 +520,7 @@ export default function Page() {
         {/* ════════ CARTE ════════ */}
         <NumSection
           id="carte"
-          num="04"
+          num="05"
           titre="La carte du voyage"
           intro="D'ouest en est : Sumatra, Java, Bali, puis les îles de Komodo — et retour à Bali pour finir."
         >
@@ -459,9 +532,9 @@ export default function Page() {
         {/* ════════ CHECKLIST ════════ */}
         <NumSection
           id="reservations"
-          num="05"
+          num="06"
           titre="Quoi réserver, et quand"
-          intro="Dans l'ordre. La toute première ligne est la plus urgente : c'est elle qui bloque le reste."
+          intro="Dans l'ordre. La première ligne récapitule ce qui est bouclé ; les suivantes sont ce qu'il reste à faire, du plus urgent au plus tranquille."
         >
           <ol className="space-y-3">
             {checklist.map((c, i) => (
@@ -486,7 +559,7 @@ export default function Page() {
         {/* ════════ VIGILANCE ════════ */}
         <NumSection
           id="vigilance"
-          num="06"
+          num="07"
           titre="Points de vigilance"
           intro="Les quelques pièges à garder en tête pour que tout roule sur place."
         >
