@@ -162,7 +162,7 @@ export const reservations: Reservation[] = [
     ref: "Réf. PFIPUG · DPS 15 h 45 → LBJ 16 h 55",
     statut: "✅ payé",
     infos: [
-      "Vol direct 1 h 10, classe économique, PT Indonesia AirAsia. Enregistrement en ligne AirAsia ouvert 14 jours avant.",
+      "Vol direct 1 h 10, classe économique, PT Indonesia AirAsia. Enregistrement en ligne AirAsia ouvert 14 jours avant. On part avec un petit sac cabine chacun (7 kg max chez AirAsia) : les grosses valises restent chez Jasmine à Bali du 11 au 14.",
       "Depuis Canggu, compter environ une heure jusqu'à l'aéroport : quitter l'hôtel vers 12 h 45 - 13 h pour être au terminal domestique 2 h avant.",
       "Arrivée à Labuan Bajo à 16 h 55 (heure de Bali = heure de Florès), 15 min de route jusqu'à la Casa de Capulet.",
     ],
@@ -188,7 +188,7 @@ export const reservations: Reservation[] = [
     statut: "✅ payé",
     infos: [
       "Même réservation PFIPUG que l'aller. Vol direct 1 h 10.",
-      "Le bateau est de retour au port vers 12 h, l'aéroport de Komodo est à 10 min : le temps d'un déjeuner et d'une douche (demander à la Casa de Capulet ou à Travass où se poser) avant d'aller à l'aéroport vers 15 h 30. Enregistrement fermé 45 min avant, à faire en ligne la veille depuis le bateau si le réseau passe.",
+      "Le bateau est de retour au port vers 12 h, l'aéroport de Komodo est à 10 min : le temps d'un déjeuner et d'une douche (demander à la Casa de Capulet ou à Travass où se poser) avant d'aller à l'aéroport vers 15 h 30. Bagage cabine seulement : les valises sont restées chez Jasmine à Bali. Enregistrement fermé 45 min avant, à faire en ligne la veille depuis le bateau si le réseau passe.",
       "Arrivée à Denpasar 18 h 35, puis environ une heure de route vers Canggu : hôtel vers 20 h. La nuit du 14 à Canggu reste à réserver.",
     ],
   },
@@ -372,7 +372,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "La seule journée entière sans obligation avant la croisière : plage, boutiques, massage — et le soir, le petit sac pour Komodo.",
         details:
-          "Journée à la carte dans le quartier le plus animé de Bali : grasse matinée, plage de Berawa ou Echo Beach, massage, balade dans les concept-stores, coucher de soleil au beach club et dîner au restaurant. Le soir, on prépare un petit sac pour la croisière (maillots, crème solaire, lampe, médicament contre le mal de mer) — l'idéal est de laisser les grosses valises en garde quelque part (à voir avec Jasmine si possible de les déposer à Canggu, sinon en garde à l'hôtel de Labuan Bajo pendant les deux nuits à bord). Retrait d'espèces avant Labuan Bajo (les distributeurs s'y vident le week-end : frais de parc éventuels et pourboires sont souvent en liquide — la croisière, elle, est déjà payée). Pas de réveil matinal : le vol de demain est à 15 h 45.",
+          "Journée à la carte dans le quartier le plus animé de Bali : grasse matinée, plage de Berawa ou Echo Beach, massage, balade dans les concept-stores, coucher de soleil au beach club et dîner au restaurant. Le soir, on prépare le petit sac de Komodo (maillots, crème solaire, lampe, médicament contre le mal de mer, chargeur, passeports, une tenue sèche pour le vol) : les grosses valises restent à Bali chez Jasmine pendant toute l'escapade, du 11 au 14 — on voyage léger, bagage cabine seulement, ce qui simplifie aussi l'enchaînement bateau-avion du 14. Retrait d'espèces avant Labuan Bajo (les distributeurs s'y vident le week-end : frais de parc éventuels et pourboires sont souvent en liquide — la croisière, elle, est déjà payée). Pas de réveil matinal : le vol de demain est à 15 h 45.",
         nuit: "Hôtel à Canggu · ‼️ à réserver",
         type: "repos",
       },
@@ -418,7 +418,7 @@ export const phases: { titre: string; detail: string; jours: Jour[] }[] = [
         resume:
           "Dernière baignade, retour au port de Labuan Bajo vers 12 h, vol AirAsia 17 h 25 → 18 h 35 · ✅ réservé (réf. PFIPUG), nuit à Canggu.",
         details:
-          "Dernière matinée en mer (snorkeling, tortues selon le programme), puis retour au port de Labuan Bajo vers 12 h, comme confirmé par Travass Life. Cinq heures devant soi : déjeuner de fruits de mer sur le front de mer, douche et valises (voir avec la Casa de Capulet pour garder les bagages et utiliser une salle de bain, ou un day pass), puis départ pour l'aéroport vers 15 h 30. L'aéroport de Komodo est à dix minutes du port : décollage AirAsia à 17 h 25 (enregistrement fermé 45 minutes avant, le faire en ligne la veille si le réseau passe), atterrissage à Denpasar à 18 h 35, puis environ une heure de route jusqu'à Canggu — hôtel vers 20 h, longue douche et dîner tardif. On ne dort plus à Labuan Bajo ce soir-là : la nuit du 14 se passe à Bali. Si le volcan Lewotobi clouait les avions au sol, le plan B serait de reprendre une chambre sur place et de décaler le vol au lendemain.",
+          "Dernière matinée en mer (snorkeling, tortues selon le programme), puis retour au port de Labuan Bajo vers 12 h, comme confirmé par Travass Life. Cinq heures devant soi et rien qu'un petit sac chacun (les valises sont chez Jasmine à Bali) : déjeuner de fruits de mer sur le front de mer, une douche à trouver sur place (demander à la Casa de Capulet ou à Travass), puis départ pour l'aéroport vers 15 h 30. L'aéroport de Komodo est à dix minutes du port : décollage AirAsia à 17 h 25 (enregistrement fermé 45 minutes avant, le faire en ligne la veille si le réseau passe), atterrissage à Denpasar à 18 h 35, puis environ une heure de route jusqu'à Canggu — hôtel vers 20 h, longue douche et dîner tardif. On ne dort plus à Labuan Bajo ce soir-là : la nuit du 14 se passe à Bali. Si le volcan Lewotobi clouait les avions au sol, le plan B serait de reprendre une chambre sur place et de décaler le vol au lendemain.",
         nuit: "Canggu · ‼️ nuit du 14 à réserver (le Plawa Laguna commence le 15 — demander une nuit de plus)",
         type: "bateau",
       },
@@ -636,7 +636,7 @@ export const checklist = [
   },
   {
     quand: "Le plus urgent",
-    quoi: "Le retour de Komodo est le 14 octobre au soir (vol AirAsia 17 h 25) : 1) réserver la nuit du mercredi 14 à Canggu — d'abord demander au Plawa Laguna d'ajouter une nuit avant celles du 15 et du 16 ; 2) vérifier que la nuit du 14 à la Casa de Capulet est bien annulée (on n'y dort plus) ; 3) leur demander quand même de garder les bagages et de prêter une douche l'après-midi du 14 (le bateau rentre vers 12 h, vol à 17 h 25).",
+    quoi: "Le retour de Komodo est le 14 octobre au soir (vol AirAsia 17 h 25) : 1) réserver la nuit du mercredi 14 à Canggu — d'abord demander au Plawa Laguna d'ajouter une nuit avant celles du 15 et du 16 ; 2) vérifier que la nuit du 14 à la Casa de Capulet est bien annulée (on n'y dort plus) ; 3) leur demander où prendre une douche l'après-midi du 14 (le bateau rentre vers 12 h, vol à 17 h 25 — on n'a qu'un petit sac, les valises sont chez Jasmine).",
   },
   {
     quand: "Le plus urgent",
@@ -660,7 +660,7 @@ export const checklist = [
   },
   {
     quand: "Avant l'arrivée à Canggu",
-    quoi: "Réserver la table du vendredi soir 9 octobre à Canggu (le quartier se remplit vite), et voir avec Jasmine s'il est possible d'y laisser les grosses valises pendant la croisière.",
+    quoi: "Réserver la table du vendredi soir 9 octobre à Canggu (le quartier se remplit vite), et caler avec Jasmine le dépôt des grosses valises chez elle avant le vol du 11 (et leur récupération le 14 au soir ou le 15).",
   },
   {
     quand: "La semaine du départ",

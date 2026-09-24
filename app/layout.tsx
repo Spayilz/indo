@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import HorsLigne from "@/components/HorsLigne";
 import { Fraunces, Figtree } from "next/font/google";
 import "./globals.css";
 
@@ -20,6 +21,22 @@ export const metadata: Metadata = {
   title: "Indonésie 2026 — Notre carnet de voyage",
   description:
     "Le plan des vacances, jour par jour. Du 26 septembre au 18 octobre 2026.",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Indo 2026",
+    statusBarStyle: "default",
+  },
+  icons: {
+    icon: [{ url: "/icons/icone-192.png", sizes: "192x192", type: "image/png" }],
+    apple: "/icons/apple-touch-icon.png",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#c2683a",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -29,7 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${titres.variable} ${corps.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <HorsLigne />
+      </body>
     </html>
   );
 }
