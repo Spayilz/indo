@@ -183,7 +183,7 @@ export default function Page() {
                           <article
                             key={j.iso}
                             id={`j-${j.iso}`}
-                            className="relative rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-4 md:p-6 ombre-douce scroll-mt-[76px]"
+                            className="cv relative rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-4 md:p-6 ombre-douce scroll-mt-[76px]"
                           >
                             <span className="timeline-noeud" />
                             <div className="flex items-center justify-between gap-3">
@@ -286,7 +286,7 @@ export default function Page() {
               <article
                 key={r.titre}
                 id={r.iso ? `billet-${r.iso}` : undefined}
-                className="rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-4 md:p-6 ombre-douce scroll-mt-[76px]"
+                className="cv rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-4 md:p-6 ombre-douce scroll-mt-[76px]"
               >
                 <div className="flex items-center justify-between gap-3 flex-wrap">
                   <div className="font-bold text-[14px] uppercase tracking-wide text-[var(--accent)]">
@@ -340,34 +340,44 @@ export default function Page() {
             {hebergements.map((h) => (
               <div
                 key={h.nom + h.nuits[0]}
-                className="rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-4 ombre-douce"
+                className="rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-3.5 ombre-douce flex items-start gap-3"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <div className="text-[13px] font-bold uppercase tracking-wide text-[var(--accent)]">
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[13px] font-bold uppercase tracking-wide text-[var(--accent)]">
                       {formatNuits(h.nuits)} · {h.ville}
-                    </div>
-                    <div className="font-bold text-[17px] leading-snug mt-0.5">{h.nom}</div>
-                    {(h.reservePar || h.note) && (
-                      <div className="mt-1 text-[14px] leading-relaxed text-[var(--encre-douce)]">
-                        {h.reservePar && <span>Réservé par {h.reservePar}. </span>}
-                        {h.note}
-                      </div>
-                    )}
+                    </span>
+                    <Statut s={h.statut} />
                   </div>
-                  <Statut s={h.statut} />
-                </div>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <a href={mapsUrl(h.q)} target="_blank" rel="noreferrer" className="chip">
-                    🗺️ Itinéraire
-                  </a>
-                  {h.tel && (
-                    <a href={`tel:${h.tel}`} className="chip chip-tel">
-                      📞 Appeler
-                    </a>
+                  <div className="font-bold text-[16px] leading-snug mt-1">{h.nom}</div>
+                  {(h.reservePar || h.note) && (
+                    <div className="mt-0.5 text-[13.5px] leading-snug text-[var(--encre-douce)]">
+                      {h.reservePar && <span>Réservé par {h.reservePar}. </span>}
+                      {h.note}
+                    </div>
                   )}
-                  {h.ref && <Copier texte={h.ref} label={`Réf. ${h.ref}`} />}
+                  {(h.tel || h.ref) && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {h.tel && (
+                        <a href={`tel:${h.tel}`} className="chip chip-tel">
+                          📞 Appeler
+                        </a>
+                      )}
+                      {h.ref && <Copier texte={h.ref} label={`Réf. ${h.ref}`} />}
+                    </div>
+                  )}
                 </div>
+                {h.statut !== "‼️ à réserver" && (
+                  <a
+                    href={mapsUrl(h.q)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="chip shrink-0"
+                    aria-label={`Ouvrir ${h.nom} dans Google Maps`}
+                  >
+                    🗺️
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -562,7 +572,7 @@ export default function Page() {
                 <div className="flex items-baseline justify-between gap-3">
                   <div className="font-bold text-[15px]">{e.quand}</div>
                   <div className="shrink-0 text-right">
-                    <div className="font-bold tabular-nums text-[var(--accent)]">
+                    <div className="font-bold tabular-nums text-[var(--accent)] whitespace-nowrap">
                       ≈ {idr(e.montant)} IDR
                     </div>
                     <div className="text-[13px] text-[var(--encre-douce)] tabular-nums">≈ {euros(e.montant)} €</div>
@@ -573,9 +583,9 @@ export default function Page() {
               </div>
             ))}
             <div className="p-4 bg-[var(--fond-chaud)] flex items-baseline justify-between gap-3">
-              <div className="font-bold">Total estimé en liquide</div>
-              <div className="text-right tabular-nums">
-                <div className="font-bold text-[var(--accent)]">
+              <div className="font-bold">Total en liquide</div>
+              <div className="text-right tabular-nums shrink-0">
+                <div className="font-bold text-[var(--accent)] whitespace-nowrap">
                   ≈ {idr(especes.reduce((a, e) => a + e.montant, 0))} IDR
                 </div>
                 <div className="text-[13px] text-[var(--encre-douce)]">

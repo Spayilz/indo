@@ -200,6 +200,13 @@ html {
   border-color: transparent;
 }
 
+/* Rendu différé des cartes hors écran : page longue plus fluide sur mobile */
+.cv {
+  content-visibility: auto;
+  contain-intrinsic-width: none;
+  contain-intrinsic-height: auto 560px;
+}
+
 /* ── Journées ────────────────────────────────────── */
 .jour-actuel {
   border-color: var(--accent) !important;
@@ -265,6 +272,13 @@ details.recit[open] > summary::after {
   background: #e9ece6 !important;
   font-family: var(--font-corps), sans-serif !important;
   border-radius: 16px;
+}
+
+.leaflet-bar a {
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 20px !important;
 }
 
 .leaflet-control-attribution {

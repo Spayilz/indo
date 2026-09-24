@@ -44,11 +44,11 @@ export default function Galerie({ captures }: { captures: Capture[] }) {
               className="w-full aspect-[9/16] object-cover object-top rounded-xl border border-[var(--ligne)] bg-white group-hover:opacity-90"
             />
             {c.pour && (
-              <span className="absolute top-1.5 left-1.5 text-[11px] font-bold px-2 py-0.5 rounded-full bg-[var(--accent)] text-white">
+              <span className="absolute top-1.5 left-1.5 text-[12px] font-bold px-2 py-0.5 rounded-full bg-[var(--accent)] text-white">
                 {c.pour}
               </span>
             )}
-            <div className="mt-1 text-[12px] leading-snug text-[var(--encre-douce)]">
+            <div className="mt-1 text-[13px] leading-snug text-[var(--encre-douce)]">
               {c.legende}
             </div>
           </button>

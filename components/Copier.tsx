@@ -15,7 +15,7 @@ export default function Copier({ texte, label = "Copier" }: { texte: string; lab
           setTimeout(() => setOk(false), 1500);
         } catch {}
       }}
-      className="inline-flex items-center gap-1 min-h-[36px] px-3 rounded-lg border border-[var(--ligne)] bg-[var(--carte)] text-[13.5px] font-semibold text-[var(--accent)]"
+      className="inline-flex items-center gap-1 min-h-[44px] px-3.5 rounded-lg border border-[var(--ligne)] bg-[var(--carte)] text-[13.5px] font-semibold text-[var(--accent)]"
     >
       {ok ? "Copié ✓" : `⧉ ${label}`}
     </button>
