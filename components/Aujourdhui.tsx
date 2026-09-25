@@ -11,13 +11,17 @@ import {
   FIN,
 } from "@/lib/dates";
 import { hebergements, reservations } from "@/lib/plan";
-
-const mapsUrl = (q: string) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+import { mapsUrl } from "@/lib/ui";
 
 /* La carte « Aujourd'hui » : calculée sur la date du téléphone,
  * avec flèches pour regarder la veille et le lendemain. */
-export default function Aujourdhui() {
+export default function Aujourdhui({
+  onOuvrirJour,
+  onOuvrirBillet,
+}: {
+  onOuvrirJour: (iso: string) => void;
+  onOuvrirBillet: (cle: string) => void;
+}) {
   const [maintenant, setMaintenant] = useState<Date | null>(null);
   const [decalage, setDecalage] = useState(0);
 
@@ -27,23 +31,13 @@ export default function Aujourdhui() {
     return () => clearInterval(t);
   }, []);
 
-  const isoJour = maintenant ? isoLocal(maintenant) : null;
-
-  // Ouvre le récit du jour courant dans la liste et le surligne
-  useEffect(() => {
-    if (!isoJour) return;
-    const art = document.getElementById(`j-${isoJour}`);
-    if (!art) return;
-    art.classList.add("jour-actuel");
-    art.querySelector("details")?.setAttribute("open", "");
-  }, [isoJour]);
-
-  if (!maintenant || !isoJour) {
+  if (!maintenant) {
     return (
-      <div className="rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-5 min-h-[160px]" />
+      <div className="rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-5 min-h-[220px]" />
     );
   }
 
+  const isoJour = isoLocal(maintenant);
   const avant = joursEntre(isoJour, DEBUT);
   const apres = joursEntre(FIN, isoJour);
   let base = tousLesJours.findIndex((j) => j.iso === isoJour);
@@ -68,11 +62,10 @@ export default function Aujourdhui() {
   const enVoyage = avant <= 0 && apres <= 0;
 
   return (
-    <div className="rounded-2xl bg-[var(--carte)] border-2 border-[var(--accent)] p-5 md:p-6 ombre-carte">
-      {/* Bandeau : où on en est */}
+    <div className="rounded-2xl bg-[var(--carte)] border-2 border-[var(--accent)] p-4 md:p-6 ombre-carte">
       {avant > 0 && (
         <div className="mb-3 rounded-xl bg-[var(--accent-clair)] text-[var(--accent)] px-3.5 py-2 text-[14.5px] font-bold">
-          ✈️ J-{avant} avant le départ · voici le programme du {avant === 1 ? "lendemain" : "premier jour"}
+          ✈️ J-{avant} avant le départ · le programme du {avant === 1 ? "lendemain" : "premier jour"}
         </div>
       )}
       {apres > 0 && (
@@ -92,9 +85,7 @@ export default function Aujourdhui() {
           ‹
         </button>
         <div className="text-center min-w-0">
-          <div className="text-[13px] font-bold uppercase tracking-wide text-[var(--accent)]">
-            {libelle}
-          </div>
+          <div className="text-[13px] font-bold uppercase tracking-wide text-[var(--accent)]">{libelle}</div>
           <div className="font-bold text-[17px] leading-tight">{j.date}</div>
           <div className="text-[13px] text-[var(--encre-douce)] truncate">{j.phase.titre}</div>
         </div>
@@ -121,7 +112,6 @@ export default function Aujourdhui() {
         {j.titre}
       </h2>
 
-      {/* Horaires */}
       <ul className="mt-4 space-y-2">
         {j.horaires.map((h, i) => (
           <li key={i} className="flex gap-3 items-baseline">
@@ -133,7 +123,6 @@ export default function Aujourdhui() {
         ))}
       </ul>
 
-      {/* Nuit */}
       <div className="mt-4 pt-3 border-t border-[var(--ligne)] flex items-start gap-2 text-[15.5px]">
         <span>🛏️</span>
         <div className="min-w-0 flex-1">
@@ -142,7 +131,6 @@ export default function Aujourdhui() {
         </div>
       </div>
 
-      {/* Alerte */}
       {j.alerte && (
         <div className="mt-3 rounded-xl bg-[var(--nuit-fond)] border border-[var(--nuit-bord)] px-3.5 py-2.5 text-[14.5px] leading-relaxed">
           <span className="font-bold">⚠️ </span>
@@ -150,31 +138,30 @@ export default function Aujourdhui() {
         </div>
       )}
 
-      {/* Actions */}
       <div className="mt-4 flex flex-wrap gap-2">
-        {hotel && (
-          <a
-            href={mapsUrl(hotel.q)}
-            target="_blank"
-            rel="noreferrer"
-            className="chip"
+        {billets.map((b) => (
+          <button
+            key={b.titre}
+            type="button"
+            onClick={() => b.iso && onOuvrirBillet(b.iso)}
+            className="chip chip-accent"
           >
+            🎫 {b.titre.split(" — ")[0]}
+          </button>
+        ))}
+        {hotel && hotel.statut !== "‼️ à réserver" && (
+          <a href={mapsUrl(hotel.q)} target="_blank" rel="noreferrer" className="chip">
             🗺️ Hôtel dans Maps
           </a>
         )}
-        {billets.map((b) => (
-          <a key={b.titre} href={`#billet-${b.iso}`} className="chip chip-accent">
-            🎫 {b.titre.split(" — ")[0]}
-          </a>
-        ))}
         {j.lieux?.map((l) => (
           <a key={l.q} href={mapsUrl(l.q)} target="_blank" rel="noreferrer" className="chip">
             📍 {l.nom}
           </a>
         ))}
-        <a href={`#j-${j.iso}`} className="chip">
+        <button type="button" onClick={() => onOuvrirJour(j.iso)} className="chip">
           📖 Le récit du jour
-        </a>
+        </button>
       </div>
     </div>
   );

@@ -163,7 +163,129 @@ html {
   color: #fff;
 }
 
-/* ── Barre de navigation flottante ───────────────── */
+/* ── Web app : barres, rangées, tuiles ───────────── */
+.barre-haut {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: var(--nav-fond);
+  border-bottom: 1px solid var(--ligne);
+  padding-top: env(safe-area-inset-top);
+}
+.barre-onglets {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--nav-fond);
+  border-top: 1px solid var(--ligne);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.onglet {
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--encre-douce);
+  -webkit-tap-highlight-color: transparent;
+}
+.onglet-actif {
+  color: var(--accent);
+}
+.groupe {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--ligne);
+  background: var(--carte);
+}
+.rangee {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 12px 12px 14px;
+  min-height: 64px;
+  background: var(--carte);
+  border-bottom: 1px solid var(--ligne);
+  color: var(--encre);
+  -webkit-tap-highlight-color: transparent;
+}
+.rangee:last-child {
+  border-bottom: 0;
+}
+.rangee:active {
+  background: var(--fond-chaud);
+}
+.rangee-actuelle {
+  background: color-mix(in srgb, var(--accent) 9%, var(--carte));
+}
+.badge-date {
+  flex-shrink: 0;
+  width: 50px;
+  min-height: 50px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--couleur-phase, var(--accent));
+  background: color-mix(in srgb, var(--couleur-phase, var(--accent)) 12%, var(--carte));
+}
+.tuile {
+  min-height: 64px;
+  border-radius: 16px;
+  border: 1px solid var(--ligne);
+  background: var(--carte);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 14.5px;
+  text-align: left;
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+}
+.tuile:active {
+  background: var(--fond-chaud);
+}
+.feuille-ouverte {
+  overflow: hidden;
+}
+details.accordeon > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 0 14px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+details.accordeon > summary::-webkit-details-marker {
+  display: none;
+}
+details.accordeon > summary::after {
+  content: "⌄";
+  margin-left: auto;
+  font-size: 20px;
+  color: var(--encre-douce);
+  transition: transform 0.2s;
+}
+details.accordeon[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+/* ── (ancienne) barre flottante ──────────────────── */
 .nav-flottante {
   position: sticky;
   top: 0;

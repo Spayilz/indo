@@ -51,5 +51,12 @@ export function formatNuits(nuits: string[]): string {
   });
   const mois = MOIS[jours[0].m - 1];
   if (jours.length === 1) return `${jours[0].d} ${mois}`;
-  return `${jours.map((j) => j.d).join(" et ")} ${mois}`;
+  const nums = jours.map((j) => j.d);
+  return `${nums.slice(0, -1).join(", ")} et ${nums[nums.length - 1]} ${mois}`;
+}
+
+/** ["2026-10-14","2026-10-15","2026-10-16"] → "14–16" ; une seule nuit → "27" */
+export function plageNuits(nuits: string[]): string {
+  const d = nuits.map((n) => Number(n.split("-")[2]));
+  return d.length === 1 ? String(d[0]) : `${d[0]}–${d[d.length - 1]}`;
 }

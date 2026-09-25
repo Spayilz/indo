@@ -87,7 +87,7 @@ export default function HorsLigne() {
       onClick={() => setVisible(false)}
       className="fixed left-1/2 -translate-x-1/2 z-50 px-4 min-h-[40px] flex items-center rounded-full text-[14px] font-semibold shadow-lg"
       style={{
-        bottom: "calc(12px + env(safe-area-inset-bottom))",
+        bottom: "calc(76px + env(safe-area-inset-bottom))",
         background: etat === "hors-ligne" || etat === "erreur" ? "#3f3a34" : "#1f7a4b",
         color: "white",
       }}
