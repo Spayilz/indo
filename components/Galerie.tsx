@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export type Capture = { src: string; legende: string; pour?: string };
 
@@ -55,7 +56,11 @@ export default function Galerie({ captures }: { captures: Capture[] }) {
         ))}
       </div>
 
-      {ouverte !== null && (
+      {/* Rendu dans <body> par un portail : les fiches ont un rendu différé
+          (content-visibility) qui confinerait sinon la visionneuse à la fiche. */}
+      {ouverte !== null &&
+        typeof document !== "undefined" &&
+        createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -117,8 +122,9 @@ export default function Galerie({ captures }: { captures: Capture[] }) {
               </button>
             </div>
           )}
-        </div>
-      )}
+        </div>,
+        document.body,
+        )}
     </>
   );
 }

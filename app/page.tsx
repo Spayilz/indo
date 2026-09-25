@@ -1,6 +1,6 @@
 import Carte from "@/components/Carte";
 import NavFlottante from "@/components/NavFlottante";
-import Galerie from "@/components/Galerie";
+import Galerie, { type Capture } from "@/components/Galerie";
 import Aujourdhui from "@/components/Aujourdhui";
 import Copier from "@/components/Copier";
 import { VersionCarnet } from "@/components/HorsLigne";
@@ -64,6 +64,7 @@ const navLiens = [
   { href: "#aujourdhui", label: "Aujourd'hui" },
   { href: "#itineraire", label: "Jours" },
   { href: "#billets", label: "Billets" },
+  { href: "#documents", label: "Documents" },
   { href: "#croisiere", label: "Croisière" },
   { href: "#pratique", label: "Pratique" },
   { href: "#carte", label: "Carte" },
@@ -113,7 +114,24 @@ function Statut({ s }: { s: string }) {
   );
 }
 
+/* Toutes les captures du carnet, réunies pour la section « Documents » */
+function tousLesDocuments(): Capture[] {
+  const vus = new Set<string>();
+  const out: Capture[] = [];
+  const ajouter = (source: string, captures?: Capture[]) => {
+    for (const c of captures ?? []) {
+      if (vus.has(c.src)) continue;
+      vus.add(c.src);
+      out.push({ ...c, legende: `${source} · ${c.legende}` });
+    }
+  };
+  for (const r of reservations) ajouter(r.titre.split(" — ")[0], r.captures);
+  for (const h of hebergements) ajouter(h.ville, h.captures);
+  return out;
+}
+
 export default function Page() {
+  const documents = tousLesDocuments();
   return (
     <>
       <NavFlottante liens={navLiens} />
@@ -422,8 +440,20 @@ export default function Page() {
           </div>
         </NumSection>
 
+        {/* ════════ DOCUMENTS ════════ */}
+        <NumSection
+          id="documents"
+          num="03"
+          titre="Tous les documents"
+          intro={`${documents.length} captures — visas, cartes d'arrivée, billets, réservations. Un tap ouvre le document en plein écran, flèches pour passer au suivant. Tout est lisible sans réseau.`}
+        >
+          <div className="rounded-2xl bg-[var(--carte)] border border-[var(--ligne)] p-4 md:p-6 ombre-douce -mt-2">
+            <Galerie captures={documents} />
+          </div>
+        </NumSection>
+
         {/* ════════ CROISIÈRE ════════ */}
-        <NumSection id="croisiere" num="03" titre="La croisière à Komodo" intro={croisiere.cadre}>
+        <NumSection id="croisiere" num="04" titre="La croisière à Komodo" intro={croisiere.cadre}>
           <div
             className="rounded-2xl p-5 md:p-6 text-white ombre-carte"
             style={{ background: "linear-gradient(135deg, #1f7a8c, #166374)" }}
@@ -499,7 +529,7 @@ export default function Page() {
         {/* ════════ PRATIQUE ════════ */}
         <NumSection
           id="pratique"
-          num="04"
+          num="05"
           titre="Pratique"
           intro="Urgences, contacts, espèces à prévoir, heure, quelques mots — ce qu'on cherche vite."
         >
@@ -655,7 +685,7 @@ export default function Page() {
         {/* ════════ CARTE ════════ */}
         <NumSection
           id="carte"
-          num="05"
+          num="06"
           titre="La carte du voyage"
           intro="D'ouest en est. Pour naviguer vraiment, les étapes s'ouvrent dans Google Maps (zones hors ligne à télécharger avant le départ)."
         >
