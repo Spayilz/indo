@@ -108,9 +108,28 @@ export const reservations: Reservation[] = [
     ref: "Franck Monardo · Agathe Roncalli",
     statut: "✅ réservé",
     infos: [
-      "Franck MONARDO · né le 15 mai 1993 · passeport 22IK82830",
-      "Agathe RONCALLI · née le 23 juillet 1990 · passeport 21DI57178",
+      "Franck MONARDO · né le 15 mai 1993 · passeport 22IK82830 (expire le 15/12/2032) · nationalité française",
+      "Agathe RONCALLI · née le 23 juillet 1990 · passeport 21DI57178 (expire le 17/11/2031) · nationalité française",
       "Ces numéros sont ceux saisis sur le train (KAI), les vols Lion Air et AirAsia : ce sont les passeports à présenter à l'embarquement. À réutiliser pour le billet Bromo (nominatif) et le permis SiORA de Komodo.",
+    ],
+  },
+  {
+    quand: "Dim. 27 sept. · 19 h 35",
+    iso: "2026-09-27",
+    titre: "Immigration à Medan — e-VoA + carte d'arrivée",
+    ref: "e-VoA Franck Z8A1569554 · Agathe Z8A1569563 · cartes d'arrivée 2609250073615 · 2609250073616",
+    statut: "✅ payé",
+    infos: [
+      "Visas électroniques à l'arrivée (e-VoA, 30 jours) délivrés le 25/09/2026, à utiliser avant le 23/12/2026. Franck : référence 2250926B1773956, visa Z8A1569554, reçu RA1569538. Agathe : référence 2250926B1774015, visa Z8A1569563, reçu RA1569547. Adresse déclarée : JW Marriott Medan.",
+      "All Indonesia Arrival Card (carte d'arrivée électronique) soumise pour le 27 septembre : Franck n° 2609250073615 (QR ci-dessous), Agathe n° 2609250073616. Le QR code est à présenter à l'arrivée.",
+      "Les deux e-VoA donnent droit aux portiques automatiques (autogate) à Kualanamu : passeport sur le lecteur, pas de file au comptoir visa. Garder aussi le billet retour (17 octobre) accessible, l'officier peut le demander.",
+      "Séjour autorisé : 30 jours (on reste 21). Ne rien changer sur les e-VoA, ils ne sont ni modifiables ni remboursables.",
+    ],
+    captures: [
+      { src: "/billets/evoa-franck.jpg", legende: "e-VoA — Z8A1569554", pour: "Franck" },
+      { src: "/billets/arrival-card-franck.png", legende: "Carte d'arrivée — QR 2609250073615", pour: "Franck" },
+      { src: "/billets/evoa-agathe.jpg", legende: "e-VoA — Z8A1569563", pour: "Agathe" },
+      { src: "/billets/arrival-card-agathe.jpg", legende: "Carte d'arrivée — 2609250073616", pour: "Agathe" },
     ],
   },
   {
@@ -306,11 +325,11 @@ export const phases: Phase[] = [
         horaires: [
           { h: "16:30", quoi: "Arrivée Singapour Changi (correspondance 2 h 30)" },
           { h: "19:00", quoi: "Singapore Airlines SQ 994 → Medan" },
-          { h: "19:35", quoi: "Kualanamu : immigration (e-VoA), DAB (retirer ≈ 6,8 M IDR pour Sumatra), SIM Telkomsel" },
+          { h: "19:35", quoi: "Kualanamu : autogate avec l'e-VoA + QR de la carte d'arrivée, DAB (retirer ≈ 6,8 M IDR pour Sumatra), SIM Telkomsel" },
           { h: "~21:00", quoi: "Taxi (1 h) → JW Marriott Medan" },
         ],
         alerte:
-          "Aucun distributeur à Bukit Lawang : tout le liquide de Sumatra se retire ce soir à l'aéroport (plusieurs retraits).",
+          "À l'immigration : e-VoA et QR de la carte d'arrivée sur le téléphone (captures dans « Billets »), passeports, billet retour. Puis DAB : aucun distributeur à Bukit Lawang, tout le liquide de Sumatra se retire ce soir (plusieurs retraits).",
         lieux: [
           { nom: "JW Marriott Hotel Medan", q: "JW Marriott Hotel Medan" },
           { nom: "Aéroport de Kualanamu", q: "Kualanamu International Airport" },
